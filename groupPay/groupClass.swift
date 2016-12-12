@@ -7,4 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
+class Group {
+    struct PropertyKey {
+        static let nameKey = "name"
+        static let persons = "person"
+        static let transactionLog = "transactions"
+    }
+}
