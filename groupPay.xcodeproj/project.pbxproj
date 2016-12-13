@@ -16,6 +16,7 @@
 		FE14845F1DF9C428003B48E2 /* groupPayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE14845E1DF9C428003B48E2 /* groupPayTests.swift */; };
 		FE14846A1DF9C428003B48E2 /* groupPayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1484691DF9C428003B48E2 /* groupPayUITests.swift */; };
 		FE1484781DF9C661003B48E2 /* groupClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1484771DF9C661003B48E2 /* groupClass.swift */; };
+		FE57FDE41E0057C600CDD9C2 /* personClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57FDE31E0057C600CDD9C2 /* personClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		FE1484691DF9C428003B48E2 /* groupPayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupPayUITests.swift; sourceTree = "<group>"; };
 		FE14846B1DF9C428003B48E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE1484771DF9C661003B48E2 /* groupClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupClass.swift; sourceTree = "<group>"; };
+		FE57FDE31E0057C600CDD9C2 /* personClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				FE1484491DF9C428003B48E2 /* AppDelegate.swift */,
 				FE14844B1DF9C428003B48E2 /* ViewController.swift */,
 				FE1484771DF9C661003B48E2 /* groupClass.swift */,
+				FE57FDE31E0057C600CDD9C2 /* personClass.swift */,
 				FE14844D1DF9C428003B48E2 /* Main.storyboard */,
 				4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */,
 				FE1484501DF9C428003B48E2 /* Assets.xcassets */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE57FDE41E0057C600CDD9C2 /* personClass.swift in Sources */,
 				FE14844C1DF9C428003B48E2 /* ViewController.swift in Sources */,
 				FE1484781DF9C661003B48E2 /* groupClass.swift in Sources */,
 				FE14844A1DF9C428003B48E2 /* AppDelegate.swift in Sources */,
