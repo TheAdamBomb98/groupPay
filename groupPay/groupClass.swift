@@ -10,9 +10,12 @@ import Foundation
 import UIKit
 
 class Group {
-    struct PropertyKey {
-        static let nameKey = "name"
-        static let persons = "person"
-        static let transactionLog = "transactions"
+    var name: String
+    var people: [Person]
+    var transactions: [Receipt]
+    init( name: String , people: [Person] , transactions: [Receipt] ) {
+        self.name = name
+        self.people = people
+        self.transactions = transactions
     }
 }
