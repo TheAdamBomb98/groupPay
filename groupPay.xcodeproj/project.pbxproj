@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4BB90C8D1DFF0C0500A73C15 /* groupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */; };
+		FE0B974E1E044C54002390EA /* newGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0B974D1E044C54002390EA /* newGroupViewController.swift */; };
 		FE14844A1DF9C428003B48E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1484491DF9C428003B48E2 /* AppDelegate.swift */; };
 		FE14844C1DF9C428003B48E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE14844B1DF9C428003B48E2 /* ViewController.swift */; };
 		FE14844F1DF9C428003B48E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE14844D1DF9C428003B48E2 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupsTableViewCell.swift; sourceTree = "<group>"; };
+		FE0B974D1E044C54002390EA /* newGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newGroupViewController.swift; sourceTree = "<group>"; };
 		FE1484461DF9C428003B48E2 /* groupPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = groupPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE1484491DF9C428003B48E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE14844B1DF9C428003B48E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				FE57FDE31E0057C600CDD9C2 /* personClass.swift */,
 				FE57FDE51E00584800CDD9C2 /* receiptClass.swift */,
 				FE14844D1DF9C428003B48E2 /* Main.storyboard */,
+				FE0B974D1E044C54002390EA /* newGroupViewController.swift */,
 				4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */,
 				FE1484501DF9C428003B48E2 /* Assets.xcassets */,
 				FE1484521DF9C428003B48E2 /* LaunchScreen.storyboard */,
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE0B974E1E044C54002390EA /* newGroupViewController.swift in Sources */,
 				FE57FDE41E0057C600CDD9C2 /* personClass.swift in Sources */,
 				FE14844C1DF9C428003B48E2 /* ViewController.swift in Sources */,
 				FE1484781DF9C661003B48E2 /* groupClass.swift in Sources */,
