@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  groupPay
 //
-//  Created by FORD, ADAM on 12/8/16.
-//  Copyright © 2016 FORD, ADAM. All rights reserved.
+//  Created by FORD ADAM, WEST CARTER, STROBEL JOSEPH, BLANCHARD JENNIFER on 12/8/16.
+//  Copyright © 2016 FORD ADAM, WEST CARTER, STROBEL JOSEPH,JENNIFER BLANCHARD. All rights reserved.
 //
 
 import UIKit
