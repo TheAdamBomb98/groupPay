@@ -7,28 +7,23 @@
 //
 import Foundation
 import UIKit
-var people: [
+
 class newGroupViewController: UIViewController {
+    //var tempPeople: [Person]
     @IBOutlet weak var nameField: UITextField!
     
     @IBOutlet weak var phoneField: UITextField!
     
     @IBOutlet weak var emailField: UITextField!
     
-    @IBOutlet weak var nameDisplay: UILabel!
-    
-    @IBOutlet weak var phoneDisplay: UILabel!
-    
-    @IBOutlet weak var emailDisplay: UILabel!
-    
     @IBOutlet weak var addPersonButton: UIButton!
 
-    @IBAction func addPersonButtonPressed(_ sender: UIButton) {
-        
-    }
+    @IBOutlet weak var noNameError: UIView!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        noNameError.isHidden = true
         // Do any additional setup after loading the view.
     }
 
