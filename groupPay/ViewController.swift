@@ -8,36 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
 
-    let people = [
-        ("Adam Ford", "New York"),
-        ("Joe Strobel", "Alabama"),
-        ("Carter West", "Texas"),
-        ("Jennifer Blanchard", "Minnesota")
-    ]
-
-    //how many sections are in the view
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    //table view will return int for how many rows
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-            return people.count
-    }
-
-    //what is in the table
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
-            var (personName, personLocation) = people[indexPath.row]
-            cell.textLabel?.text = personName
-        
-        return cell
-    }
-
-    
     
     
     

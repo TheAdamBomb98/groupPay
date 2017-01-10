@@ -14,11 +14,11 @@ class viewControllerTwo: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var tableView: UITableView!
   
     
-    let people = [
-        ("Adam Ford", "New York"),
-        ("Joe Strobel", "Alabama"),
-        ("Carter West", "Texas"),
-        ("Jennifer Blanchard", "Minnesota")
+    let groups = [
+        ("Vegas", "January"),
+        ("Florida", "March"),
+        ("Cali", "June"),
+        ("Texas", "July")
     ]
     
     //how many sections are in the view
@@ -29,13 +29,13 @@ class viewControllerTwo: UIViewController, UITableViewDataSource, UITableViewDel
     //table view will return int for how many rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return people.count
+        return groups.count
     }
     
     //what is in the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        var (personName, personLocation) = people[indexPath.row]
+        var (personName, personLocation) = groups[indexPath.row]
         cell.textLabel?.text = personName
         
         return cell
