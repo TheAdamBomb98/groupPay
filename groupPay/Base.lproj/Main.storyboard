@@ -117,7 +117,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Add Person"/>
                                 <connections>
-                                    <action selector="addPersonButtonPressed:" destination="4J7-ZB-zq1" eventType="touchUpInside" id="H2C-2A-pJM"/>
+                                    <action selector="addPersonButtonPressed:" destination="4J7-ZB-zq1" eventType="touchUpInside" id="z35-hj-ROe"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1Z-WK-SyS">
