@@ -9,7 +9,12 @@
 import Foundation
 import UIKit
 
-class viewControllerTwo: UIViewController, UITableViewDataSource, UITableViewDelegate {
+let groups = [
+    "Vegas", "Cali", "Florida", "Staycation"
+]
+
+
+class GroupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
   
@@ -46,7 +51,7 @@ class viewControllerTwo: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        _ = segue.destination as! viewControllerThree
+        _ = segue.destination as! GroupPageController
     }
     
     
