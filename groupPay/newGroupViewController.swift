@@ -20,7 +20,22 @@ class newGroupViewController: UIViewController {
 
     @IBOutlet weak var noNameError: UIView!
 
+    //@IBAction func closeOnPopUp(_ sender: AnyObject) {
+    //noNameError.isHidden = true
+    //}
+    
+    
+    @IBAction func addPersonButtonPressed(_ sender: AnyObject) {
+        var tempPeople: [Person] = []
+        var currentIndex = 0
+        tempPeople[currentIndex] = Person(name: nameField.text!, totalPlusMinus: 0.0, transactions: [], currentPay: 0, currentPlusMinus: 0, phoneNumber: phoneField.text!, email: emailField.text!)
+        currentIndex += 1
+        nameField.text = ""
+        phoneField.text = ""
+        emailField.text = ""
+    }
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         noNameError.isHidden = true
@@ -42,5 +57,5 @@ class newGroupViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
+
