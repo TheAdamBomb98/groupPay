@@ -51,7 +51,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MmJ-hI-MPk" id="a1y-2B-vZl">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -164,12 +164,36 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.26574213554694848" green="1" blue="0.14559748907368542" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEA-5x-ROg">
+                                <frame key="frameInset" minX="135" minY="617" width="98" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Finalize Group"/>
+                                <connections>
+                                    <action selector="finalizeGroupButtonPressed:" destination="4J7-ZB-zq1" eventType="touchUpInside" id="ZFO-WZ-2a8"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hk2-lS-drZ">
+                                <frame key="frameInset" minX="175" minY="105" width="141" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHq-sj-Ong">
+                                <frame key="frameInset" minX="43" minY="108" width="102" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="addPersonButton" destination="aLp-Nl-1uD" id="7OX-a9-PV4"/>
                         <outlet property="emailField" destination="uYJ-py-LZK" id="rmb-Dk-E9n"/>
+                        <outlet property="finalizeGroupButton" destination="aEA-5x-ROg" id="dAr-Vr-s5P"/>
+                        <outlet property="groupNameField" destination="Hk2-lS-drZ" id="Qxf-mr-7hr"/>
                         <outlet property="nameField" destination="uun-44-NVy" id="7P3-u2-PIU"/>
                         <outlet property="noNameError" destination="OVb-J0-lQo" id="9cA-fF-A4p"/>
                         <outlet property="phoneField" destination="h1Z-WK-SyS" id="5Cn-Vy-pJ5"/>
@@ -177,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5MX-PX-0Hg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986" y="-101"/>
+            <point key="canvasLocation" x="984.79999999999995" y="-101.19940029985008"/>
         </scene>
         <!--Group View Controller-->
         <scene sceneID="ZRI-1c-yja">
