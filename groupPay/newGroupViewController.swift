@@ -26,9 +26,13 @@ class newGroupViewController: UIViewController {
     
     
     @IBAction func addPersonButtonPressed(_ sender: AnyObject) {
-        var tempPeople: [Person] = []
+        var tempPeople = [Person]()
         var currentIndex = 0
-        tempPeople[currentIndex] = Person(name: nameField.text!, totalPlusMinus: 0.0, transactions: [], currentPay: 0, currentPlusMinus: 0, phoneNumber: phoneField.text!, email: emailField.text!)
+            
+            let x = Person(name: nameField.text!, totalPlusMinus: 0.0, transactions: [], currentPay: 0, currentPlusMinus: 0, phoneNumber: phoneField.text!, email: emailField.text!)
+        
+        tempPeople.append(x)
+        
         currentIndex += 1
         nameField.text = ""
         phoneField.text = ""
