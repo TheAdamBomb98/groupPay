@@ -29,9 +29,10 @@ class newGroupViewController: UIViewController {
     //}
     
     var tempPeople = [Person]()
+    var currentIndex = 0
     @IBAction func addPersonButtonPressed(_ sender: AnyObject) {
 
-        var currentIndex = 0
+
             
             let x = Person(name: nameField.text!, totalPlusMinus: 0.0, transactions: [], currentPay: 0, currentPlusMinus: 0, phoneNumber: phoneField.text!, email: emailField.text!)
         
@@ -47,6 +48,7 @@ class newGroupViewController: UIViewController {
         let tempReceipts = [Receipt]()
         let x = Group(name: groupNameField.text!, person: tempPeople, transactions: tempReceipts)
         allGroups.append(x)
+        groupNameField.text = ""
     }
     
     override func viewDidLoad() {
