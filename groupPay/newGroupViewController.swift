@@ -24,9 +24,30 @@ class newGroupViewController: UIViewController {
     
     @IBOutlet weak var groupNameField: UITextField!
     
+    @IBOutlet weak var TableofPeople: UITableView!
     //@IBAction func closeOnPopUp(_ sender: AnyObject) {
     //noNameError.isHidden = true
     //}
+    
+    
+    //how many sections are in the view
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    //table view will return int for how many rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return tempPeople.count
+    }
+    
+    //what is in the table
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = UITableViewCell()
+        var personName = tempPeople[indexPath.row]
+        cell.textLabel?.text = personName.name
+        return cell
+    }
     
     var tempPeople = [Person]()
     var currentIndex = 0
@@ -42,8 +63,13 @@ class newGroupViewController: UIViewController {
         nameField.text = ""
         phoneField.text = ""
         emailField.text = ""
+        
     }
-
+    func refresh(_ refreshControl: UIRefreshControl) {
+        // Do your job, when done:
+        refreshControl.endRefreshing()
+    }
+    
     @IBAction func finalizeGroupButtonPressed(_ sender: AnyObject) {
         let tempReceipts = [Receipt]()
         let x = Group(name: groupNameField.text!, person: tempPeople, transactions: tempReceipts)
@@ -54,6 +80,13 @@ class newGroupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         noNameError.isHidden = true
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for:.valueChanged)
+        if #available(iOS 10.0, *) {
+            TableofPeople.refreshControl = refreshControl
+        } else {
+            TableofPeople.backgroundView = refreshControl
+        }
         // Do any additional setup after loading the view.
     }
 
