@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 var allGroups = [Group]()
-class newGroupViewController: UIViewController {
+class newGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //var tempPeople: [Person]
     @IBOutlet weak var nameField: UITextField!
     
@@ -47,10 +47,12 @@ class newGroupViewController: UIViewController {
         var personName = tempPeople[indexPath.row]
         cell.textLabel?.text = personName.name
         return cell
+        
     }
     
+    
     var tempPeople = [Person]()
-    var currentIndex = 0
+       var currentIndex = 0
     @IBAction func addPersonButtonPressed(_ sender: AnyObject) {
 
 
@@ -59,10 +61,13 @@ class newGroupViewController: UIViewController {
         
         tempPeople.append(x)
         
+        
         currentIndex += 1
         nameField.text = ""
         phoneField.text = ""
         emailField.text = ""
+       // TableofPeople.reloadInputViews()
+        TableofPeople.reloadData()
         
     }
     func refresh(_ refreshControl: UIRefreshControl) {
@@ -83,11 +88,13 @@ class newGroupViewController: UIViewController {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for:.valueChanged)
         if #available(iOS 10.0, *) {
-            TableofPeople.refreshControl = refreshControl
+          //  TableofPeople.refreshControl = refreshControl
         } else {
-            TableofPeople.backgroundView = refreshControl
+           // TableofPeople.backgroundView = refreshControl
         }
         // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
