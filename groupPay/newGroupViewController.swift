@@ -84,7 +84,7 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        noNameError.isHidden = true
+        //noNameError.isHidden = true
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for:.valueChanged)
         if #available(iOS 10.0, *) {
