@@ -7,8 +7,7 @@
 //
 
 import UIKit
-var groupArray: [Group] = []
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     @IBOutlet weak var tableView: UITableView!
     //how many sections are in the view
@@ -19,15 +18,14 @@ class ViewController: UIViewController {
     //table view will return int for how many rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return groupArray.count
+        return allGroups.count
     }
     
     //what is in the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        var groupName  = groupArray[indexPath.row].name
+        var groupName  = allGroups[indexPath.row].name
         cell.textLabel?.text = groupName
-        
         return cell
     }
     
@@ -35,6 +33,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.reloadData()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
