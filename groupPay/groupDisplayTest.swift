@@ -6,9 +6,18 @@
 //  Copyright © 2017 FORD, ADAM. All rights reserved.
 //
 
+
+//Test Page
+
 import Foundation
 import UIKit
 class groupDisplayTest: UIViewController {
+    
+    var addMe: Group?
+    
+    //var superGroupArray: [Group] = []
+    
+    var count = 0
     
     @IBOutlet weak var groupNameLabel: UILabel!
     
@@ -18,16 +27,36 @@ class groupDisplayTest: UIViewController {
     
     @IBOutlet weak var personEmailLabel: UILabel!
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // update array list
+        // if(addMe != nil){
+        //     superGroupArray.append(addMe!)
+        // }
+        
+        if let savedGroups = loadGroups(){
+            allGroups += savedGroups
+        }
+        
         groupNameLabel.text = allGroups[0].name
         personNameLabel.text = allGroups[0].person[0].name
         personPhoneLabel.text = allGroups[0].person[0].phoneNumber
         personEmailLabel.text = allGroups[0].person[0].email
         
+        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
+
+private func loadGroups() -> [Group]? {
+    return NSKeyedUnarchiver.unarchiveObject(withFile: Group.ArchiveURL.path) as? [Group]
+    
+}
+

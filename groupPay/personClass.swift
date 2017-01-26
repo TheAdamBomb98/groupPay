@@ -12,13 +12,14 @@
   
   class Person: NSObject, NSCoding {
     
+    
     //MARK: Properties
     
     var name: String
-    var totalPlusMinus: Double
+    var totalPlusMinus = 0.0
     var transactions: [Receipt]
-    var currentPay: Double
-    var currentPlusMinus: Double
+    var currentPay = 0.0
+    var currentPlusMinus = 0.0
     //phoneNumber and email will need to be changed to accomodate for actually sending notifications
     //Also may need to be optional...
     var phoneNumber: String
@@ -67,22 +68,21 @@
         aCoder.encode(email, forKey: PropertyKey.email)
     }
     
-    //...
-    
     required convenience init?(coder aDecoder: NSCoder) {
         
         
-        let name = aDecoder.decodeObject(forKey: PropertyKey.name)
-        let totalPlusMinus = aDecoder.decodeObject(forKey: PropertyKey.totalPlusMinus)
-        let transactions = aDecoder.decodeObject(forKey: PropertyKey.transactions)
-        let currentPay = aDecoder.decodeObject(forKey: PropertyKey.currentPay)
-        let currentPlusMinus = aDecoder.decodeObject(forKey: PropertyKey.currentPlusMinus)
-        let phoneNumber = aDecoder.decodeObject(forKey: PropertyKey.phoneNumber)
-        let email = aDecoder.decodeObject(forKey: PropertyKey.email)
+        let name = aDecoder.decodeObject(forKey: PropertyKey.name) as! String
+        let totalPlusMinus = aDecoder.decodeDouble(forKey: PropertyKey.totalPlusMinus)
+        let transactions = aDecoder.decodeObject(forKey: PropertyKey.transactions) as! [Receipt]
+        let currentPay = aDecoder.decodeDouble(forKey: PropertyKey.currentPay)
+        let currentPlusMinus = aDecoder.decodeDouble(forKey: PropertyKey.currentPlusMinus)
+        let phoneNumber = aDecoder.decodeObject(forKey: PropertyKey.phoneNumber) as! String
+        let email = aDecoder.decodeObject(forKey: PropertyKey.email) as! String
         
         
         // Must call designated initializer.
-        self.init(name: name as! String, totalPlusMinus: totalPlusMinus as! Double, transactions: transactions as! [Receipt], currentPay: currentPay as! Double, currentPlusMinus: currentPlusMinus as! Double, phoneNumber: phoneNumber as! String, email: email as! String)
+        self.init(name: name, totalPlusMinus: totalPlusMinus, transactions: transactions, currentPay: currentPay, currentPlusMinus: currentPlusMinus, phoneNumber: phoneNumber, email: email)
         
     }
+    
   }
