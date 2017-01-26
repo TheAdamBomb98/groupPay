@@ -39,9 +39,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Groups"/>
-                                <connections>
-                                    <segue destination="eUA-gp-AfF" kind="show" id="zDM-xt-MBX"/>
-                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TfI-rZ-xz6">
                                 <frame key="frameInset" minY="184" width="375" height="168"/>
@@ -55,6 +52,9 @@
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="QuP-se-2Zf" kind="show" identifier="show" id="uwx-L1-R4x"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -322,58 +322,6 @@
             </objects>
             <point key="canvasLocation" x="1770" y="-101"/>
         </scene>
-        <!--Group View Controller-->
-        <scene sceneID="ZRI-1c-yja">
-            <objects>
-                <viewController id="eUA-gp-AfF" customClass="GroupViewController" customModule="groupPay" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hKI-uo-d1P"/>
-                        <viewControllerLayoutGuide type="bottom" id="dZ3-PV-Yd8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HaL-9X-e9Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="euM-S4-TcW">
-                                <frame key="frameInset" minY="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="Pko-pJ-y5L"/>
-                                    <constraint firstAttribute="height" constant="647" id="mQd-Q9-Lxn"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RmT-Tb-1lA">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RmT-Tb-1lA" id="zxK-H9-ROh">
-                                            <frame key="frameInset" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="QuP-se-2Zf" kind="show" identifier="show" id="INF-Yd-YlP"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="eUA-gp-AfF" id="7XQ-Tc-DXS"/>
-                                    <outlet property="delegate" destination="eUA-gp-AfF" id="3w0-cP-BJF"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="euM-S4-TcW" firstAttribute="centerX" secondItem="HaL-9X-e9Q" secondAttribute="centerX" id="DPl-y0-rSi"/>
-                            <constraint firstItem="euM-S4-TcW" firstAttribute="centerY" secondItem="HaL-9X-e9Q" secondAttribute="centerY" id="g1j-3a-OPK"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="euM-S4-TcW" id="rpo-rJ-LGh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Byh-eE-xfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="985" y="588"/>
-        </scene>
         <!--Group Page VC-->
         <scene sceneID="BC4-lQ-7Hm">
             <objects>
@@ -399,10 +347,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yrj-Ht-y0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1805.5999999999999" y="587.85607196401804"/>
+            <point key="canvasLocation" x="985" y="595"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tC8-97-j01"/>
+        <segue reference="V9F-Sp-pnC"/>
     </inferredMetricsTieBreakers>
 </document>

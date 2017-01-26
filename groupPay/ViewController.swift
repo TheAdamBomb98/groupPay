@@ -28,7 +28,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = groupName
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "show", sender: nil)
+        
+    }
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        _ = segue.destination as! GroupPageController
+    }
     
     
     override func viewDidLoad() {
