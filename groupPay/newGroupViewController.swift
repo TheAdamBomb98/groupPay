@@ -12,7 +12,7 @@
 import Foundation
 import UIKit
 import os.log
-
+//ADAM TEST DESKTOP
 //goal
 var allGroups = [Group]()
 let zero = 0.0
