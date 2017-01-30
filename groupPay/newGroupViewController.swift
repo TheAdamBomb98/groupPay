@@ -17,7 +17,7 @@ import os.log
 var allGroups = [Group]()
 let zero = 0.0
 
-class newGroupViewController: UIViewController {
+class newGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //var tempPeople: [Person]
     
     var addMe: Group?
@@ -29,16 +29,33 @@ class newGroupViewController: UIViewController {
     
     @IBOutlet weak var addPersonButton: UIButton!
     
-    @IBOutlet weak var noNameError: UIView!
-    
     @IBOutlet weak var finalizeGroupButton: UIButton!
     
     @IBOutlet weak var groupNameField: UITextField!
     
+    @IBOutlet weak var TableOfPeople: UITableView!
     //@IBAction func closeOnPopUp(_ sender: AnyObject) {
     //noNameError.isHidden = true
     //}
     
+    //how many sections are in the view
+    func numberOfSections(in TableView: UITableView) -> Int {
+        return 1
+    }
+    
+    //table view will return int for how many rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return allGroups.count
+    }
+    
+    //what is in the table
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = UITableViewCell()
+        var PersonName  = tempPeople[indexPath.row].name
+        cell.textLabel?.text = PersonName
+        return cell
+    }
     var tempPeople = [Person]()
     var currentIndex = 0
     @IBAction func addPersonButtonPressed(_ sender: AnyObject) {
@@ -53,7 +70,7 @@ class newGroupViewController: UIViewController {
         nameField.text = ""
         phoneField.text = ""
         emailField.text = ""
-        
+        TableOfPeople.reloadData()
     }
     
     @IBAction func finalizeGroupButtonPressed(_ sender: AnyObject) {
@@ -67,7 +84,6 @@ class newGroupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        noNameError.isHidden = true
         // Do any additional setup after loading the view.
     }
     

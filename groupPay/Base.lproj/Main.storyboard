@@ -163,10 +163,6 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ofK-Kj-zgi">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="4J7-ZB-zq1" id="ctd-94-EnE"/>
-                                    <outlet property="delegate" destination="4J7-ZB-zq1" id="RiK-f8-kFE"/>
-                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jca-Y0-kir">
                                 <constraints>
@@ -219,7 +215,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="TableofPeople" destination="ofK-Kj-zgi" id="a0g-Mg-155"/>
+                        <outlet property="TableOfPeople" destination="ofK-Kj-zgi" id="7pM-G2-NWH"/>
                         <outlet property="addPersonButton" destination="aLp-Nl-1uD" id="7OX-a9-PV4"/>
                         <outlet property="emailField" destination="uYJ-py-LZK" id="rmb-Dk-E9n"/>
                         <outlet property="finalizeGroupButton" destination="aEA-5x-ROg" id="dAr-Vr-s5P"/>
@@ -351,6 +347,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="V9F-Sp-pnC"/>
+        <segue reference="tC8-97-j01"/>
     </inferredMetricsTieBreakers>
 </document>
