@@ -46,7 +46,7 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
     //table view will return int for how many rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return allGroups.count
+        return tempPeople.count
     }
     
     //what is in the table
