@@ -19,7 +19,7 @@ let zero = 0.0
 
 class newGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //var tempPeople: [Person]
-    
+    //test
     var addMe: Group?
     @IBOutlet weak var nameField: UITextField!
     
