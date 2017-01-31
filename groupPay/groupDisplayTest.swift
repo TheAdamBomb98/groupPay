@@ -13,10 +13,6 @@ import Foundation
 import UIKit
 class groupDisplayTest: UIViewController {
     
-    var addMe: Group?
-    
-    //var superGroupArray: [Group] = []
-    
     var count = 0
     
     @IBOutlet weak var groupNameLabel: UILabel!
@@ -32,11 +28,6 @@ class groupDisplayTest: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // update array list
-        // if(addMe != nil){
-        //     superGroupArray.append(addMe!)
-        // }
-        
         if let savedGroups = loadGroups(){
             allGroups += savedGroups
         }

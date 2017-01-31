@@ -16,8 +16,6 @@ import os.log
 internal let zero = 0.0
 
 class newGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    //var tempPeople: [Person]
-    var addMe: Group?
     @IBOutlet weak var nameField: UITextField!
     
     @IBOutlet weak var phoneField: UITextField!
@@ -93,12 +91,6 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         _ = segue.destination as! groupDisplayTest
-        if segue.identifier == "addedGroup" {
-            if let destinationVC = segue.destination as? groupDisplayTest{
-                destinationVC.addMe = addMe
-            }
-            
-        }
     }
     
     
