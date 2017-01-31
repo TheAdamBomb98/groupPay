@@ -55,8 +55,4 @@ class groupDisplayTest: UIViewController {
     }
 }
 
-private func loadGroups() -> [Group]? {
-    return NSKeyedUnarchiver.unarchiveObject(withFile: Group.ArchiveURL.path) as? [Group]
-    
-}
 

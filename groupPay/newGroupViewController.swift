@@ -12,14 +12,11 @@
 import Foundation
 import UIKit
 import os.log
-//ADAM TEST DESKTOP
-//goal
-var allGroups = [Group]()
-let zero = 0.0
+
+internal let zero = 0.0
 
 class newGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //var tempPeople: [Person]
-    //test
     var addMe: Group?
     @IBOutlet weak var nameField: UITextField!
     
@@ -107,19 +104,7 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
     
     //private functions
     
-    private func saveGroups() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(allGroups, toFile: Group.ArchiveURL.path)
-        if isSuccessfulSave {
-            os_log("Groups successfully saved.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to save groups...", log: OSLog.default, type: .error)
-        }
-    }
     
-    private func loadGroups() -> [Group]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Group.ArchiveURL.path) as? [Group]
-        
-    }
     
     
     /*
