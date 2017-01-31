@@ -84,6 +84,8 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.emailField.keyboardType = UIKeyboardType.emailAddress
+        self.phoneField.keyboardType = UIKeyboardType.numberPad
         // Do any additional setup after loading the view.
     }
     
