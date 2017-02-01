@@ -70,8 +70,8 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func finalizeGroupButtonPressed(_ sender: AnyObject) {
         let tempReceipts = [Receipt]()
-        let addMe = Group(name: groupNameField.text!, person: tempPeople, transactions: tempReceipts)
-        allGroups.append(addMe)
+        let newGroup = Group(name: groupNameField.text!, person: tempPeople, transactions: tempReceipts)
+        allGroups.append(newGroup)
         groupNameField.text = ""
         
         saveGroups()

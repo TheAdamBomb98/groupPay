@@ -11,6 +11,7 @@
 
 import Foundation
 import UIKit
+import os.log
 class groupDisplayTest: UIViewController {
     
     var count = 0
@@ -29,14 +30,13 @@ class groupDisplayTest: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let savedGroups = loadGroups(){
-            allGroups += savedGroups
+            allGroups = savedGroups
         }
         
         groupNameLabel.text = allGroups[0].name
         personNameLabel.text = allGroups[0].person[0].name
         personPhoneLabel.text = allGroups[0].person[0].phoneNumber
         personEmailLabel.text = allGroups[0].person[0].email
-        
         
     }
     
