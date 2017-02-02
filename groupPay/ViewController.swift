@@ -40,6 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
+        allGroups = loadGroups()!
         // Do any additional setup after loading the view, typically from a nib.
     }
 
