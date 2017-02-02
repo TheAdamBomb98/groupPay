@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4B3ACEC21E23F6B8004C5D5D /* GroupPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ACEC11E23F6B8004C5D5D /* GroupPageController.swift */; };
 		4BB90C8D1DFF0C0500A73C15 /* groupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */; };
-		FE08E7D41E2FCDB60030D2DF /* groupDisplayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE08E7D31E2FCDB60030D2DF /* groupDisplayTest.swift */; };
 		FE0B974E1E044C54002390EA /* newGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0B974D1E044C54002390EA /* newGroupViewController.swift */; };
 		FE14844A1DF9C428003B48E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1484491DF9C428003B48E2 /* AppDelegate.swift */; };
 		FE14844C1DF9C428003B48E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE14844B1DF9C428003B48E2 /* ViewController.swift */; };
@@ -44,7 +43,6 @@
 /* Begin PBXFileReference section */
 		4B3ACEC11E23F6B8004C5D5D /* GroupPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPageController.swift; sourceTree = "<group>"; };
 		4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupsTableViewCell.swift; sourceTree = "<group>"; };
-		FE08E7D31E2FCDB60030D2DF /* groupDisplayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupDisplayTest.swift; sourceTree = "<group>"; };
 		FE0B974D1E044C54002390EA /* newGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newGroupViewController.swift; sourceTree = "<group>"; };
 		FE1484461DF9C428003B48E2 /* groupPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = groupPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE1484491DF9C428003B48E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 				FE57FDE31E0057C600CDD9C2 /* personClass.swift */,
 				FE57FDE51E00584800CDD9C2 /* receiptClass.swift */,
 				FE14844D1DF9C428003B48E2 /* Main.storyboard */,
-				FE08E7D31E2FCDB60030D2DF /* groupDisplayTest.swift */,
 				FE5F18B81E40F15300A0ACEA /* global.swift */,
 				FE0B974D1E044C54002390EA /* newGroupViewController.swift */,
 				4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */,
@@ -289,7 +286,6 @@
 				FE1484781DF9C661003B48E2 /* groupClass.swift in Sources */,
 				FE5F18B91E40F15300A0ACEA /* global.swift in Sources */,
 				FE14844A1DF9C428003B48E2 /* AppDelegate.swift in Sources */,
-				FE08E7D41E2FCDB60030D2DF /* groupDisplayTest.swift in Sources */,
 				4BB90C8D1DFF0C0500A73C15 /* groupsTableViewCell.swift in Sources */,
 				FE57FDE61E00584800CDD9C2 /* receiptClass.swift in Sources */,
 				4B3ACEC21E23F6B8004C5D5D /* GroupPageController.swift in Sources */,

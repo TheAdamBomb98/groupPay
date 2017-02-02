@@ -3,7 +3,7 @@
 //  groupPay
 //
 //  Created by FORD ADAM, WEST CARTER, STROBEL JOSEPH, BLANCHARD JENNIFER on 12/8/16.
-//  Copyright © 2016 FORD ADAM, WEST CARTER, STROBEL JOSEPH,JENNIFER BLANCHARD. All rights reserved.
+//  Copyright © 2016 FORD ADAM, WEST CARTER, STROBEL JOSEPH, BLANCHARD All rights reserved.
 //
 
 import UIKit
