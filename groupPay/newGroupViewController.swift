@@ -89,6 +89,11 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var secondVC: GroupPageController = segue.destination as! GroupPageController
+        secondVC.recievedGroup = allGroups[allGroups.count - 1]
+    }
+    
 
     
     

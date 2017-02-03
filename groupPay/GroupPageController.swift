@@ -11,8 +11,11 @@ import UIKit
 
 class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    var recievedGroup: Group?
     
     @IBOutlet var peopleTable: UITableView!
+    
+    @IBOutlet weak var groupNameLabel: UILabel!
     
     //how many sections are in the view
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,6 +36,9 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
 
+    override func viewDidLoad() {
+        groupNameLabel.text = recievedGroup?.name
+    }
  
     
 }
