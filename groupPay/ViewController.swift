@@ -28,16 +28,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = groupName
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "show", sender: nil)
+        // Get Cell Label
+        let indexPath = tableView.indexPathForSelectedRow!
+        let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
         
+        currentGroupName = currentCell.textLabel?.text
+        performSegue(withIdentifier: "yourSegueIdentifier", sender: self)
     }
+
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        _ = segue.destination as! GroupPageController
+        if( segue.identifier == "yourSegueIdentifier" ) {
+            for i in allGroups {
+                if (i.name == currentGroupName)
+                {
+                groupToPass = i
+                }
+        
+        var secondVC = segue.destination as! GroupPageController
+        secondVC.recievedGroup = groupToPass
+            }
+        }
+    
+    //func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        
+        // Get Cell Label
+        //let indexPath = tableView.indexPathForSelectedRow!
+        //let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
+        
+       // currentGroupName = currentCell.textLabel?.text
+        //performSegue(withIdentifier: "yourSegueIdentifier", sender: self)
+   // }
+    
     }
-    
-    
-    override func viewDidLoad() {
+
+        override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
         allGroups = loadGroups()!
@@ -51,4 +77,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 
 }
+
+
+
+
 

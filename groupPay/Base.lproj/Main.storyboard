@@ -47,7 +47,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="QuP-se-2Zf" kind="show" identifier="show" id="uwx-L1-R4x"/>
+                                            <segue destination="QuP-se-2Zf" kind="show" identifier="yourSegueIdentifier" id="Pfs-dR-NCF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -65,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+            <point key="canvasLocation" x="-246" y="493"/>
         </scene>
         <!--New Group View Controller-->
         <scene sceneID="8uN-Zs-seO">
@@ -246,7 +246,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uss-3N-TnT" id="a3z-OA-Vc9">
-                                            <frame key="frameInset" width="343" height="44"/>
+                                            <frame key="frameInset" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -256,6 +256,14 @@
                                     <outlet property="delegate" destination="QuP-se-2Zf" id="EOU-qB-pMp"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn8-7t-VRK">
+                                <frame key="frameInset" minX="28" minY="20" width="197" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Return to Homepage"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ZmT-AX-eSC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -266,10 +274,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yrj-Ht-y0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984.79999999999995" y="594.15292353823088"/>
+            <point key="canvasLocation" x="1689" y="493"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uwx-L1-R4x"/>
+        <segue reference="Pfs-dR-NCF"/>
     </inferredMetricsTieBreakers>
 </document>
