@@ -43,7 +43,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MmJ-hI-MPk" id="a1y-2B-vZl">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -246,7 +246,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uss-3N-TnT" id="a3z-OA-Vc9">
-                                            <frame key="frameInset" width="343" height="43"/>
+                                            <frame key="frameInset" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -296,24 +296,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Person Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwv-fN-Std">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Person Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwv-fN-Std">
                                 <frame key="frameInset" minX="8" minY="28" width="359" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.0" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cof-kH-KtZ">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cof-kH-KtZ">
                                 <frame key="frameInset" minX="15" minY="20" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&lt; Back"/>
                                 <connections>
-                                    <segue destination="QuP-se-2Zf" kind="show" id="dns-rb-dg4"/>
+                                    <segue destination="QuP-se-2Zf" kind="show" id="66U-z1-yDI"/>
                                 </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qr4-Cy-M7l">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="415" id="OHA-8w-hIt"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="9I9-lQ-Fie" id="DzK-sU-Lck"/>
+                                    <outlet property="delegate" destination="9I9-lQ-Fie" id="htI-AG-fuE"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hR1-l9-cpf">
+                                <frame key="frameInset" minX="138" minY="573" width="99" height="55"/>
+                                <state key="normal" title="Add Payment"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qr4-Cy-M7l" firstAttribute="top" secondItem="uMT-r8-Zpf" secondAttribute="top" constant="133" id="5Pf-zj-Bz2"/>
+                            <constraint firstItem="hR1-l9-cpf" firstAttribute="top" secondItem="qr4-Cy-M7l" secondAttribute="bottom" constant="25" id="FFW-aF-8Yo"/>
+                            <constraint firstItem="qr4-Cy-M7l" firstAttribute="centerX" secondItem="uMT-r8-Zpf" secondAttribute="centerX" id="Uz4-TH-eWb"/>
+                            <constraint firstItem="qr4-Cy-M7l" firstAttribute="leading" secondItem="cof-kH-KtZ" secondAttribute="leading" id="X9y-TF-y74"/>
+                            <constraint firstItem="qr4-Cy-M7l" firstAttribute="centerX" secondItem="Gwv-fN-Std" secondAttribute="centerX" id="Xy2-Sa-PFA"/>
+                            <constraint firstItem="qr4-Cy-M7l" firstAttribute="centerX" secondItem="hR1-l9-cpf" secondAttribute="centerX" id="YSq-oP-kgK"/>
+                            <constraint firstItem="qr4-Cy-M7l" firstAttribute="trailing" secondItem="uMT-r8-Zpf" secondAttribute="trailingMargin" id="phF-Co-an3"/>
+                            <constraint firstItem="qr4-Cy-M7l" firstAttribute="top" secondItem="Gwv-fN-Std" secondAttribute="bottom" constant="48" id="qFx-qQ-ouR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="PersonName" destination="Gwv-fN-Std" id="rcK-pg-Pf7"/>
+                        <outlet property="addPaymentPerson" destination="hR1-l9-cpf" id="fgp-mo-KYq"/>
+                        <outlet property="backToGroup" destination="cof-kH-KtZ" id="RAD-by-Mam"/>
+                        <outlet property="tableOfPayments" destination="qr4-Cy-M7l" id="B41-KV-zWS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="do3-CT-cSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -321,6 +349,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dns-rb-dg4"/>
+        <segue reference="66U-z1-yDI"/>
     </inferredMetricsTieBreakers>
 </document>
