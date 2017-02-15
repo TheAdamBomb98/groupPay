@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4B3ACEC21E23F6B8004C5D5D /* GroupPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ACEC11E23F6B8004C5D5D /* GroupPageController.swift */; };
 		4B498F2B1E4A30360088AE29 /* PersonPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B498F2A1E4A30360088AE29 /* PersonPageController.swift */; };
-		4B8C1B5C1E53684E007A5583 /* transactionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8C1B5B1E53684E007A5583 /* transactionController.swift */; };
 		4BB90C8D1DFF0C0500A73C15 /* groupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */; };
 		FE0B974E1E044C54002390EA /* newGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0B974D1E044C54002390EA /* newGroupViewController.swift */; };
 		FE14844A1DF9C428003B48E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1484491DF9C428003B48E2 /* AppDelegate.swift */; };
@@ -45,7 +44,6 @@
 /* Begin PBXFileReference section */
 		4B3ACEC11E23F6B8004C5D5D /* GroupPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPageController.swift; sourceTree = "<group>"; };
 		4B498F2A1E4A30360088AE29 /* PersonPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonPageController.swift; sourceTree = "<group>"; };
-		4B8C1B5B1E53684E007A5583 /* transactionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = transactionController.swift; sourceTree = "<group>"; };
 		4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupsTableViewCell.swift; sourceTree = "<group>"; };
 		FE0B974D1E044C54002390EA /* newGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newGroupViewController.swift; sourceTree = "<group>"; };
 		FE1484461DF9C428003B48E2 /* groupPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = groupPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,7 +117,6 @@
 				FE14844B1DF9C428003B48E2 /* ViewController.swift */,
 				4B3ACEC11E23F6B8004C5D5D /* GroupPageController.swift */,
 				4B498F2A1E4A30360088AE29 /* PersonPageController.swift */,
-				4B8C1B5B1E53684E007A5583 /* transactionController.swift */,
 				FE1484771DF9C661003B48E2 /* groupClass.swift */,
 				FE57FDE31E0057C600CDD9C2 /* personClass.swift */,
 				FE57FDE51E00584800CDD9C2 /* receiptClass.swift */,
@@ -293,7 +290,6 @@
 				FE1484781DF9C661003B48E2 /* groupClass.swift in Sources */,
 				FE5F18B91E40F15300A0ACEA /* global.swift in Sources */,
 				FE14844A1DF9C428003B48E2 /* AppDelegate.swift in Sources */,
-				4B8C1B5C1E53684E007A5583 /* transactionController.swift in Sources */,
 				4BB90C8D1DFF0C0500A73C15 /* groupsTableViewCell.swift in Sources */,
 				FE57FDE61E00584800CDD9C2 /* receiptClass.swift in Sources */,
 				4B3ACEC21E23F6B8004C5D5D /* GroupPageController.swift in Sources */,
