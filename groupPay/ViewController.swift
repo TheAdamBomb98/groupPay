@@ -35,21 +35,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
         
         currentGroupName = currentCell.textLabel?.text
-        performSegue(withIdentifier: "yourSegueIdentifier", sender: self)
-    }
-
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if( segue.identifier == "yourSegueIdentifier" ) {
-            for i in allGroups {
-                if (i.name == currentGroupName)
-                {
-                groupToPass = i
-                }
         
-        var secondVC = segue.destination as! GroupPageController
-        secondVC.recievedGroup = groupToPass
+        for i in allGroups {
+            if ( i.name == currentGroupName )
+            {
+                groupToPass = i
             }
         }
+        var secondVC = GroupPageController()
+        //secondVC.recievedGroup = groupToPass
+        performSegue(withIdentifier: "yourSegueIdentifier" , sender: self )
+        }
+
+    //func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //if( segue.identifier == "yourSegueIdentifier" ) {
+            //for i in allGroups {
+                //if (i.name == currentGroupName)
+               // {
+                //groupToPass = i
+                //}
+        
+       // var secondVC = segue.destination as! GroupPageController
+        //secondVC.recievedGroup = groupToPass
+            //}
+       // }
     
     //func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         
@@ -61,9 +70,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //performSegue(withIdentifier: "yourSegueIdentifier", sender: self)
    // }
     
-    }
 
-        override func viewDidLoad() {
+
+    override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
         allGroups = loadGroups()!

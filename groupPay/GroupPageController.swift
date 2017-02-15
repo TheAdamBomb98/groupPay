@@ -37,6 +37,7 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     override func viewDidLoad() {
+        recievedGroup = groupToPass
         groupNameLabel.text = recievedGroup?.name
     }
  
