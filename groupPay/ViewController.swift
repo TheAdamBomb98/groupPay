@@ -39,7 +39,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("here")
         if( segue.identifier == "yourSegueIdentifier" ) {
             for i in allGroups {
                 if (i.name == currentGroupName)
