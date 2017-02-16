@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import os.log
 var groupToPass: Group!
-var currentGroupName: String!
+var personToPass: Person!
 //SAVING FUNCTIONS AND DECLARATION
 
 internal var allGroups: [groupPay.Group] = []

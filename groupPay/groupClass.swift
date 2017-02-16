@@ -16,7 +16,7 @@ class Group: NSObject, NSCoding {
     //MARK: Properties
     
     var name: String
-    var person: [Person]
+    var people: [Person]
     var transactions: [Receipt]
     
     //MARK: Archiving Paths
@@ -37,7 +37,7 @@ class Group: NSObject, NSCoding {
         
         // Initialize stored properties.
         self.name = name
-        self.person = person
+        self.people = person
         self.transactions = transactions
         
         
@@ -47,7 +47,7 @@ class Group: NSObject, NSCoding {
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
-        aCoder.encode(person, forKey: PropertyKey.person)
+        aCoder.encode(people, forKey: PropertyKey.person)
         aCoder.encode(transactions, forKey: PropertyKey.transactions)
     }
     

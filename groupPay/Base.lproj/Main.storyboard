@@ -43,11 +43,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MmJ-hI-MPk" id="a1y-2B-vZl">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="QuP-se-2Zf" kind="show" identifier="yourSegueIdentifier" id="Pfs-dR-NCF"/>
+                                            <segue destination="QuP-se-2Zf" kind="show" identifier="homepageToGroupPage" id="Pfs-dR-NCF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -245,8 +245,16 @@
                                 <color key="textColor" red="0.0" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn8-7t-VRK">
+                                <frame key="frameInset" minX="28" minY="20" width="197" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Return to Homepage"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ZmT-AX-eSC"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vby-CO-gSN">
-                                <frame key="frameInset" minX="16" minY="271" width="343" height="376"/>
+                                <frame key="frameInset" minX="16" minY="200" width="343" height="376"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -257,6 +265,9 @@
                                             <frame key="frameInset" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="9I9-lQ-Fie" kind="show" identifier="groupPageToPersonPage" id="1GA-sg-59Z"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -264,22 +275,6 @@
                                     <outlet property="delegate" destination="QuP-se-2Zf" id="EOU-qB-pMp"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn8-7t-VRK">
-                                <frame key="frameInset" minX="28" minY="20" width="197" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Return to Homepage"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ZmT-AX-eSC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U32-7b-RYB">
-                                <frame key="frameInset" minX="129" minY="154" width="117" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Person Page"/>
-                                <connections>
-                                    <segue destination="9I9-lQ-Fie" kind="show" id="yXT-7w-AdW"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -290,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yrj-Ht-y0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="492.50374812593708"/>
+            <point key="canvasLocation" x="959" y="653"/>
         </scene>
         <!--Person Page Controller-->
         <scene sceneID="4jU-XA-00L">
@@ -322,10 +317,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="personLabel" destination="Gwv-fN-Std" id="uDG-5M-2FA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="do3-CT-cSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2586.4000000000001" y="492.50374812593708"/>
+            <point key="canvasLocation" x="1948" y="639"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

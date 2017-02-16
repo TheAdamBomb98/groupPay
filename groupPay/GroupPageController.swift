@@ -25,16 +25,34 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     //table view will return int for how many rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return allGroups.count
+        return recievedGroup!.people.count
     }
     
     //what is in the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        var personName  = allGroups[indexPath.row].name
+        var personName  = recievedGroup?.people[indexPath.row].name
         cell.textLabel?.text = personName
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Get Cell Label
+        let indexPath = tableView.indexPathForSelectedRow!
+        let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
+        
+        let currentPersonName = currentCell.textLabel?.text
+        
+        for i in (recievedGroup?.people)! {
+            if ( i.name == currentPersonName )
+            {
+                personToPass = i
+            }
+        }
+        performSegue(withIdentifier: "groupPageToPersonPage" , sender: self )
+    }
+    
+    
 
     override func viewDidLoad() {
         recievedGroup = groupToPass
