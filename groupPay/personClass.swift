@@ -24,6 +24,9 @@
     //Also may need to be optional...
     var phoneNumber: String
     var email: String
+    //Adding these to allow for calculating strings
+    var toPaySummary: String
+    var toBePaidSummary: String
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -39,11 +42,13 @@
         static let currentPlusMinus = "currentPlusMinus"
         static let phoneNumber = "phoneNumber"
         static let email = "email"
+        static let toPaySummary = "toPaySummary"
+        static let toBePaidSummary = "toBePaidSummary"
     }
     
     //MARK: Initialization
     
-    init( name: String , totalPlusMinus: Double , transactions: [Receipt] , currentPay: Double , currentPlusMinus: Double , phoneNumber: String , email: String){
+    init( name: String , totalPlusMinus: Double , transactions: [Receipt] , currentPay: Double , currentPlusMinus: Double , phoneNumber: String , email: String, toPaySummary: String, toBePaidSummary: String){
         
         //initalize stored properties
         
@@ -54,6 +59,8 @@
         self.currentPlusMinus = currentPlusMinus
         self.phoneNumber = phoneNumber
         self.email = email
+        self.toPaySummary = toPaySummary
+        self.toBePaidSummary = toBePaidSummary
     }
     
     //MARK: NSCoding
@@ -66,6 +73,8 @@
         aCoder.encode(currentPlusMinus, forKey: PropertyKey.currentPlusMinus)
         aCoder.encode(phoneNumber, forKey: PropertyKey.phoneNumber)
         aCoder.encode(email, forKey: PropertyKey.email)
+        aCoder.encode(toPaySummary, forKey: PropertyKey.toPaySummary)
+        aCoder.encode(toBePaidSummary, forKey: PropertyKey.toBePaidSummary)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -78,10 +87,12 @@
         let currentPlusMinus = aDecoder.decodeDouble(forKey: PropertyKey.currentPlusMinus)
         let phoneNumber = aDecoder.decodeObject(forKey: PropertyKey.phoneNumber) as! String
         let email = aDecoder.decodeObject(forKey: PropertyKey.email) as! String
+        let toPaySummary = aDecoder.decodeObject(forKey: PropertyKey.toPaySummary) as! String
+        let toBePaidSummary = aDecoder.decodeObject(forKey: PropertyKey.toPaySummary) as! String
         
         
         // Must call designated initializer.
-        self.init(name: name, totalPlusMinus: totalPlusMinus, transactions: transactions, currentPay: currentPay, currentPlusMinus: currentPlusMinus, phoneNumber: phoneNumber, email: email)
+        self.init(name: name, totalPlusMinus: totalPlusMinus, transactions: transactions, currentPay: currentPay, currentPlusMinus: currentPlusMinus, phoneNumber: phoneNumber, email: email, toPaySummary: toPaySummary, toBePaidSummary: toBePaidSummary)
         
     }
     

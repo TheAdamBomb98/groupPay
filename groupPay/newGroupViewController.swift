@@ -57,7 +57,7 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         
-        let x = Person(name: nameField.text!, totalPlusMinus : zero, transactions: [], currentPay: 0.0, currentPlusMinus: 0.0, phoneNumber: phoneField.text!, email: emailField.text!)
+        let x = Person(name: nameField.text!, totalPlusMinus : zero, transactions: [], currentPay: 0.0, currentPlusMinus: 0.0, phoneNumber: phoneField.text!, email: emailField.text!, toPaySummary: "", toBePaidSummary: "")
         
         tempPeople.append(x)
         

@@ -28,3 +28,30 @@ func loadGroups() -> [Group]? {
     return NSKeyedUnarchiver.unarchiveObject(withFile: Group.ArchiveURL.path) as? [Group]
     
 }
+
+func calculate( groupOfPeople: [Person] ) -> [Person] {
+    var peopleList = groupOfPeople
+    var peopleThatAreDone: [Person] = []
+    while( peopleList.count > 1 ) {
+        //DOUBLE CHECK THIS
+        //I think it might be sorting the wrong direction
+        peopleList.sorted(by: { $0.totalPlusMinus > $1.totalPlusMinus})
+        let payFromLowest = peopleList[0].totalPlusMinus
+        peopleList[0].toPaySummary = "You will pay $" + String(payFromLowest) + " to " + peopleList[(peopleList.count - 1)].name + "."
+        if ( peopleList[(peopleList.count - 1)].name.characters.count == 0 ){
+            peopleList[(peopleList.count - 1)].toBePaidSummary = "You will be paid $" + String(payFromLowest) + " by " + peopleList[0].name + "."
+        }
+        else {
+            peopleList[(peopleList.count - 1)].toBePaidSummary += " You will also be paid $" + String(payFromLowest) + " by " + peopleList[0].name + "."
+        }
+        peopleList[0].totalPlusMinus = 0
+        peopleList[(peopleList.count - 1)].totalPlusMinus = peopleList[(peopleList.count - 1)].totalPlusMinus + payFromLowest
+        for i in 0...(peopleList.count - 1) {
+            if( peopleList[i].totalPlusMinus == 0 ){
+                peopleThatAreDone.append(peopleList[i])
+                peopleList.remove(at: i)
+            }
+        }
+    }
+    return peopleThatAreDone
+}
