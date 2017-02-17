@@ -1,16 +1,15 @@
 //
-//  CollectionViewCell.swift
+//  collectionViewCell.swift
 //  groupPay
 //
-//  Created by STROBEL, JOSEPH on 2/17/17.
+//  Created by WEST, CARTER on 2/17/17.
 //  Copyright © 2017 FORD, ADAM. All rights reserved.
 //
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
-    
+class collectionViewCell: UICollectionViewCell {
+
     @IBOutlet weak var label: UILabel!
-    
     
 }
