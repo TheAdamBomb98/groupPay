@@ -9,32 +9,14 @@
 import Foundation
 import UIKit
 
-class GroupPageController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    @IBOutlet weak var collectionView: UICollectionView!
     var recievedGroup: Group?
     
     @IBOutlet var peopleTable: UITableView!
     
     @IBOutlet weak var groupNameLabel: UILabel!
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
-    {
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath as IndexPath)
-        cell.backgroundColor = UIColor.white
-        //cell.label?.text = recievedGroup?.name
-        return cell
-    }
-   /* func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets
-    {
-        return UIEdgeInsets(top: 100, left: 5, bottom: 100, right: 5)
-    }
-   */
+    
     //how many sections are in the view
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -73,16 +55,6 @@ class GroupPageController: UIViewController, UICollectionViewDataSource, UIColle
     
 
     override func viewDidLoad() {
-        //var flowLayout = UICollectionViewFlowLayout()
-        
-       // let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: flowLayout)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.black
-        
-        self.view.addSubview(collectionView)
-    
         recievedGroup = groupToPass
         groupNameLabel.text = recievedGroup?.name
     }
