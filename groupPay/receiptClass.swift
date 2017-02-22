@@ -54,15 +54,14 @@ class Receipt: NSObject, NSCoding {
     required convenience init?(coder aDecoder: NSCoder) {
         
         
-        let amount = aDecoder.decodeObject(forKey: PropertyKey.amount)
-        let tag = aDecoder.decodeObject(forKey: PropertyKey.tag)
-        let person = aDecoder.decodeObject(forKey: PropertyKey.person)
-        let group = aDecoder.decodeObject(forKey: PropertyKey.group)
+        let amount = aDecoder.decodeDouble(forKey: PropertyKey.amount)
+        let tag = aDecoder.decodeObject(forKey: PropertyKey.tag) as! String
+        let person = aDecoder.decodeObject(forKey: PropertyKey.person) as! Person
+        let group = aDecoder.decodeObject(forKey: PropertyKey.group) as! Group
         
         
         // Must call designated initializer.
-        self.init(amount: amount as! Double, tag: tag as! String, person: person as! Person, group: group as! Group)
-        
+        self.init(amount: amount, tag: tag, person: person, group: group)
     }
 }
 

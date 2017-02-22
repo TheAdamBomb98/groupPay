@@ -53,7 +53,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
-        allGroups = loadGroups()!
+        //NEVER set this up like this: allGroups = loadGroups()!
+        if let savedGroups = loadGroups(){
+            allGroups = savedGroups
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
