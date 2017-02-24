@@ -479,7 +479,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Rq1-kb-SVc"/>
         <segue reference="Vbi-th-5hN"/>
-        <segue reference="dns-rb-dg4"/>
     </inferredMetricsTieBreakers>
 </document>

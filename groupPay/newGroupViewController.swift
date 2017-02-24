@@ -89,10 +89,15 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //var secondVC: GroupPageController = segue.destination as! GroupPageController
         //secondVC.recievedGroup = allGroups[allGroups.count - 1]
-        groupToPass = allGroups[allGroups.count - 1]
+        
+        //in case there's no groups saved and they press cancel...
+        if allGroups.count != 0{
+            groupToPass = allGroups[allGroups.count - 1]
+        }
     }
     
 
