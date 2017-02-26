@@ -15,7 +15,7 @@ import os.log
 
 internal let zero = 0.0
 
-class newGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class newGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     @IBOutlet weak var nameField: UITextField!
     
     @IBOutlet weak var phoneField: UITextField!
@@ -81,6 +81,8 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         self.emailField.keyboardType = UIKeyboardType.emailAddress
         self.phoneField.keyboardType = UIKeyboardType.numberPad
+        
+        self.nameField.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -99,10 +101,14 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
             groupToPass = allGroups[allGroups.count - 1]
         }
     }
-    
-
-    
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameField.resignFirstResponder()
+        emailField.resignFirstResponder()
+        return true
+    }
     //private functions
     
     
