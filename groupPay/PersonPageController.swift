@@ -17,7 +17,6 @@ class PersonPageController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var makeAPayment: UIButton!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
@@ -25,15 +24,11 @@ class PersonPageController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        cell.label?.text = receivedPerson?.name
-        cell.backgroundColor = UIColor.white
+        cell.label?.text = "hello"
+        cell.backgroundColor = UIColor.black
         return cell
     }
     
-    @IBAction func makeAPaymentButtonPressed(_ sender: AnyObject) {
-        personToPass = receivedPerson
-        performSegue(withIdentifier: "personToPayment" , sender: self)
-    }
     //collection
     
     override func viewDidLoad() {
@@ -52,8 +47,5 @@ class PersonPageController: UIViewController, UICollectionViewDelegate, UICollec
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        personToPass = receivedPerson
-        
-    }
+    
 }

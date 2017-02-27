@@ -11,7 +11,7 @@ import UIKit
 import os.log
 var groupToPass: Group!
 var personToPass: Person!
-
+//SAVING FUNCTIONS AND DECLARATION
 
 internal var allGroups: [groupPay.Group] = []
 
