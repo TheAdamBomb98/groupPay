@@ -24,8 +24,8 @@ class PersonPageController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        cell.label?.text = receivedPerson?.name
-        cell.backgroundColor = UIColor.white
+        cell.label?.text = "hello"
+        cell.backgroundColor = UIColor.black
         return cell
     }
     
