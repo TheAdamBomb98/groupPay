@@ -52,12 +52,20 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
         performSegue(withIdentifier: "groupPageToPersonPage" , sender: self )
     }
     
-    
-
     override func viewDidLoad() {
         recievedGroup = groupToPass
         groupNameLabel.text = recievedGroup?.name
     }
  
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            // handle delete (by removing the data from your array and updating the tableview)
+        }
+    }
+
     
 }
