@@ -48,7 +48,7 @@
 		4B498F2A1E4A30360088AE29 /* PersonPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonPageController.swift; sourceTree = "<group>"; };
 		4BA7686E1E575DE200E6586E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupsTableViewCell.swift; sourceTree = "<group>"; };
-		D0A1FB1D1E5F498100D2AAF0 /* newPaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = newPaymentVC.swift; path = ../newPaymentVC.swift; sourceTree = "<group>"; };
+		D0A1FB1D1E5F498100D2AAF0 /* newPaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newPaymentVC.swift; sourceTree = "<group>"; };
 		FE0B974D1E044C54002390EA /* newGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newGroupViewController.swift; sourceTree = "<group>"; };
 		FE1484461DF9C428003B48E2 /* groupPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = groupPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE1484491DF9C428003B48E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
