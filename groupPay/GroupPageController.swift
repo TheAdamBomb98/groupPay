@@ -31,6 +31,9 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     //what is in the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
+        if let savedGroups = loadGroups(){
+            allGroups = savedGroups
+        }
         var personName  = recievedGroup?.people[indexPath.row].name
         cell.textLabel?.text = personName
         return cell
@@ -53,6 +56,9 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewDidLoad() {
+        if let savedGroups = loadGroups(){
+            allGroups = savedGroups
+        }
         recievedGroup = groupToPass
         groupNameLabel.text = recievedGroup?.name
     }
@@ -63,7 +69,12 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            // handle delete (by removing the data from your array and updating the tableview)
+            recievedGroup?.people.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath],  with: UITableViewRowAnimation.automatic)
+            if let savedGroups = loadGroups(){
+                allGroups = savedGroups
+            }
+
         }
     }
 
