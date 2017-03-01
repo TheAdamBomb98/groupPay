@@ -19,13 +19,12 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     @IBOutlet weak var enterTag: UIPickerView!
     let pickerData = ["Gas","Breakfast","Lunch","Dinner","Food","Snacks","Hotel","Tickets","Other"]
     
-    var tempPerson = allGroups[0].people[0]
     var tag = "test"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         allGroups = loadGroups()!
-        enterName.text = tempPerson.name
+        enterName.text = allGroups[0].people[0].name
         self.enterMoney.keyboardType = UIKeyboardType.numbersAndPunctuation
         
         enterTag.dataSource = self

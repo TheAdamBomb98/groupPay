@@ -92,13 +92,16 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //var secondVC: GroupPageController = segue.destination as! GroupPageController
         //secondVC.recievedGroup = allGroups[allGroups.count - 1]
+        if allGroups.count != 0{
         groupToPass = allGroups[allGroups.count - 1]
     }
+    
+
 
     //private functions
     
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
@@ -113,3 +116,4 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
      */
 }
 
+}
