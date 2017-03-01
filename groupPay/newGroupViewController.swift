@@ -77,6 +77,11 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
         saveGroups()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.emailField.keyboardType = UIKeyboardType.emailAddress
@@ -99,12 +104,7 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
 
 
     //private functions
-    
-    
-    func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
+
     /*
      // MARK: - Navigation
      
