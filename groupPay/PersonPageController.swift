@@ -27,7 +27,8 @@ class PersonPageController: UIViewController, UICollectionViewDelegate, UICollec
         cell.label?.text = receivedPerson?.name
         cell.backgroundColor = UIColor.white
         return cell
-    }/*
+    }
+    /*
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
             if segue.identifier == "pastTripCollectionToSavedLocationSegue" {

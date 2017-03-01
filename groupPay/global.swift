@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import os.log
 var groupToPass: Group!
+var indexOfGroup: Int!
 var personToPass: Person!
 //SAVING FUNCTIONS AND DECLARATION
 

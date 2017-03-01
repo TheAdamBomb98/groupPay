@@ -40,6 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if ( i.name == currentGroupName )
             {
                 groupToPass = i
+                indexOfGroup = allGroups.index(of: groupToPass)
             }
         }
         var secondVC = GroupPageController()
