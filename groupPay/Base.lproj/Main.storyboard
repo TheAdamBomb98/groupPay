@@ -319,7 +319,7 @@
                                     <constraint firstAttribute="height" constant="156" id="5EH-IN-vzv"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NMl-bz-777">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="175" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -333,19 +333,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kO6-DD-LRs">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="163" id="M0a-ns-2Sx"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.86575420439999995" green="1" blue="0.88852544099999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="kO6-DD-LRs" firstAttribute="bottom" secondItem="TOe-4D-Ogv" secondAttribute="bottomMargin" id="NfU-Pj-O0D"/>
-                                            <constraint firstItem="kO6-DD-LRs" firstAttribute="top" secondItem="TOe-4D-Ogv" secondAttribute="topMargin" id="b20-AY-EnC"/>
-                                            <constraint firstItem="kO6-DD-LRs" firstAttribute="leading" secondItem="TOe-4D-Ogv" secondAttribute="leadingMargin" id="gfe-jW-ak3"/>
+                                            <constraint firstItem="kO6-DD-LRs" firstAttribute="bottom" secondItem="TOe-4D-Ogv" secondAttribute="bottomMargin" id="2AQ-iy-444"/>
+                                            <constraint firstItem="kO6-DD-LRs" firstAttribute="top" secondItem="TOe-4D-Ogv" secondAttribute="topMargin" id="34m-DL-JV9"/>
+                                            <constraint firstItem="kO6-DD-LRs" firstAttribute="leading" secondItem="TOe-4D-Ogv" secondAttribute="leadingMargin" id="NOY-QX-mJg"/>
+                                            <constraint firstItem="kO6-DD-LRs" firstAttribute="trailing" secondItem="TOe-4D-Ogv" secondAttribute="trailingMargin" id="jko-Ic-aIG"/>
                                         </constraints>
                                         <size key="customSize" width="300" height="50"/>
                                         <connections>
