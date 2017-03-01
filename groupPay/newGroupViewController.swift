@@ -92,7 +92,9 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //var secondVC: GroupPageController = segue.destination as! GroupPageController
         //secondVC.recievedGroup = allGroups[allGroups.count - 1]
+        if allGroups.count != 0{
         groupToPass = allGroups[allGroups.count - 1]
+    }
     }
     
 
