@@ -94,14 +94,13 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
         //secondVC.recievedGroup = allGroups[allGroups.count - 1]
         groupToPass = allGroups[allGroups.count - 1]
     }
-    
 
-    
-    
     //private functions
     
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     /*
      // MARK: - Navigation
