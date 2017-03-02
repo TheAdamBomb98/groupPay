@@ -20,7 +20,6 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     let pickerData = ["Gas","Breakfast","Lunch","Dinner","Food","Snacks","Hotel","Tickets","Other"]
     
     var tag = "test"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         allGroups = loadGroups()!
