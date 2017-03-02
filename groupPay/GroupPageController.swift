@@ -13,6 +13,9 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var recievedGroup: Group?
     
+    var receivedGroupIndex: Int?
+    
+    
     @IBOutlet var peopleTable: UITableView!
     
     @IBOutlet weak var groupNameLabel: UILabel!
@@ -50,8 +53,11 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
             if ( i.name == currentPersonName )
             {
                 personToPass = i
+                indexOfPerson = allGroups[receivedGroupIndex!].index(ofAccessibilityElement: personToPass)
             }
         }
+        groupToPass = recievedGroup
+        indexOfGroup = receivedGroupIndex
         performSegue(withIdentifier: "groupPageToPersonPage" , sender: self )
     }
     
@@ -59,6 +65,7 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
         if let savedGroups = loadGroups(){
             allGroups = savedGroups
         }
+        receivedGroupIndex = indexOfGroup
         recievedGroup = groupToPass
         groupNameLabel.text = recievedGroup?.name
     }

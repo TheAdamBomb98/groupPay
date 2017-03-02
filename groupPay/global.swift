@@ -12,6 +12,7 @@ import os.log
 var groupToPass: Group!
 var indexOfGroup: Int!
 var personToPass: Person!
+var indexOfPerson: Int!
 //SAVING FUNCTIONS AND DECLARATION
 
 internal var allGroups: [groupPay.Group] = []

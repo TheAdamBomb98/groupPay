@@ -326,7 +326,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="TOe-4D-Ogv" customClass="CollectionViewCell" customModule="groupPay" customModuleProvider="target">
-                                        <rect key="frame" x="21.5" y="0.0" width="300" height="50"/>
+                                        <rect key="frame" x="22" y="0.0" width="300" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
@@ -355,6 +355,15 @@
                                     <outlet property="delegate" destination="9I9-lQ-Fie" id="MQT-kn-C6m"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzz-BB-1cc">
+                                <frame key="frameInset" minX="90" minY="518" width="186" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Make Payment"/>
+                                <connections>
+                                    <action selector="makePaymentButtonPressed:" destination="9I9-lQ-Fie" eventType="touchUpInside" id="pk8-yE-8GM"/>
+                                    <segue destination="Sui-Tq-qZA" kind="show" identifier="personToPayment" id="QNB-Gm-DlX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -367,6 +376,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="YUj-dR-Z9G" id="XX5-bR-gei"/>
+                        <outlet property="makePaymentButton" destination="Tzz-BB-1cc" id="dKV-0i-xHn"/>
                         <outlet property="personLabel" destination="Gwv-fN-Std" id="uDG-5M-2FA"/>
                     </connections>
                 </viewController>
@@ -448,6 +458,9 @@
                                 <frame key="frameInset" minX="224" minY="541" width="105" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="9I9-lQ-Fie" kind="show" id="ZxQ-Kb-owZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -464,7 +477,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dns-rb-dg4"/>
         <segue reference="ZmT-AX-eSC"/>
+        <segue reference="dns-rb-dg4"/>
+        <segue reference="ZxQ-Kb-owZ"/>
     </inferredMetricsTieBreakers>
 </document>

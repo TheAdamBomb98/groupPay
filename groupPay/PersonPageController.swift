@@ -13,11 +13,19 @@ class PersonPageController: UIViewController, UICollectionViewDelegate, UICollec
     
     var receivedPerson: Person?
     
+    var receivedPersonIndex: Int?
+    
+    var receivedGroup: Group?
+    
+    var receivedGroupIndex: Int?
+    
+    
+    
     @IBOutlet weak var personLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
+    @IBOutlet weak var makePaymentButton: UIButton!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
     }
@@ -27,6 +35,16 @@ class PersonPageController: UIViewController, UICollectionViewDelegate, UICollec
         cell.label?.text = receivedPerson?.name
         cell.backgroundColor = UIColor.white
         return cell
+    }
+    
+    
+    @IBAction func makePaymentButtonPressed(_ sender: AnyObject) {
+        personToPass = receivedPerson
+        indexOfPerson = receivedPersonIndex
+        groupToPass = receivedGroup
+        indexOfGroup = receivedGroupIndex
+        performSegue(withIdentifier: "personToPayment" , sender: self)
+        
     }
     /*
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

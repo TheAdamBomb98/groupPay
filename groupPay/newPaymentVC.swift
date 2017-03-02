@@ -13,6 +13,12 @@ import os.log
 
 class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
+    var receivedGroup: Group?
+    var receievedGroupIndex: Int?
+    var receievedPerson: Person?
+    var receievedPersonIndex: Int?
+    
+    
     
     @IBOutlet weak var enterName: UILabel!
     @IBOutlet weak var enterMoney: UITextField!
@@ -20,6 +26,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     let pickerData = ["Gas","Breakfast","Lunch","Dinner","Food","Snacks","Hotel","Tickets","Other"]
     
     var tag = "test"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         allGroups = loadGroups()!
@@ -28,6 +35,11 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         
         enterTag.dataSource = self
         enterTag.delegate = self
+        
+        receivedGroup = groupToPass
+        receievedGroupIndex = indexOfGroup
+        receievedPerson = personToPass
+        receievedPersonIndex = indexOfPerson
     }
     
     
@@ -44,6 +56,11 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         saveGroups()
     }
     
+
+        
+
+    
+
     //PickerView Functions
     //MARK: - Delegates and data sources
     //MARK: Data Sources
