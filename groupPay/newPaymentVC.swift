@@ -13,10 +13,10 @@ import os.log
 
 class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
-    var receivedGroup: Group?
-    var receievedGroupIndex: Int?
-    var receievedPerson: Person?
-    var receievedPersonIndex: Int?
+    var gotGroup: Group?
+    var gotGroupIndex: Int?
+    var gotPerson: Person?
+    var gotPersonIndex: Int?
     
     
     
@@ -36,10 +36,10 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         enterTag.dataSource = self
         enterTag.delegate = self
         
-        receivedGroup = groupToPass
-        receievedGroupIndex = indexOfGroup
-        receievedPerson = personToPass
-        receievedPersonIndex = indexOfPerson
+        gotGroup = groupToPass
+        gotGroupIndex = indexOfGroup
+        gotPerson = personToPass
+        gotPersonIndex = indexOfPerson
     }
     
     
@@ -48,12 +48,17 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     @IBAction func addPayment(_ sender: AnyObject) {
         var amount = 0.0
         amount = (Double)(enterMoney.text!)!
-        let person = allGroups[0].people[0]
-        let group = allGroups[0]
-        
+        let person = allGroups[gotGroupIndex!].people[gotPersonIndex!]
+        let group = allGroups[gotGroupIndex!]
         let newPay = Receipt( amount: amount, tag: tag , person: person, group: group )
         allGroups[0].people[0].transactions.append(newPay)
         saveGroups()
+        allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
+        personToPass = gotPerson
+        indexOfPerson = gotPersonIndex
+        groupToPass = gotGroup
+        indexOfGroup = gotGroupIndex
+        performSegue(withIdentifier: "paymentToPerson" , sender: self)
     }
     
 

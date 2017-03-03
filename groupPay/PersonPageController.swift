@@ -11,13 +11,10 @@ import UIKit
 
 class PersonPageController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var receivedPerson: Person?
-    
-    var receivedPersonIndex: Int?
-    
-    var receivedGroup: Group?
-    
-    var receivedGroupIndex: Int?
+    var gotPerson: Person?
+    var gotPersonIndex: Int?
+    var gotGroup: Group?
+    var gotGroupIndex: Int?
     
     
     
@@ -32,17 +29,17 @@ class PersonPageController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        cell.label?.text = receivedPerson?.name
+        cell.label?.text = gotPerson?.name
         cell.backgroundColor = UIColor.white
         return cell
     }
     
     
     @IBAction func makePaymentButtonPressed(_ sender: AnyObject) {
-        personToPass = receivedPerson
-        indexOfPerson = receivedPersonIndex
-        groupToPass = receivedGroup
-        indexOfGroup = receivedGroupIndex
+        personToPass = gotPerson
+        indexOfPerson = gotPersonIndex
+        groupToPass = gotGroup
+        indexOfGroup = gotGroupIndex
         performSegue(withIdentifier: "personToPayment" , sender: self)
         
     }
@@ -65,10 +62,12 @@ class PersonPageController: UIViewController, UICollectionViewDelegate, UICollec
         //tableView.reloadData()
         //allGroups = loadGroups()!
         // Do any additional setup after loading the view, typically from a nib.
-        receivedPerson = personToPass
-        personLabel.text = receivedPerson?.name
-        
-        
+        gotGroup = groupToPass
+        gotGroupIndex = indexOfGroup
+        gotPerson = personToPass
+        gotPersonIndex = indexOfPerson
+        personLabel.text = gotPerson?.name
+
     }
     
     override func didReceiveMemoryWarning() {

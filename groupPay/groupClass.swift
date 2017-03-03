@@ -27,17 +27,17 @@ class Group: NSObject, NSCoding {
     
     struct PropertyKey {
         static let name = "name"
-        static let person = "person"
+        static let people = "people"
         static let transactions = "transactions"
     }
     
     //MARK: Initialization
     
-    init( name: String , person: [Person] , transactions: [Receipt] ) {
+    init( name: String , people: [Person] , transactions: [Receipt] ) {
         
         // Initialize stored properties.
         self.name = name
-        self.people = person
+        self.people = people
         self.transactions = transactions
         
         
@@ -47,7 +47,7 @@ class Group: NSObject, NSCoding {
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
-        aCoder.encode(people, forKey: PropertyKey.person)
+        aCoder.encode(people, forKey: PropertyKey.people)
         aCoder.encode(transactions, forKey: PropertyKey.transactions)
     }
     
@@ -59,13 +59,14 @@ class Group: NSObject, NSCoding {
             return nil
         }
         
-        let person = aDecoder.decodeObject(forKey: PropertyKey.person)
+        let people = aDecoder.decodeObject(forKey: PropertyKey.people)
         
         
         let transactions = aDecoder.decodeObject(forKey: PropertyKey.transactions)
-        
+        //MIGHT CAUSE ERROR
+        //ADAM TRIED TO BE HELPFUL
         // Must call designated initializer.
-        self.init(name: name, person: person as! [Person], transactions: transactions as! [Receipt])
+        self.init(name: name, people: people as! [Person], transactions: transactions as! [Receipt])
         
     }
 }

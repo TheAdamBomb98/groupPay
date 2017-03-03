@@ -11,9 +11,8 @@ import UIKit
 
 class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    var recievedGroup: Group?
-    
-    var receivedGroupIndex: Int?
+    var gotGroup: Group?
+    var gotGroupIndex: Int?
     
     
     @IBOutlet var peopleTable: UITableView!
@@ -28,7 +27,7 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     //table view will return int for how many rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return recievedGroup!.people.count
+        return gotGroup!.people.count
     }
     
     //what is in the table
@@ -37,7 +36,7 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
         if let savedGroups = loadGroups(){
             allGroups = savedGroups
         }
-        var personName  = recievedGroup?.people[indexPath.row].name
+        var personName  = gotGroup?.people[indexPath.row].name
         cell.textLabel?.text = personName
         return cell
     }
@@ -49,15 +48,15 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let currentPersonName = currentCell.textLabel?.text
         
-        for i in (recievedGroup?.people)! {
+        for i in (gotGroup?.people)! {
             if ( i.name == currentPersonName )
             {
                 personToPass = i
-                indexOfPerson = allGroups[receivedGroupIndex!].index(ofAccessibilityElement: personToPass)
+                indexOfPerson = allGroups[gotGroupIndex!].people.index(of: personToPass)
             }
         }
-        groupToPass = recievedGroup
-        indexOfGroup = receivedGroupIndex
+        groupToPass = gotGroup
+        indexOfGroup = gotGroupIndex
         performSegue(withIdentifier: "groupPageToPersonPage" , sender: self )
     }
     
@@ -65,9 +64,9 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
         if let savedGroups = loadGroups(){
             allGroups = savedGroups
         }
-        receivedGroupIndex = indexOfGroup
-        recievedGroup = groupToPass
-        groupNameLabel.text = recievedGroup?.name
+        gotGroupIndex = indexOfGroup
+        gotGroup = groupToPass
+        groupNameLabel.text = gotGroup?.name
     }
  
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -75,7 +74,7 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            recievedGroup?.people.remove(at: indexPath.row)
+            gotGroup?.people.remove(at: indexPath.row)
             allGroups[indexOfGroup].people.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath],  with: UITableViewRowAnimation.automatic)
             saveGroups()
