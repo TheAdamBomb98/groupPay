@@ -52,16 +52,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return true
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
-            allGroups.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath],  with: UITableViewRowAnimation.automatic)
-            saveGroups()
-            
-        }
         
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            
+            let alertController = UIAlertController(title: "Delete Group", message: "Are you sure you want to delete this group?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+                let yesAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                //remove from data source
+                allGroups.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath],  with: UITableViewRowAnimation.automatic)
+                saveGroups()
+                }
+            
+                alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            
+        
+        alertController.addAction(yesAction)
+        self.present(alertController, animated: true, completion: nil)
     }
-
-
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
