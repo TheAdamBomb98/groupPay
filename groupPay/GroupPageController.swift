@@ -48,7 +48,7 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let currentPersonName = currentCell.textLabel?.text
         
-        for i in (gotGroup?.people)! {
+        for i in (allGroups[gotGroupIndex!].people) {
             if ( i.name == currentPersonName )
             {
                 personToPass = i

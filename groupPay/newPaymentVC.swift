@@ -29,17 +29,18 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        gotGroup = groupToPass
+        gotGroupIndex = indexOfGroup
+        gotPerson = personToPass
+        gotPersonIndex = indexOfPerson
         allGroups = loadGroups()!
-        enterName.text = allGroups[0].people[0].name
+        enterName.text = allGroups[gotGroupIndex!].people[gotPersonIndex!].name
         self.enterMoney.keyboardType = UIKeyboardType.numbersAndPunctuation
         
         enterTag.dataSource = self
         enterTag.delegate = self
         
-        gotGroup = groupToPass
-        gotGroupIndex = indexOfGroup
-        gotPerson = personToPass
-        gotPersonIndex = indexOfPerson
+
     }
     
     
