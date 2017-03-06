@@ -40,8 +40,7 @@ class Group: NSObject, NSCoding {
         self.people = people
         self.transactions = transactions
         
-        
-    }
+            }
     
     //MARK: NSCoding
     

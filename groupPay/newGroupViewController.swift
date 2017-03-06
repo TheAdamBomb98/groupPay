@@ -75,6 +75,10 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
         groupNameField.text = ""
         
         saveGroups()
+        
+        groupToPass = allGroups[(allGroups.count - 1)]
+        indexOfGroup = allGroups.index(of: groupToPass)
+        performSegue(withIdentifier: "newGroupToGroupPage", sender: self)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -94,13 +98,13 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //var secondVC: GroupPageController = segue.destination as! GroupPageController
         //secondVC.recievedGroup = allGroups[allGroups.count - 1]
         if allGroups.count != 0{
         groupToPass = allGroups[allGroups.count - 1]
     }
-    
+    */
 
 
     //private functions
@@ -116,4 +120,4 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
      */
 }
 
-}
+

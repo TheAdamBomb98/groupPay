@@ -43,7 +43,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MmJ-hI-MPk" id="a1y-2B-vZl">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -134,7 +134,7 @@
                                 <state key="normal" title="Finalize Group"/>
                                 <connections>
                                     <action selector="finalizeGroupButtonPressed:" destination="4J7-ZB-zq1" eventType="touchUpInside" id="ZFO-WZ-2a8"/>
-                                    <segue destination="QuP-se-2Zf" kind="show" id="Rq1-kb-SVc"/>
+                                    <segue destination="QuP-se-2Zf" kind="show" identifier="newGroupToGroupPage" id="Rq1-kb-SVc"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hk2-lS-drZ">
@@ -262,7 +262,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uss-3N-TnT" id="a3z-OA-Vc9">
-                                            <frame key="frameInset" width="343" height="43"/>
+                                            <frame key="frameInset" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -326,7 +326,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="TOe-4D-Ogv" customClass="CollectionViewCell" customModule="groupPay" customModuleProvider="target">
-                                        <rect key="frame" x="22" y="0.0" width="300" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
@@ -479,7 +479,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ZmT-AX-eSC"/>
-        <segue reference="dns-rb-dg4"/>
+        <segue reference="Rq1-kb-SVc"/>
         <segue reference="1GA-sg-59Z"/>
     </inferredMetricsTieBreakers>
 </document>
