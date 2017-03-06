@@ -19,24 +19,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group Pay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQ4-x7-FkF">
-                                <frame key="frameInset" minX="76" minY="47" width="223" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Pay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQ4-x7-FkF">
+                                <fontDescription key="fontDescription" name="Baskerville-Italic" family="Baskerville" pointSize="54"/>
+                                <color key="textColor" red="0.0" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ItO-2l-lkc">
-                                <frame key="frameInset" minX="91" minY="134" width="193" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ItO-2l-lkc">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="sq6-at-cCO"/>
+                                </constraints>
                                 <state key="normal" title="Add People and Group Page"/>
                                 <connections>
                                     <segue destination="4J7-ZB-zq1" kind="show" id="vho-NK-tsH"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TfI-rZ-xz6">
-                                <frame key="frameInset" minY="184" width="375" height="168"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TfI-rZ-xz6">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MmJ-hI-MPk">
@@ -57,7 +54,19 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.86575420439999995" green="1" blue="0.88852544099999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nQ4-x7-FkF" firstAttribute="centerX" secondItem="ItO-2l-lkc" secondAttribute="centerX" id="5AB-G2-Htk"/>
+                            <constraint firstItem="TfI-rZ-xz6" firstAttribute="top" secondItem="nQ4-x7-FkF" secondAttribute="bottom" constant="53" id="5we-HY-J2I"/>
+                            <constraint firstAttribute="trailing" secondItem="TfI-rZ-xz6" secondAttribute="trailing" id="Cuz-ya-cHg"/>
+                            <constraint firstItem="ItO-2l-lkc" firstAttribute="centerX" secondItem="TfI-rZ-xz6" secondAttribute="centerX" id="FpO-rO-w5y"/>
+                            <constraint firstItem="nQ4-x7-FkF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="27" id="RBL-M7-Eox"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ItO-2l-lkc" secondAttribute="bottom" constant="465" id="Wk0-mw-9wc"/>
+                            <constraint firstItem="TfI-rZ-xz6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cK3-Kq-DpA"/>
+                            <constraint firstItem="ItO-2l-lkc" firstAttribute="top" secondItem="nQ4-x7-FkF" secondAttribute="bottom" constant="3" id="gUy-El-PeL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TfI-rZ-xz6" secondAttribute="bottom" constant="315" id="i15-kw-SJB"/>
+                            <constraint firstItem="nQ4-x7-FkF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="jEl-Vw-huB"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="TfI-rZ-xz6" id="TDw-z4-dzC"/>
@@ -276,7 +285,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.86575420439999995" green="1" blue="0.88852544099999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="groupNameLabel" destination="Mbd-x3-COm" id="o7b-A2-wnD"/>
@@ -326,7 +335,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="TOe-4D-Ogv" customClass="CollectionViewCell" customModule="groupPay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <rect key="frame" x="21.5" y="0.0" width="300" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
@@ -365,7 +374,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.86575420439999995" green="1" blue="0.88852544099999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="YUj-dR-Z9G" firstAttribute="leading" secondItem="uMT-r8-Zpf" secondAttribute="leadingMargin" id="DOQ-Ev-BEa"/>
                             <constraint firstItem="YUj-dR-Z9G" firstAttribute="centerX" secondItem="Gwv-fN-Std" secondAttribute="centerX" id="NfV-Ju-MBi"/>
@@ -464,7 +473,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.86575420439999995" green="1" blue="0.88852544099999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="enterMoney" destination="fVW-RU-bIH" id="t6U-wE-eJM"/>
@@ -478,8 +487,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Pfs-dR-NCF"/>
         <segue reference="ZmT-AX-eSC"/>
-        <segue reference="Rq1-kb-SVc"/>
-        <segue reference="1GA-sg-59Z"/>
+        <segue reference="tg5-H9-NA1"/>
     </inferredMetricsTieBreakers>
 </document>
