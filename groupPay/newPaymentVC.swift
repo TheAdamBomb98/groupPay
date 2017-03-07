@@ -52,7 +52,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         let person = allGroups[gotGroupIndex!].people[gotPersonIndex!]
         let group = allGroups[gotGroupIndex!]
         let newPay = Receipt( amount: amount, tag: tag , person: person, group: group )
-        allGroups[0].people[0].transactions.append(newPay)
+        allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
         saveGroups()
         allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
         personToPass = gotPerson
