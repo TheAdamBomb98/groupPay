@@ -9,30 +9,64 @@
 import Foundation
 import UIKit
 
-class PersonPageController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var gotPerson: Person?
     var gotPersonIndex: Int?
     var gotGroup: Group?
     var gotGroupIndex: Int?
     
-    
-    
-    @IBOutlet weak var personLabel: UILabel!
-    
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableViewTag: UITableView!
+   
+    @IBOutlet weak var tableViewPrice: UITableView!
     
     @IBOutlet weak var makePaymentButton: UIButton!
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+    
+    //how many sections are in the view
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if tableView == self.tableViewTag {
+            return 1
+        }
+        else {
+            return 1
+        }
+        
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        cell.label?.text = gotPerson?.name
-        cell.backgroundColor = UIColor.white
-        return cell
+    //table view will return int for how many rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var count:Int?
+        if tableView == self.tableViewTag {
+            count = gotPerson?.transactions.count
+        }
+        if tableView == self.tableViewTag {
+            count = gotPerson?.transactions.count
+        }
+        
+    return count!
     }
+        
+    
+    
+    //what is in the table
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell:UITableViewCell?
+        
+        if tableView == self.tableViewTag {
+            cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            let tag = gotPerson?.transactions[indexPath.row].tag
+            cell?.textLabel?.text = tag
+            
+        }
+        if tableView == self.tableViewPrice {
+            cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            let price = gotPerson?.transactions[indexPath.row].amount
+            cell?.textLabel?.text = (String)(describing: price)
+            
+        }
+        return cell!
+    }
+    
     
     
     @IBAction func makePaymentButtonPressed(_ sender: AnyObject) {
@@ -43,19 +77,6 @@ class PersonPageController: UIViewController, UICollectionViewDelegate, UICollec
         performSegue(withIdentifier: "personToPayment" , sender: self)
         
     }
-    /*
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            if segue.identifier == "pastTripCollectionToSavedLocationSegue" {
-                let newViewController = segue.destinationViewController as! /* controller for editing */
-                let indexPath = sender as! NSIndexPath
-                let selectedRow: NSManagedObject = locationsList[indexPath.row] as! NSManagedObject
-                newViewController./*variable to pass */ = selectedRow as! /*Group*/
-            }
-        }
-    }
- */
-    //collection
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +87,7 @@ class PersonPageController: UIViewController, UICollectionViewDelegate, UICollec
         gotGroupIndex = indexOfGroup
         gotPerson = personToPass
         gotPersonIndex = indexOfPerson
-        personLabel.text = gotPerson?.name
+        ///*label in tableview*/ = gotPerson?.name
 
     }
     
