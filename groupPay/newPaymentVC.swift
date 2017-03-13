@@ -13,9 +13,7 @@ import os.log
 
 class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
-    var gotGroup: Group?
     var gotGroupIndex: Int?
-    var gotPerson: Person?
     var gotPersonIndex: Int?
     
     
@@ -29,9 +27,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gotGroup = groupToPass
         gotGroupIndex = indexOfGroup
-        gotPerson = personToPass
         gotPersonIndex = indexOfPerson
         allGroups = loadGroups()!
         enterName.text = allGroups[gotGroupIndex!].people[gotPersonIndex!].name
@@ -55,9 +51,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
         saveGroups()
         allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
-        personToPass = gotPerson
         indexOfPerson = gotPersonIndex
-        groupToPass = gotGroup
         indexOfGroup = gotGroupIndex
         performSegue(withIdentifier: "paymentToPerson" , sender: self)
     }

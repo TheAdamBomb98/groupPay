@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4B3ACEC21E23F6B8004C5D5D /* GroupPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ACEC11E23F6B8004C5D5D /* GroupPageController.swift */; };
 		4B498F2B1E4A30360088AE29 /* PersonPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B498F2A1E4A30360088AE29 /* PersonPageController.swift */; };
-		4BA7686F1E575DE200E6586E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA7686E1E575DE200E6586E /* CollectionViewCell.swift */; };
 		4BB90C8D1DFF0C0500A73C15 /* groupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */; };
 		D0A1FB1E1E5F498100D2AAF0 /* newPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1FB1D1E5F498100D2AAF0 /* newPaymentVC.swift */; };
 		FE0B974E1E044C54002390EA /* newGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0B974D1E044C54002390EA /* newGroupViewController.swift */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		4B3ACEC11E23F6B8004C5D5D /* GroupPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPageController.swift; sourceTree = "<group>"; };
 		4B498F2A1E4A30360088AE29 /* PersonPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonPageController.swift; sourceTree = "<group>"; };
-		4BA7686E1E575DE200E6586E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupsTableViewCell.swift; sourceTree = "<group>"; };
 		D0A1FB1D1E5F498100D2AAF0 /* newPaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newPaymentVC.swift; sourceTree = "<group>"; };
 		FE0B974D1E044C54002390EA /* newGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newGroupViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				FE14844B1DF9C428003B48E2 /* ViewController.swift */,
 				4B3ACEC11E23F6B8004C5D5D /* GroupPageController.swift */,
 				4B498F2A1E4A30360088AE29 /* PersonPageController.swift */,
-				4BA7686E1E575DE200E6586E /* CollectionViewCell.swift */,
 				FE1484771DF9C661003B48E2 /* groupClass.swift */,
 				FE57FDE31E0057C600CDD9C2 /* personClass.swift */,
 				FE57FDE51E00584800CDD9C2 /* receiptClass.swift */,
@@ -300,7 +297,6 @@
 				4BB90C8D1DFF0C0500A73C15 /* groupsTableViewCell.swift in Sources */,
 				FE57FDE61E00584800CDD9C2 /* receiptClass.swift in Sources */,
 				4B3ACEC21E23F6B8004C5D5D /* GroupPageController.swift in Sources */,
-				4BA7686F1E575DE200E6586E /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

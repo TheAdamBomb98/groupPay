@@ -76,8 +76,7 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
         
         saveGroups()
         
-        groupToPass = allGroups[(allGroups.count - 1)]
-        indexOfGroup = allGroups.index(of: groupToPass)
+        indexOfGroup = allGroups.index(of: newGroup)
         performSegue(withIdentifier: "newGroupToGroupPage", sender: self)
     }
     

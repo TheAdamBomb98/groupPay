@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 import os.log
-var groupToPass: Group!
 var indexOfGroup: Int!
-var personToPass: Person!
 var indexOfPerson: Int!
 //SAVING FUNCTIONS AND DECLARATION
 

@@ -11,9 +11,7 @@ import UIKit
 
 class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var gotPerson: Person?
     var gotPersonIndex: Int?
-    var gotGroup: Group?
     var gotGroupIndex: Int?
     
     @IBOutlet weak var tableViewTag: UITableView!
@@ -37,10 +35,10 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count:Int?
         if tableView == self.tableViewTag {
-            count = gotPerson?.transactions.count
+            count = allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.count
         }
         if tableView == self.tableViewTag {
-            count = gotPerson?.transactions.count
+            count = allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.count
         }
         
     return count!
@@ -50,17 +48,19 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //what is in the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         var cell:UITableViewCell?
         
         if tableView == self.tableViewTag {
             cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            let tag = gotPerson?.transactions[indexPath.row].tag
+            let tag = allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions[indexPath.row].tag
             cell?.textLabel?.text = tag
             
         }
+        
         if tableView == self.tableViewPrice {
             cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            let price = gotPerson?.transactions[indexPath.row].amount
+            let price = allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions[indexPath.row].amount
             cell?.textLabel?.text = (String)(describing: price)
             
         }
@@ -70,9 +70,7 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     @IBAction func makePaymentButtonPressed(_ sender: AnyObject) {
-        personToPass = gotPerson
         indexOfPerson = gotPersonIndex
-        groupToPass = gotGroup
         indexOfGroup = gotGroupIndex
         performSegue(withIdentifier: "personToPayment" , sender: self)
         
@@ -83,9 +81,7 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
         //tableView.reloadData()
         //allGroups = loadGroups()!
         // Do any additional setup after loading the view, typically from a nib.
-        gotGroup = groupToPass
         gotGroupIndex = indexOfGroup
-        gotPerson = personToPass
         gotPersonIndex = indexOfPerson
         ///*label in tableview*/ = gotPerson?.name
 
