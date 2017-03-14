@@ -356,6 +356,16 @@
                                     <constraint firstAttribute="width" constant="183" id="324-uq-P3e"/>
                                     <constraint firstAttribute="height" constant="277" id="zy7-AJ-thc"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="zek-oN-JVY">
+                                        <rect key="frame" x="0.0" y="28" width="183" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zek-oN-JVY" id="fdM-Ku-R7s">
+                                            <rect key="frame" x="0.0" y="0.0" width="183" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="9I9-lQ-Fie" id="yDc-uO-UQt"/>
                                     <outlet property="delegate" destination="9I9-lQ-Fie" id="eCX-nJ-Qil"/>
@@ -364,6 +374,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FrI-Yd-OgH">
                                 <rect key="frame" x="197" y="162" width="178" height="277"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" id="8kx-s7-Xqb">
+                                        <rect key="frame" x="0.0" y="28" width="178" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8kx-s7-Xqb" id="nsl-WX-ZiZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="178" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="9I9-lQ-Fie" id="j3f-87-13z"/>
                                     <outlet property="delegate" destination="9I9-lQ-Fie" id="UwJ-52-KBJ"/>
