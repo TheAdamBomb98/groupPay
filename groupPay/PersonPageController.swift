@@ -33,13 +33,10 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //table view will return int for how many rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         var count:Int?
-        if tableView == self.tableViewTag {
-            count = allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.count
-        }
-        if tableView == self.tableViewTag {
-            count = allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.count
-        }
+        
+        count = allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.count
         
     return count!
     }
@@ -50,21 +47,17 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell:UITableViewCell?
-        
+        var cell1:UITableViewCell?
         if tableView == self.tableViewTag {
             cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             let tag = allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions[indexPath.row].tag
             cell?.textLabel?.text = tag
-            
+            return cell!
         }
-        
-        if tableView == self.tableViewPrice {
-            cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            let price = allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions[indexPath.row].amount
-            cell?.textLabel?.text = (String)(describing: price)
-            
-        }
-        return cell!
+        cell1 = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath)
+        let price = allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions[indexPath.row].amount
+        cell1?.textLabel?.text = (String)(describing: price)
+        return cell1!
     }
     
     
@@ -78,11 +71,13 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableView.reloadData()
-        //allGroups = loadGroups()!
-        // Do any additional setup after loading the view, typically from a nib.
         gotGroupIndex = indexOfGroup
         gotPersonIndex = indexOfPerson
+        tableViewTag.reloadData()
+        tableViewPrice.reloadData()
+        //allGroups = loadGroups()!
+        // Do any additional setup after loading the view, typically from a nib.
+
         ///*label in tableview*/ = gotPerson?.name
 
     }

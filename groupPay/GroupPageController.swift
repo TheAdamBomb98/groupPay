@@ -54,7 +54,6 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
                 indexOfPerson = allGroups[gotGroupIndex!].people.index(of: tempPerson)
             }
         }
-        indexOfGroup = gotGroupIndex
         performSegue(withIdentifier: "groupPageToPersonPage" , sender: self )
     }
     
