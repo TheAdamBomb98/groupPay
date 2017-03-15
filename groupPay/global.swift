@@ -32,6 +32,10 @@ func loadGroups() -> [Group]? {
 func calculate( groupOfPeople: [Person] ) -> [Person] {
     var peopleList = groupOfPeople
     var peopleThatAreDone: [Person] = []
+    var groupTotal = 0.0
+    //for i in allGroups {
+        //groupTotal += i.totalPaid
+    //}
     while( peopleList.count > 1 ) {
         //DOUBLE CHECK THIS
         //I think it might be sorting the wrong direction

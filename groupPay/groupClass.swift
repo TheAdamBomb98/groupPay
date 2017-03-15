@@ -65,7 +65,6 @@ class Group: NSObject, NSCoding {
         let date = aDecoder.decodeObject(forKey: PropertyKey.date)
         let people = aDecoder.decodeObject(forKey: PropertyKey.people)
         
-        
         let transactions = aDecoder.decodeObject(forKey: PropertyKey.transactions)
         //MIGHT CAUSE ERROR
         //ADAM TRIED TO BE HELPFUL

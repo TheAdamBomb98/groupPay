@@ -32,9 +32,6 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     //what is in the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        if let savedGroups = loadGroups(){
-            allGroups = savedGroups
-        }
         var personName  = allGroups[gotGroupIndex!].people[indexPath.row].name
         cell.textLabel?.text = personName
         return cell
@@ -58,9 +55,9 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewDidLoad() {
-        if let savedGroups = loadGroups(){
-            allGroups = savedGroups
-        }
+        //if let savedGroups = loadGroups(){
+            //allGroups = savedGroups
+        //}
         gotGroupIndex = indexOfGroup
         groupNameLabel.text = allGroups[gotGroupIndex!].name
     }

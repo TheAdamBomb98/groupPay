@@ -92,9 +92,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.reloadData()
         //NEVER set this up like this: allGroups = loadGroups()!
-        if let savedGroups = loadGroups(){
-            allGroups = savedGroups
-        }
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
