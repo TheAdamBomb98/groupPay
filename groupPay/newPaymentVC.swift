@@ -45,12 +45,19 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     @IBAction func addPayment(_ sender: AnyObject) {
         var amount = 0.0
         amount = (Double)(enterMoney.text!)!
+        //tag = enterTag.description
+        //Swift.print(tag)
         let person = allGroups[gotGroupIndex!].people[gotPersonIndex!]
         let group = allGroups[gotGroupIndex!]
         let newPay = Receipt( amount: amount, tag: tag , person: person, group: group )
         allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
         saveGroups()
         allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
+        
+        allGroups[gotGroupIndex!].people[gotPersonIndex!].totalPaid += amount
+        
+        allGroups[gotGroupIndex!].transactions.append(newPay)
+        
         indexOfPerson = gotPersonIndex
         indexOfGroup = gotGroupIndex
         performSegue(withIdentifier: "paymentToPerson" , sender: self)
@@ -79,7 +86,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        tag = pickerData[0]
+        tag = pickerData[row]
     }
     
 }

@@ -27,6 +27,7 @@
     //Adding these to allow for calculating strings
     var toPaySummary: String
     var toBePaidSummary: String
+    var totalPaid = 0.0
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -44,11 +45,12 @@
         static let email = "email"
         static let toPaySummary = "toPaySummary"
         static let toBePaidSummary = "toBePaidSummary"
+        static let totalPaid = "totalPaid"
     }
     
     //MARK: Initialization
     
-    init( name: String , totalPlusMinus: Double , transactions: [Receipt] , currentPay: Double , currentPlusMinus: Double , phoneNumber: String , email: String, toPaySummary: String, toBePaidSummary: String){
+    init( name: String , totalPlusMinus: Double , transactions: [Receipt] , currentPay: Double , currentPlusMinus: Double , phoneNumber: String , email: String, toPaySummary: String, toBePaidSummary: String, totalPaid: Double){
         
         //initalize stored properties
         
@@ -61,6 +63,7 @@
         self.email = email
         self.toPaySummary = toPaySummary
         self.toBePaidSummary = toBePaidSummary
+        self.totalPaid = totalPaid
     }
     
     //MARK: NSCoding
@@ -75,6 +78,7 @@
         aCoder.encode(email, forKey: PropertyKey.email)
         aCoder.encode(toPaySummary, forKey: PropertyKey.toPaySummary)
         aCoder.encode(toBePaidSummary, forKey: PropertyKey.toBePaidSummary)
+        aCoder.encode(totalPaid, forKey: PropertyKey.totalPaid)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -89,10 +93,11 @@
         let email = aDecoder.decodeObject(forKey: PropertyKey.email) as! String
         let toPaySummary = aDecoder.decodeObject(forKey: PropertyKey.toPaySummary) as! String
         let toBePaidSummary = aDecoder.decodeObject(forKey: PropertyKey.toPaySummary) as! String
+        let totalPaid = aDecoder.decodeObject(forKey: PropertyKey.totalPaid) as! Double
         
         
         // Must call designated initializer.
-        self.init(name: name, totalPlusMinus: totalPlusMinus, transactions: transactions, currentPay: currentPay, currentPlusMinus: currentPlusMinus, phoneNumber: phoneNumber, email: email, toPaySummary: toPaySummary, toBePaidSummary: toBePaidSummary)
+        self.init(name: name, totalPlusMinus: totalPlusMinus, transactions: transactions, currentPay: currentPay, currentPlusMinus: currentPlusMinus, phoneNumber: phoneNumber, email: email, toPaySummary: toPaySummary, toBePaidSummary: toBePaidSummary, totalPaid: totalPaid)
         
     }
     
