@@ -14,7 +14,7 @@ class Group: NSObject, NSCoding {
     
     
     //MARK: Properties
-    
+    var date: NSDate
     var name: String
     var people: [Person]
     var transactions: [Receipt]
@@ -26,6 +26,7 @@ class Group: NSObject, NSCoding {
     //MARK: Types
     
     struct PropertyKey {
+        static let date = "date"
         static let name = "name"
         static let people = "people"
         static let transactions = "transactions"
@@ -33,9 +34,10 @@ class Group: NSObject, NSCoding {
     
     //MARK: Initialization
     
-    init( name: String , people: [Person] , transactions: [Receipt] ) {
+    init( date: NSDate, name: String , people: [Person] , transactions: [Receipt] ) {
         
         // Initialize stored properties.
+        self.date = date
         self.name = name
         self.people = people
         self.transactions = transactions
@@ -45,9 +47,11 @@ class Group: NSObject, NSCoding {
     //MARK: NSCoding
     
     func encode(with aCoder: NSCoder) {
+        aCoder.encode(date, forKey: PropertyKey.date)
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(people, forKey: PropertyKey.people)
         aCoder.encode(transactions, forKey: PropertyKey.transactions)
+        
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -58,6 +62,7 @@ class Group: NSObject, NSCoding {
             return nil
         }
         
+        let date = aDecoder.decodeObject(forKey: PropertyKey.date)
         let people = aDecoder.decodeObject(forKey: PropertyKey.people)
         
         
@@ -65,7 +70,7 @@ class Group: NSObject, NSCoding {
         //MIGHT CAUSE ERROR
         //ADAM TRIED TO BE HELPFUL
         // Must call designated initializer.
-        self.init(name: name, people: people as! [Person], transactions: transactions as! [Receipt])
+        self.init(date: date as! NSDate, name: name, people: people as! [Person], transactions: transactions as! [Receipt])
         
     }
 }

@@ -23,9 +23,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //what is in the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
-        var groupName  = allGroups[indexPath.row].name
-        cell.textLabel?.text = groupName
+        let cell = UITableViewCell()
+        
+        let groupName  = allGroups[indexPath.row].name
+        var groupDate = allGroups[indexPath.row].date.description
+        let endVal = groupDate.index(groupDate.startIndex, offsetBy: 10)
+        let dateSub = groupDate.substring(to: endVal)
+        groupDate = dateSub
+        let label1 = UILabel(frame: CGRect(x: 15, y: 0, width: cell.frame.width/2, height: cell.frame.height))
+        let label2 = UILabel(frame: CGRect(x: cell.frame.width/2, y: 0, width: cell.frame.width/2, height: cell.frame.height))
+        label1.text = groupName
+        label2.text = groupDate
+        label2.textAlignment = .right
+        cell.addSubview(label1)
+        cell.addSubview(label2)
+        
+        
+        //cell.textLabel?.text = groupName
         return cell
     }
     
