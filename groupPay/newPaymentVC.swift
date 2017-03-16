@@ -51,13 +51,12 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         let group = allGroups[gotGroupIndex!]
         let newPay = Receipt( amount: amount, tag: tag , person: person, group: group )
         allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
-        saveGroups()
-        allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
-        
-        //allGroups[gotGroupIndex!].people[gotPersonIndex!].totalPaid += amount
-        
         allGroups[gotGroupIndex!].transactions.append(newPay)
         
+        allGroups[gotGroupIndex!].people[gotPersonIndex!].totalPaid += amount
+        
+        saveGroups()
+   
         indexOfPerson = gotPersonIndex
         indexOfGroup = gotGroupIndex
         performSegue(withIdentifier: "paymentToPerson" , sender: self)

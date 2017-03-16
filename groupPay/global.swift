@@ -33,14 +33,18 @@ func calculate( groupOfPeople: [Person] ) -> [Person] {
     var peopleList = groupOfPeople
     var peopleThatAreDone: [Person] = []
     var groupTotal = 0.0
-    //for i in allGroups {
-        //groupTotal += i.totalPaid
-    //}
+    for i in peopleList {
+        groupTotal += i.totalPaid
+    }
+    let groupTotalAvg = groupTotal / (Double)(peopleList.count)
+    for i in peopleList {
+        i.totalPlusMinus = i.totalPaid - groupTotalAvg
+    }
     while( peopleList.count > 1 ) {
         //DOUBLE CHECK THIS
         //I think it might be sorting the wrong direction
         peopleList.sorted(by: { $0.totalPlusMinus > $1.totalPlusMinus})
-        let payFromLowest = peopleList[0].totalPlusMinus
+        let payFromLowest = (round(peopleList[0].totalPlusMinus * 100) / 100)
         peopleList[0].toPaySummary = "You will pay $" + String(payFromLowest) + " to " + peopleList[(peopleList.count - 1)].name + "."
         if ( peopleList[(peopleList.count - 1)].name.characters.count == 0 ){
             peopleList[(peopleList.count - 1)].toBePaidSummary = "You will be paid $" + String(payFromLowest) + " by " + peopleList[0].name + "."
