@@ -54,7 +54,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         saveGroups()
         allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
         
-        allGroups[gotGroupIndex!].people[gotPersonIndex!].totalPaid += amount
+        //allGroups[gotGroupIndex!].people[gotPersonIndex!].totalPaid += amount
         
         allGroups[gotGroupIndex!].transactions.append(newPay)
         
