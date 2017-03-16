@@ -30,12 +30,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let endVal = groupDate.index(groupDate.startIndex, offsetBy: 10)
         let dateSub = groupDate.substring(to: endVal)
         groupDate = dateSub
-        let label1 = UILabel(frame: CGRect(x: 15, y: 0, width: cell.frame.width/2, height: cell.frame.height))
+        //let label1 = UILabel(frame: CGRect(x: 15, y: 0, width: cell.frame.width/2, height: cell.frame.height))
+        cell.textLabel?.text = groupName
         let label2 = UILabel(frame: CGRect(x: cell.frame.width/2, y: 0, width: (cell.frame.width/2 + 80), height: cell.frame.height))
-        label1.text = groupName
+        //label1.text = groupName
         label2.text = groupDate
         label2.textAlignment = .right
-        cell.addSubview(label1)
+        //cell.addSubview(label1)
         cell.addSubview(label2)
         
         
