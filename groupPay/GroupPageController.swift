@@ -55,9 +55,6 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewDidLoad() {
-        //if let savedGroups = loadGroups(){
-            //allGroups = savedGroups
-        //}
         gotGroupIndex = indexOfGroup
         groupNameLabel.text = allGroups[gotGroupIndex!].name
     }
