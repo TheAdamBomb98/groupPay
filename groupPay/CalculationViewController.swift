@@ -15,11 +15,18 @@ internal class CalculationViewController : UIViewController{
     @IBOutlet weak var textOfCalculations: UITextView!
     var gotPersonIndex: Int?
     var gotGroupIndex: Int?
-    
+    var calculatedList: [Person] = []
+    var fullSummary: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         gotGroupIndex = indexOfGroup
         gotPersonIndex = indexOfPerson
         labelOfGroup.text = ((allGroups[gotGroupIndex!].name) + " Calculations")
+        var tempList = allGroups[gotGroupIndex!].people
+        calculatedList = calculate(groupOfPeople: tempList)
+        for i in calculatedList{
+           fullSummary = fullSummary + " " + i.toPaySummary
+        }
+        textOfCalculations.insertText( fullSummary )
     }
 }
