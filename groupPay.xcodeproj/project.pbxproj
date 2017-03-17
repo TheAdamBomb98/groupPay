@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4B3ACEC21E23F6B8004C5D5D /* GroupPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ACEC11E23F6B8004C5D5D /* GroupPageController.swift */; };
 		4B498F2B1E4A30360088AE29 /* PersonPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B498F2A1E4A30360088AE29 /* PersonPageController.swift */; };
+		4B6159971E7C3E6200013B82 /* PersonPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B498F2A1E4A30360088AE29 /* PersonPageController.swift */; };
 		4BB90C8D1DFF0C0500A73C15 /* groupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */; };
 		BBD26F9E1E7AE6F3000BADFF /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD26F9D1E7AE6F3000BADFF /* CalculationViewController.swift */; };
 		D0A1FB1E1E5F498100D2AAF0 /* newPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1FB1D1E5F498100D2AAF0 /* newPaymentVC.swift */; };
@@ -309,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE14845F1DF9C428003B48E2 /* groupPayTests.swift in Sources */,
+				4B6159971E7C3E6200013B82 /* PersonPageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
