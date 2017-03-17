@@ -60,6 +60,13 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell1!
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if tableViewTag == scrollView {
+            tableViewPrice.contentOffset = tableViewTag.contentOffset
+        }else if tableViewPrice == scrollView {
+            tableViewTag.contentOffset = tableViewPrice.contentOffset
+        }
+    }
     
     
     @IBAction func makePaymentButtonPressed(_ sender: AnyObject) {
