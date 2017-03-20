@@ -224,6 +224,7 @@
 				TargetAttributes = {
 					FE1484451DF9C428003B48E2 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = QEK259F9U8;
 						ProvisioningStyle = Automatic;
 					};
 					FE1484591DF9C428003B48E2 = {
@@ -454,9 +455,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QEK259F9U8;
 				INFOPLIST_FILE = groupPay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JAC.groupPay;
+				PRODUCT_BUNDLE_IDENTIFIER = joe.groupPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -466,9 +468,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QEK259F9U8;
 				INFOPLIST_FILE = groupPay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JAC.groupPay;
+				PRODUCT_BUNDLE_IDENTIFIER = joe.groupPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

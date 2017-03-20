@@ -31,7 +31,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         gotPersonIndex = indexOfPerson
         allGroups = loadGroups()!
         enterName.text = allGroups[gotGroupIndex!].people[gotPersonIndex!].name
-        self.enterMoney.keyboardType = UIKeyboardType.numbersAndPunctuation
+        self.enterMoney.keyboardType = UIKeyboardType.numberPad
         
         enterTag.dataSource = self
         enterTag.delegate = self
@@ -39,7 +39,10 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
 
     }
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
     
    
     @IBAction func addPayment(_ sender: AnyObject) {
