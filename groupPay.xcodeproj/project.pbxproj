@@ -130,10 +130,10 @@
 				FE0B974D1E044C54002390EA /* newGroupViewController.swift */,
 				D0A1FB1D1E5F498100D2AAF0 /* newPaymentVC.swift */,
 				4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */,
+				BBD26F9D1E7AE6F3000BADFF /* CalculationViewController.swift */,
 				FE1484501DF9C428003B48E2 /* Assets.xcassets */,
 				FE1484521DF9C428003B48E2 /* LaunchScreen.storyboard */,
 				FE1484551DF9C428003B48E2 /* Info.plist */,
-				BBD26F9D1E7AE6F3000BADFF /* CalculationViewController.swift */,
 			);
 			path = groupPay;
 			sourceTree = "<group>";

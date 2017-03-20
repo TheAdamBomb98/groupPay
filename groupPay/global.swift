@@ -11,6 +11,7 @@ import UIKit
 import os.log
 var indexOfGroup: Int!
 var indexOfPerson: Int!
+var calculationsSummary = ""
 //SAVING FUNCTIONS AND DECLARATION
 
 internal var allGroups: [groupPay.Group] = []
@@ -29,6 +30,15 @@ func loadGroups() -> [Group]? {
     
 }
 
+func absoluteValue(number: Double)-> Double {
+    var number1 = number
+    if( number1 < 0 ) {
+        number1 = number1 * -1.0
+    }
+    return number1
+}
+
+
 func calculate( groupOfPeople: [Person] ) -> [Person] {
     var peopleList = groupOfPeople
     var peopleThatAreDone: [Person] = []
@@ -43,21 +53,32 @@ func calculate( groupOfPeople: [Person] ) -> [Person] {
     while( peopleList.count > 1 ) {
         //DOUBLE CHECK THIS
         //I think it might be sorting the wrong direction
-        peopleList.sorted(by: { $0.totalPlusMinus > $1.totalPlusMinus})
-        let payFromLowest = (round(peopleList[0].totalPlusMinus * 100) / 100)
-        peopleList[0].toPaySummary = "You will pay $" + String(payFromLowest) + " to " + peopleList[(peopleList.count - 1)].name + "."
-        if ( peopleList[(peopleList.count - 1)].name.characters.count == 0 ){
-            peopleList[(peopleList.count - 1)].toBePaidSummary = "You will be paid $" + String(payFromLowest) + " by " + peopleList[0].name + "."
+        //peopleList.sorted(by: { $1.totalPlusMinus > $0.totalPlusMinus})
+        peopleList = peopleList.sorted(by: { $0.totalPlusMinus < $1.totalPlusMinus })
+        let realPayFromLowest = peopleList[0].totalPlusMinus
+        let displayPayFromLowest = absoluteValue( number: (round(peopleList[0].totalPlusMinus * 100) / 100) )
+        peopleList[0].toPaySummary = "You will pay $" + String(displayPayFromLowest) + " to " + peopleList[(peopleList.count - 1)].name + "."
+        if ( peopleList[(peopleList.count - 1)].toBePaidSummary.characters.count == 0 ){
+            peopleList[(peopleList.count - 1)].toBePaidSummary = "You will be paid $" + String(displayPayFromLowest) + " by " + peopleList[0].name + "."
         }
         else {
-            peopleList[(peopleList.count - 1)].toBePaidSummary += " You will also be paid $" + String(payFromLowest) + " by " + peopleList[0].name + "."
+            peopleList[(peopleList.count - 1)].toBePaidSummary += " You will also be paid $" + String(displayPayFromLowest) + " by " + peopleList[0].name + "."
+        }
+        
+        
+        if ( calculationsSummary.characters.count == 0) {
+            calculationsSummary = peopleList[0].name + " pays " + displayPayFromLowest + " to " + peopleList[(peopleList.count - 1)].name + "."
+        }
+        else {
+            calculationsSummary += (" " + peopleList[0].name + " pays " + displayPayFromLowest + " to " + peopleList[(peopleList.count - 1)].name + ".")
         }
         peopleList[0].totalPlusMinus = 0
-        peopleList[(peopleList.count - 1)].totalPlusMinus = peopleList[(peopleList.count - 1)].totalPlusMinus + payFromLowest
-        for i in 0...(peopleList.count - 1) {
-            if( peopleList[i].totalPlusMinus == 0 ){
+        peopleList[(peopleList.count - 1)].totalPlusMinus = peopleList[(peopleList.count - 1)].totalPlusMinus + realPayFromLowest
+        for i in 0...((peopleList.count - 1) - peopleThatAreDone.count) {
+            if( peopleList[i].totalPlusMinus < 0.01 ){
                 peopleThatAreDone.append(peopleList[i])
                 peopleList.remove(at: i)
+                break
             }
         }
     }
