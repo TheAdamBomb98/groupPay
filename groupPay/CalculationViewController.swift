@@ -24,9 +24,5 @@ internal class CalculationViewController : UIViewController{
         labelOfGroup.text = ((allGroups[gotGroupIndex!].name) + " Calculations")
         var tempList = allGroups[gotGroupIndex!].people
         calculatedList = calculate(groupOfPeople: tempList)
-        //for i in calculatedList{
-           //fullSummary = fullSummary + " " + i.toPaySummary
-        //}
-        textOfCalculations.insertText( calculationsSummary )
     }
 }
