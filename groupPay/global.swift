@@ -55,6 +55,9 @@ func calculate( groupOfPeople: [Person] ) -> [Person] {
         //I think it might be sorting the wrong direction
         //peopleList.sorted(by: { $1.totalPlusMinus > $0.totalPlusMinus})
         peopleList = peopleList.sorted(by: { $0.totalPlusMinus < $1.totalPlusMinus })
+        if (peopleList[0].totalPlusMinus < 0.01 && peopleList[0].totalPlusMinus > -0.01){
+            break
+        }
         let realPayFromLowest = peopleList[0].totalPlusMinus
         let displayPayFromLowest = (String) (absoluteValue( number: (round(peopleList[0].totalPlusMinus * 100) / 100) ))
         let payerName = peopleList[0].name

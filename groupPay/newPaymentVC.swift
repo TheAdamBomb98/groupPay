@@ -23,7 +23,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     @IBOutlet weak var enterTag: UIPickerView!
     let pickerData = ["Gas","Breakfast","Lunch","Dinner","Food","Snacks","Hotel","Tickets","Other"]
     
-    var tag = "test"
+    var tag = "Gas"
     
     override func viewDidLoad() {
         super.viewDidLoad()
