@@ -31,7 +31,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         gotPersonIndex = indexOfPerson
         allGroups = loadGroups()!
         enterName.text = allGroups[gotGroupIndex!].people[gotPersonIndex!].name
-        self.enterMoney.keyboardType = UIKeyboardType.numberPad
+        self.enterMoney.keyboardType = UIKeyboardType.decimalPad
         
         enterTag.dataSource = self
         enterTag.delegate = self
