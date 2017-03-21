@@ -47,7 +47,17 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
    
     @IBAction func addPayment(_ sender: AnyObject) {
         var amount = 0.0
-        amount = (Double)(enterMoney.text!)!
+        print(enterMoney.text)
+        if(enterMoney.text! == ""){
+            
+        let alertController = UIAlertController(title: "Please Enter an Amount", message: "", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+        else{
+        amount = ((Double)(enterMoney.text!)!)
         //tag = enterTag.description
         //Swift.print(tag)
         let person = allGroups[gotGroupIndex!].people[gotPersonIndex!]
@@ -63,6 +73,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         indexOfPerson = gotPersonIndex
         indexOfGroup = gotGroupIndex
         performSegue(withIdentifier: "paymentToPerson" , sender: self)
+        }
     }
     
 

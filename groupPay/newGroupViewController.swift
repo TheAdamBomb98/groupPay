@@ -69,6 +69,30 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func finalizeGroupButtonPressed(_ sender: AnyObject) {
+        if (tempPeople.count < 2 && groupNameField.text! == ""){
+            let alertController = UIAlertController(title: "Please Enter a Group Name and Add People to Your Group", message: "", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+        
+       else if(tempPeople.count < 2){
+            let alertController1 = UIAlertController(title: "Please Enter People Into Your Group", message: "", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction1 = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel)
+            alertController1.addAction(okAction1)
+            self.present(alertController1, animated: true, completion: nil)
+            
+        }
+        else if (groupNameField.text! == "")
+        {
+            let alertController2 = UIAlertController(title: "Please Enter a Group Name", message: "", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction2 = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel)
+            alertController2.addAction(okAction2)
+            self.present(alertController2, animated: true, completion: nil)
+            
+        }
+        else{
         let tempReceipts = [Receipt]()
         let newGroup = Group(date: NSDate(), name: groupNameField.text!, people: tempPeople, transactions: tempReceipts)
         allGroups.append(newGroup)
@@ -78,6 +102,7 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
         
         indexOfGroup = allGroups.index(of: newGroup)
         performSegue(withIdentifier: "newGroupToGroupPage", sender: self)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
