@@ -14,6 +14,8 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
     var gotPersonIndex: Int?
     var gotGroupIndex: Int?
     
+    @IBOutlet weak var personNameTag: UILabel!
+    
     @IBOutlet weak var tableViewTag: UITableView!
    
     @IBOutlet weak var tableViewPrice: UITableView!
@@ -80,6 +82,7 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         gotGroupIndex = indexOfGroup
         gotPersonIndex = indexOfPerson
+        personNameTag.text = allGroups[gotGroupIndex!].people[gotPersonIndex!].name
         tableViewTag.reloadData()
         tableViewPrice.reloadData()
         //allGroups = loadGroups()!
