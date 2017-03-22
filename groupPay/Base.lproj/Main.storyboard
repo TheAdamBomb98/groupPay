@@ -447,6 +447,7 @@
                     <connections>
                         <outlet property="makePaymentButton" destination="Tzz-BB-1cc" id="dKV-0i-xHn"/>
                         <outlet property="personNameTag" destination="Gwv-fN-Std" id="Mvd-H2-02Y"/>
+                        <outlet property="tableView" destination="GtH-sm-FnQ" id="3Kn-lM-EDo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="do3-CT-cSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
