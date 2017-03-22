@@ -543,6 +543,14 @@
                                     <segue destination="9I9-lQ-Fie" kind="show" identifier="paymentToPerson" id="tg5-H9-NA1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeo-XB-SnN">
+                                <rect key="frame" x="54" y="447" width="172" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Not Everyone In payment"/>
+                                <connections>
+                                    <segue destination="S5B-Mc-7Mf" kind="show" id="cKE-e6-vaV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -588,10 +596,48 @@
             </objects>
             <point key="canvasLocation" x="3096.8000000000002" y="492.50374812593708"/>
         </scene>
+        <!--Sub Group View Controller-->
+        <scene sceneID="6Cc-vW-Sgv">
+            <objects>
+                <viewController id="S5B-Mc-7Mf" customClass="subGroupViewController" customModule="groupPay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e6D-vj-T53"/>
+                        <viewControllerLayoutGuide type="bottom" id="SQR-x7-o1g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NRu-Xs-l9B" customClass="subGroupViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lMC-Nn-egP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="S5B-Mc-7Mf" id="Wrb-b9-4f8"/>
+                                    <outlet property="delegate" destination="S5B-Mc-7Mf" id="SbA-ha-Svi"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IQ-7g-B6X">
+                                <rect key="frame" x="22" y="20" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="Sui-Tq-qZA" kind="show" id="l1u-wn-prj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bnk-MQ-yD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3917.5999999999999" y="489.80509745127438"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ZmT-AX-eSC"/>
         <segue reference="dns-rb-dg4"/>
         <segue reference="tg5-H9-NA1"/>
+        <segue reference="l1u-wn-prj"/>
     </inferredMetricsTieBreakers>
 </document>
