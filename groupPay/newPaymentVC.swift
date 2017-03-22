@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 import os.log
-
+var groupHasNotChanged = true
 class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
     var gotGroupIndex: Int?
@@ -57,11 +57,40 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             
         }
         else{
+            
+        
         amount = ((Double)(enterMoney.text!)!)
-        //tag = enterTag.description
-        //Swift.print(tag)
-        let person = allGroups[gotGroupIndex!].people[gotPersonIndex!]
         let group = allGroups[gotGroupIndex!]
+        let person = allGroups[gotGroupIndex!].people[gotPersonIndex!]
+        if ( groupHasNotChanged ){
+            let groupAvg = amount / 4.0
+            for i in allGroups[gotGroupIndex!].people {
+                if ( i.name == person.name ) {
+                    i.currentPlusMinus += (amount - groupAvg)
+                }
+                else{
+                i.currentPlusMinus = 0.0 - groupAvg
+                }
+            }
+            }
+        else {
+            let amountOfPeople = (Double)(nonFullGroup.count)
+            let groupAvg = amount / amountOfPeople
+            for nonFull in nonFullGroup{
+                for full in 0...( allGroups[gotGroupIndex!].people.count - 1 ) {
+                    if( nonFull.name == allGroups[gotGroupIndex!].people[full].name ){
+                        if( allGroups[gotGroupIndex!].people[full].name == person.name ){
+                            allGroups[gotGroupIndex!].people[full].currentPlusMinus += ( amount - groupAvg )
+                        }
+                        else {
+                            allGroups[gotGroupIndex!].people[full].currentPlusMinus += ( 0.0 - groupAvg )
+                        }
+                    }
+                }
+            }
+        }
+            
+        
         let newPay = Receipt( amount: amount, tag: tag , person: person, group: group )
         allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
         allGroups[gotGroupIndex!].transactions.append(newPay)
@@ -75,6 +104,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         performSegue(withIdentifier: "paymentToPerson" , sender: self)
         }
     }
+    
     
 
         

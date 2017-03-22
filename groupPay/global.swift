@@ -12,6 +12,7 @@ import os.log
 var indexOfGroup: Int!
 var indexOfPerson: Int!
 var calculationsSummary: [String] = []
+var nonFullGroup: [Person] = []
 //SAVING FUNCTIONS AND DECLARATION
 
 internal var allGroups: [groupPay.Group] = []
@@ -42,6 +43,8 @@ func absoluteValue(number: Double)-> Double {
 func calculate( groupOfPeople: [Person] ) -> [Person] {
     var peopleList = groupOfPeople
     var peopleThatAreDone: [Person] = []
+    //REMOVED to allow tesing on calculating plus minus without it
+    /*
     var groupTotal = 0.0
     for i in peopleList {
         groupTotal += i.totalPaid
@@ -50,6 +53,7 @@ func calculate( groupOfPeople: [Person] ) -> [Person] {
     for i in peopleList {
         i.totalPlusMinus = i.totalPaid - groupTotalAvg
     }
+    */
     while( peopleList.count > 1 ) {
         //DOUBLE CHECK THIS
         //I think it might be sorting the wrong direction
