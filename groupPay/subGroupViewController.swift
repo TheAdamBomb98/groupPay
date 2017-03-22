@@ -21,7 +21,7 @@ class subGroupViewController: UIViewController, UITableViewDelegate, UITableView
     //table view will return int for how many rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return allGroups[gotGroupIndex!].people.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
