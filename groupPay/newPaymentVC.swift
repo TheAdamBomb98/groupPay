@@ -62,7 +62,8 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         amount = ((Double)(enterMoney.text!)!)
         let group = allGroups[gotGroupIndex!]
         let person = allGroups[gotGroupIndex!].people[gotPersonIndex!]
-        if ( groupHasNotChanged ){
+            
+        if ( nonFullGroup.count == group.people.count){
             let groupAvg = amount / 4.0
             for i in allGroups[gotGroupIndex!].people {
                 if ( i.name == person.name ) {

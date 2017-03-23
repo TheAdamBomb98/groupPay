@@ -12,6 +12,10 @@ class subGroupViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableOfSubGroup: UITableView!
     
+    @IBOutlet weak var backButton: UIButton!
+    
+    var gotGroupIndex: Int?
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -31,19 +35,35 @@ class subGroupViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+        
         let indexPath = tableView.indexPathForSelectedRow!
-        if (){
+        if ( tableOfSubGroup.cellForRow(at: indexPath)?.backgroundColor == UIColor.green){
+                   tableOfSubGroup.cellForRow(at: indexPath)?.backgroundColor = UIColor.red
         }
-        
-        tableOfSubGroup.cellForRow(at: indexPath)?.backgroundColor = UIColor.red
-        
+        else {
+            tableOfSubGroup.cellForRow(at: indexPath)?.backgroundColor = UIColor.green
+        }
+        tableOfSubGroup.deselectRow(at: indexPath, animated: false)
     }
    
-var gotGroupIndex: Int?
+
+    @IBAction func backButtonPressed(_ sender: Any) {
+        for i in tableOfSubGroup.visibleCells {
+            if( i.backgroundColor == UIColor.green ) {
+                for allGroupPeople in allGroups[gotGroupIndex!].people {
+                    if ( allGroupPeople.name == i.textLabel?.text ) {
+                        nonFullGroup.append(allGroupPeople)
+                    }
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         gotGroupIndex = indexOfGroup
+        
         // Do any additional setup after loading the view.
     }
     

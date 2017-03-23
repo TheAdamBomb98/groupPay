@@ -54,6 +54,9 @@ func calculate( groupOfPeople: [Person] ) -> [Person] {
         i.totalPlusMinus = i.totalPaid - groupTotalAvg
     }
     */
+    for i in peopleList {
+        i.totalPlusMinus = i.currentPlusMinus
+    }
     while( peopleList.count > 1 ) {
         //DOUBLE CHECK THIS
         //I think it might be sorting the wrong direction
