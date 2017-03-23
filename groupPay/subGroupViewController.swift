@@ -32,8 +32,13 @@ class subGroupViewController: UIViewController, UITableViewDelegate, UITableView
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexPath = tableView.indexPathForSelectedRow!
+        if (){
+        }
+        
         tableOfSubGroup.cellForRow(at: indexPath)?.backgroundColor = UIColor.red
+        
     }
+   
 var gotGroupIndex: Int?
     
     override func viewDidLoad() {
