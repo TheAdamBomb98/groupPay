@@ -13,6 +13,7 @@ var indexOfGroup: Int!
 var indexOfPerson: Int!
 var calculationsSummary: [String] = []
 var nonFullGroup: [Person] = []
+var phoneNums = [String]()
 //SAVING FUNCTIONS AND DECLARATION
 
 internal var allGroups: [groupPay.Group] = []

@@ -28,10 +28,13 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
     }
     
     @IBAction func sendText(_ sender: Any) {
+        for i in 0...allGroups[gotGroupIndex!].people.count - 1{
+            phoneNums.append(allGroups[gotGroupIndex!].people[i].phoneNumber)
+        }
         if MFMessageComposeViewController.canSendText(){
             let controller = MFMessageComposeViewController()
             controller.body = "blah blah blah"
-            controller.recipients = ["6122029043"]
+            controller.recipients = phoneNums
             controller.messageComposeDelegate = self
             self.present(controller, animated: true, completion: nil)
         }
