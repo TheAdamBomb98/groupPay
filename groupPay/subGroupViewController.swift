@@ -27,6 +27,7 @@ class subGroupViewController: UIViewController, UITableViewDelegate, UITableView
         var cell = UITableViewCell()
         var personName  = allGroups[gotGroupIndex!].people[indexPath.row].name
         cell.textLabel?.text = personName
+        cell.backgroundColor = UIColor.green
         return cell
     }
     
