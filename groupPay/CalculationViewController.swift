@@ -5,10 +5,10 @@
 //  Created by WEST, CARTER on 3/16/17.
 //  Copyright © 2017 FORD, ADAM. All rights reserved.
 //
-
+import MessageUI
 import Foundation
 import UIKit
-internal class CalculationViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
+internal class CalculationViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate{
     
     @IBOutlet weak var labelOfGroup: UILabel!
    
@@ -21,6 +21,23 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
     //how many sections are in the view
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func sendText(_ sender: Any) {
+        if MFMessageComposeViewController.canSendText(){
+            let controller = MFMessageComposeViewController()
+            controller.body = "blah blah blah"
+            controller.recipients = ["6122029043"]
+            controller.messageComposeDelegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
+        else{
+            print("idk")
+        }
     }
     
     //table view will return int for how many rows
