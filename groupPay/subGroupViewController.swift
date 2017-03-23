@@ -2,18 +2,16 @@
 //  subGroupViewController.swift
 //  groupPay
 //
-//  Created by WEST, CARTER on 3/22/17.
+//  Created by WEST, CARTER on 3/23/17.
 //  Copyright © 2017 FORD, ADAM. All rights reserved.
 //
 
 import Foundation
 import UIKit
 class subGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+
+    @IBOutlet weak var tableOfSubGroup: UITableView!
     
-    var gotGroupIndex: Int?
-    var gotPersonIndex: Int?
-    
-    //how many sections are in the view
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -23,15 +21,21 @@ class subGroupViewController: UIViewController, UITableViewDelegate, UITableView
         
         return allGroups[gotGroupIndex!].people.count
     }
+    
+    //what is in the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell()
-        cell.textLabel?.text =  allGroups[gotGroupIndex!].people[indexPath.row].name
+        var cell = UITableViewCell()
+        var personName  = allGroups[gotGroupIndex!].people[indexPath.row].name
+        cell.textLabel?.text = personName
         return cell
     }
+    
+var gotGroupIndex: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         gotGroupIndex = indexOfGroup
-        gotPersonIndex = indexOfPerson
-        }
+        // Do any additional setup after loading the view.
+    }
+    
 }
