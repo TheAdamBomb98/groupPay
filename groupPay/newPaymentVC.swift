@@ -75,7 +75,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             }
             }
         else {
-            let amountOfPeople = (Double)(nonFullGroup.count)
+            let amountOfPeople = (Double)(nonFullGroup.count - 1)
             let groupAvg = amount / amountOfPeople
             for nonFull in nonFullGroup{
                 for full in 0...( allGroups[gotGroupIndex!].people.count - 1 ) {
