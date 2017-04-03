@@ -61,7 +61,9 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
+            //REVERSE PLUS MINUS HERE!!!
             allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.remove(at: indexPath.row)
+            //DELETE FROM THE GROUP ARRAY OF TRANSACTIONS TOO
             tableView.deleteRows(at: [indexPath],  with: UITableViewRowAnimation.automatic)
             saveGroups()
         }
