@@ -67,6 +67,8 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             paymentGroup.people = nonFullGroup
         }
             
+        nonFullGroup = []
+        
         let groupAvg = amount / (Double)(paymentGroup.people.count)
             
         for i in paymentGroup.people {
@@ -79,8 +81,12 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         }
             
         for paymentGroupPeople in paymentGroup.people {
-                
+            for allGroupPeople in allGroups[gotGroupIndex!].people {
+                if paymentGroupPeople.name == allGroupPeople.name {
+                    allGroupPeople.currentPlusMinus = paymentGroupPeople.currentPlusMinus
+                }
             }
+        }
             
         /*
         if ( groupHasNotChanged ){
