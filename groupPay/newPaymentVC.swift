@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 import os.log
-var groupHasNotChanged = true
+var groupHasChanged = false
 class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
     var gotGroupIndex: Int?
@@ -60,13 +60,33 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             
         
         amount = ((Double)(enterMoney.text!)!)
-        let group = allGroups[gotGroupIndex!]
-        let person = allGroups[gotGroupIndex!].people[gotPersonIndex!]
+        var paymentGroup = allGroups[gotGroupIndex!]
+        let payer = allGroups[gotGroupIndex!].people[gotPersonIndex!]
+        
+        if( groupHasChanged ) {
+            paymentGroup.people = nonFullGroup
+        }
             
+        let groupAvg = amount / (Double)(paymentGroup.people.count)
+            
+        for i in paymentGroup.people {
+            if ( i.name == payer.name ) {
+                i.currentPlusMinus += ( amount - groupAvg)
+            }
+            else {
+                i.currentPlusMinus -= groupAvg
+            }
+        }
+            
+        for paymentGroupPeople in paymentGroup.people {
+                
+            }
+            
+        /*
         if ( groupHasNotChanged ){
             let groupAvg = amount / (Double)(group.people.count)
             for i in allGroups[gotGroupIndex!].people {
-                if ( i.name == person.name ) {
+                if ( i.name == payer.name ) {
                     i.currentPlusMinus += (amount - groupAvg)
                 }
                 else{
@@ -75,12 +95,12 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             }
             }
         else {
-            let amountOfPeople = (Double)(nonFullGroup.count - 1)
+            let amountOfPeople = (Double)(paymentGroup.count - 1)
             let groupAvg = amount / amountOfPeople
-            for nonFull in nonFullGroup{
+            for nonFull in paymentGroup{
                 for full in 0...( allGroups[gotGroupIndex!].people.count - 1 ) {
                     if( nonFull.name == allGroups[gotGroupIndex!].people[full].name ){
-                        if( allGroups[gotGroupIndex!].people[full].name == person.name ){
+                        if( allGroups[gotGroupIndex!].people[full].name == payer.name ){
                             allGroups[gotGroupIndex!].people[full].currentPlusMinus += ( amount - groupAvg )
                         }
                         else {
@@ -90,9 +110,9 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
                 }
             }
         }
-            
+        */
         
-        let newPay = Receipt( amount: amount, tag: tag , person: person, group: group )
+        let newPay = Receipt( amount: amount, tag: tag , person: payer, group: paymentGroup )
         allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
         allGroups[gotGroupIndex!].transactions.append(newPay)
         

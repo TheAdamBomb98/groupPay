@@ -54,11 +54,13 @@ class subGroupViewController: UIViewController, UITableViewDelegate, UITableView
                 for allGroupPeople in allGroups[gotGroupIndex!].people {
                     if ( allGroupPeople.name == i.textLabel?.text ) {
                         nonFullGroup.append(allGroupPeople)
-                        groupHasNotChanged = false
                         
                     }
                 }
             }
+        }
+        if ( !(nonFullGroup.count == allGroups[gotGroupIndex!].people.count) ) {
+            groupHasChanged = true
         }
     }
     
