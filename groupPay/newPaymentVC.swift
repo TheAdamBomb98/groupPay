@@ -59,20 +59,31 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         else{
             
         
-        amount = ((Double)(enterMoney.text!)!)
-        var paymentGroup = allGroups[gotGroupIndex!]
+            amount = ((Double)(enterMoney.text!)!)
+            var paymentGroup = allGroups[gotGroupIndex!].people.map { $0.copy() } as! [Person]
+            
+            
+            /*
+            var paymentGroup: [Person] = []//allGroups[gotGroupIndex!]
+            for x in allGroups[gotGroupIndex!].people
+            {
+                paymentGroup.append(x)
+            }
+ */
+            
         let payer = allGroups[gotGroupIndex!].people[gotPersonIndex!]
         
         if( groupHasChanged ) {
-            paymentGroup.people = nonFullGroup
+            paymentGroup = nonFullGroup
         }
+            
             
         nonFullGroup = []
         
-        let groupAvg = amount / (Double)(paymentGroup.people.count)
+        let groupAvg = amount / (Double)(paymentGroup.count)
             
-        for i in paymentGroup.people {
-            if ( i.name == payer.name ) {
+        for i in paymentGroup {
+            if (i.name == payer.name ) {
                 i.currentPlusMinus += ( amount - groupAvg)
             }
             else {
@@ -80,7 +91,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             }
         }
             
-        for paymentGroupPeople in paymentGroup.people {
+        for paymentGroupPeople in paymentGroup {
             for allGroupPeople in allGroups[gotGroupIndex!].people {
                 if paymentGroupPeople.name == allGroupPeople.name {
                     allGroupPeople.currentPlusMinus = paymentGroupPeople.currentPlusMinus
@@ -118,7 +129,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         }
         */
         
-        let newPay = Receipt( amount: amount, tag: tag , person: payer, group: paymentGroup )
+        let newPay = Receipt( amount: amount, tag: tag , person: payer, group: allGroups[gotGroupIndex!] )
         allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
         allGroups[gotGroupIndex!].transactions.append(newPay)
         
