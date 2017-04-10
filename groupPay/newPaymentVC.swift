@@ -60,7 +60,11 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             
         
             amount = ((Double)(enterMoney.text!)!)
-            var paymentGroup = allGroups[gotGroupIndex!].people.map { $0.copy() } as! [Person]
+            var paymentGroup: [Person] = []
+            for x in allGroups[gotGroupIndex!].people {
+                paymentGroup.append(x)
+            }
+            //var paymentGroup = allGroups[gotGroupIndex!].people.map { $0.copy() } as! [Person]
             
             
             /*
