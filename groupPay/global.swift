@@ -14,6 +14,7 @@ var indexOfPerson: Int!
 var calculationsSummary: [String] = []
 var nonFullGroup: [Person] = []
 var phoneNums = [String]()
+//var tags = [String]()
 //SAVING FUNCTIONS AND DECLARATION
 
 internal var allGroups: [groupPay.Group] = []

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2CFDFBF61E845AE300922CBE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CFDFBF51E845AE300922CBE /* MessageUI.framework */; };
 		4B3ACEC21E23F6B8004C5D5D /* GroupPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ACEC11E23F6B8004C5D5D /* GroupPageController.swift */; };
+		4B47818D1E9D2E3A000BCF45 /* settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47818C1E9D2E3A000BCF45 /* settings.swift */; };
 		4B498F2B1E4A30360088AE29 /* PersonPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B498F2A1E4A30360088AE29 /* PersonPageController.swift */; };
 		4B6159971E7C3E6200013B82 /* PersonPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B498F2A1E4A30360088AE29 /* PersonPageController.swift */; };
 		4BB90C8D1DFF0C0500A73C15 /* groupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		2CFDFBF51E845AE300922CBE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4B3ACEC11E23F6B8004C5D5D /* GroupPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPageController.swift; sourceTree = "<group>"; };
+		4B47818C1E9D2E3A000BCF45 /* settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settings.swift; sourceTree = "<group>"; };
 		4B498F2A1E4A30360088AE29 /* PersonPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonPageController.swift; sourceTree = "<group>"; };
 		4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupsTableViewCell.swift; sourceTree = "<group>"; };
 		BBD26F9D1E7AE6F3000BADFF /* CalculationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				FE57FDE31E0057C600CDD9C2 /* personClass.swift */,
 				FE57FDE51E00584800CDD9C2 /* receiptClass.swift */,
 				FE14844D1DF9C428003B48E2 /* Main.storyboard */,
+				4B47818C1E9D2E3A000BCF45 /* settings.swift */,
 				BBF9F3191E84252F00780F60 /* subGroupViewController.swift */,
 				FE5F18B81E40F15300A0ACEA /* global.swift */,
 				FE0B974D1E044C54002390EA /* newGroupViewController.swift */,
@@ -318,6 +321,7 @@
 				FE14844A1DF9C428003B48E2 /* AppDelegate.swift in Sources */,
 				4BB90C8D1DFF0C0500A73C15 /* groupsTableViewCell.swift in Sources */,
 				FE57FDE61E00584800CDD9C2 /* receiptClass.swift in Sources */,
+				4B47818D1E9D2E3A000BCF45 /* settings.swift in Sources */,
 				4B3ACEC21E23F6B8004C5D5D /* GroupPageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
