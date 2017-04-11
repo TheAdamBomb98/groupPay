@@ -56,9 +56,8 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             self.present(alertController, animated: true, completion: nil)
             
         }
-        else{
+        else {
             
-        
             amount = ((Double)(enterMoney.text!)!)
             var paymentGroup: [Person] = []
             for x in allGroups[gotGroupIndex!].people {
