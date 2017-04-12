@@ -578,6 +578,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Not Everyone In payment"/>
                                 <connections>
+                                    <action selector="subgroupButton:" destination="Sui-Tq-qZA" eventType="touchUpInside" id="FyD-Y8-S3O"/>
                                     <segue destination="rzA-Yo-bDh" kind="show" id="WWd-dO-CBH"/>
                                 </connections>
                             </button>

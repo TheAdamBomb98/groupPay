@@ -32,10 +32,12 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         allGroups = loadGroups()!
         enterName.text = allGroups[gotGroupIndex!].people[gotPersonIndex!].name
         self.enterMoney.keyboardType = UIKeyboardType.decimalPad
-        
         enterTag.dataSource = self
         enterTag.delegate = self
-        
+        if enterMoneyAmount != nil{
+            enterMoney.text = String(enterMoneyAmount)
+            enterMoneyAmount = nil
+        }
 
     }
     
@@ -44,6 +46,9 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     }
 
     
+    @IBAction func subgroupButton(_ sender: UIButton) {
+        enterMoneyAmount = Double(enterMoney.text!)
+    }
    
     @IBAction func addPayment(_ sender: AnyObject) {
         var amount = 0.0
