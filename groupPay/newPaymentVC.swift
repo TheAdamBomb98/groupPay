@@ -84,7 +84,8 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         if( groupHasChanged ) {
             paymentGroup = nonFullGroup
         }
-            
+        
+        groupHasChanged = false
             
         nonFullGroup = []
         
@@ -136,8 +137,10 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             }
         }
         */
+            
+            let groupWithNameAndCorrectListOfPeople = Group( date: NSDate() , name: allGroups[gotGroupIndex!].name , people: paymentGroup , transactions: allGroups[gotGroupIndex!].transactions )
         
-        let newPay = Receipt( amount: amount, tag: tag , person: payer, group: allGroups[gotGroupIndex!] )
+        let newPay = Receipt( amount: amount, tag: tag , person: payer, group: groupWithNameAndCorrectListOfPeople )
         allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
         allGroups[gotGroupIndex!].transactions.append(newPay)
         

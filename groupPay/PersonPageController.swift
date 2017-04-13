@@ -61,8 +61,39 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            //REVERSE PLUS MINUS HERE!!!
+            
+            let currentTrans =  allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions[indexPath.row]
+            let payer = currentTrans.person
+            let tempPaymentGroup = currentTrans.group
+            var paymentGroup: [Person] = []
+            let amount = currentTrans.amount
+            
+            for i in tempPaymentGroup.people {
+                paymentGroup.append(i)
+            }
+            
+            
+            let groupAvg = amount / (Double)(paymentGroup.count)
+            
+            for i in paymentGroup {
+                if (i.name == payer.name ) {
+                    i.currentPlusMinus -= ( amount - groupAvg)
+                }
+                else {
+                    i.currentPlusMinus += groupAvg
+                }
+            }
+            
+            for paymentGroupPeople in paymentGroup {
+                for allGroupPeople in allGroups[gotGroupIndex!].people {
+                    if paymentGroupPeople.name == allGroupPeople.name {
+                        allGroupPeople.currentPlusMinus = paymentGroupPeople.currentPlusMinus
+                    }
+                }
+            }
+            
             allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.remove(at: indexPath.row)
+            
             //DELETE FROM THE GROUP ARRAY OF TRANSACTIONS TOO
             tableView.deleteRows(at: [indexPath],  with: UITableViewRowAnimation.automatic)
             saveGroups()

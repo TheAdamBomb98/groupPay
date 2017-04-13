@@ -65,6 +65,7 @@ func calculate( groupOfPeople: [Person] ) -> [Person] {
         //I think it might be sorting the wrong direction
         //peopleList.sorted(by: { $1.totalPlusMinus > $0.totalPlusMinus})
         peopleList = peopleList.sorted(by: { $0.totalPlusMinus < $1.totalPlusMinus })
+        //More efficient to check all immediately???
         if (peopleList[0].totalPlusMinus < 0.01 && peopleList[0].totalPlusMinus > -0.01){
             break
         }
