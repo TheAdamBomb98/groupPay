@@ -31,7 +31,7 @@ func saveGroups() {
 
 func loadGroups() -> [Group]? {
     return NSKeyedUnarchiver.unarchiveObject(withFile: Group.ArchiveURL.path) as? [Group]
-    
+    //Users/758743/Desktop/MAD/groupPay/groupPay
 }
 
 func absoluteValue(number: Double)-> Double {

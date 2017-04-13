@@ -3,7 +3,7 @@
 //  newPaymentVC.swift
 //  groupPay
 //
-//  Created by BLANCHARD, JENNIFER on 2/13/17.
+//  Created by ADAM, FORD and CARTER, WEST, and kinda JOE, STROBEL on 2/13/17.
 //  Copyright © 2017 FORD, ADAM. All rights reserved.
 //
 
@@ -11,6 +11,8 @@ import Foundation
 import UIKit
 import os.log
 var groupHasChanged = false
+var tag = "Gas"
+
 class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
     var gotGroupIndex: Int?
@@ -23,7 +25,6 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     @IBOutlet weak var enterTag: UIPickerView!
     let pickerData = ["Gas","Breakfast","Lunch","Dinner","Food","Snacks","Hotel","Tickets","Other"]
     
-    var tag = "Gas"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,13 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             enterMoney.text = String(enterMoneyAmount)
             enterMoneyAmount = nil
         }
-
+        var indexofTag = 0
+        for i in 0...(pickerData.count - 1) {
+            if pickerData[i] == tag {
+                indexofTag = i
+            }
+        }
+        enterTag.selectRow(indexofTag, inComponent: 0, animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -112,7 +112,7 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
         gotGroupIndex = indexOfGroup
         gotPersonIndex = indexOfPerson
         personNameTag.text = allGroups[gotGroupIndex!].people[gotPersonIndex!].name
-        
+        tag = "Gas"
         //allGroups = loadGroups()!
         // Do any additional setup after loading the view, typically from a nib.
 
