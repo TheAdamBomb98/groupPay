@@ -24,6 +24,10 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var makePaymentButton: UIButton!
     
+    @IBOutlet weak var plusMinusLabel: UILabel!
+    
+    @IBOutlet weak var totalPaidLabel: UILabel!
+    
     //how many sections are in the view
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -113,6 +117,13 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
         gotPersonIndex = indexOfPerson
         personNameTag.text = allGroups[gotGroupIndex!].people[gotPersonIndex!].name
         tag = "Gas"
+        totalPaidLabel.text = "$" + (String)((Double)((Int)(allGroups[gotGroupIndex!].people[gotPersonIndex!].totalPaid * 100) ) / 100)
+        if ( allGroups[gotGroupIndex!].people[gotPersonIndex!].currentPlusMinus > 0) {
+            plusMinusLabel.text = "+" + (String)((Double)((Int)(allGroups[gotGroupIndex!].people[gotPersonIndex!].currentPlusMinus * 100)) / 100 )
+        }
+        else {
+        plusMinusLabel.text = (String)((Double)((Int)(allGroups[gotGroupIndex!].people[gotPersonIndex!].currentPlusMinus * 100)) / 100)
+        }
         //allGroups = loadGroups()!
         // Do any additional setup after loading the view, typically from a nib.
 
