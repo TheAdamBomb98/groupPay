@@ -26,7 +26,7 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+    /*
     @IBAction func sendText(_ sender: Any) {
         for i in 0...allGroups[gotGroupIndex!].people.count - 1{
             phoneNums.append(allGroups[gotGroupIndex!].people[i].phoneNumber)
@@ -42,7 +42,7 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
             print("idk")
         }
     }
-    
+   */ 
     //table view will return int for how many rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
