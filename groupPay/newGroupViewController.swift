@@ -15,7 +15,7 @@ import os.log
 
 internal let zero = 0.0
 
-class newGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class newGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     @IBOutlet weak var nameField: UITextField!
     
     @IBOutlet weak var phoneField: UITextField!
@@ -32,6 +32,106 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
     //@IBAction func closeOnPopUp(_ sender: AnyObject) {
     //noNameError.isHidden = true
     //}
+    /*
+    func didChangeText(textField:UITextField)
+    {
+        let range = Range(uncheckedBounds: (0, textField.text!.characters.count))
+        let newString = (phoneField.text! as NSString).replacingCharacters(in: range, with: textField.text)
+        let components = newString.components(separatedBy: NSCharacterSet.decimalDigits.inverted)
+        
+        let decimalString = components.joined(separator: "") as NSString
+        let length = decimalString.length
+        let hasLeadingOne = length > 0 && decimalString.character(at: 0) == (1 as unichar)
+        
+        if length == 0 || (length > 10 && !hasLeadingOne) || length > 11
+        {
+            let newLength = (phoneField.text! as NSString).length + (string as NSString).length - range.length as Int
+            
+            return (newLength > 10) ? false : true
+        }
+        var index = 0 as Int
+        let formattedString = NSMutableString()
+        
+        if hasLeadingOne
+        {
+            formattedString.append("1 ")
+            index += 1
+        }
+        if (length - index) > 3
+        {
+            let areaCode = decimalString.substring(with: NSMakeRange(index, 3))
+            formattedString.appendFormat("(%@)", areaCode)
+            index += 3
+        }
+        if length - index > 3
+        {
+            let prefix = decimalString.substring(with: NSMakeRange(index, 3))
+            formattedString.appendFormat("%@-", prefix)
+            index += 3
+        }
+        
+        let remainder = decimalString.substring(from: index)
+        formattedString.append(remainder)
+        phoneField.text = formattedString as String
+    }
+ */
+    var totalString = 13
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
+         if (textField == phoneField)
+        {
+            let newString = (phoneField.text! as NSString).replacingCharacters(in: range, with: string)
+            let components = newString.components(separatedBy: NSCharacterSet.decimalDigits.inverted)
+            
+            let decimalString = components.joined(separator: "") as NSString
+            let length = decimalString.length
+            let hasLeadingOne = length > 0 && decimalString.hasPrefix("1")
+            
+            if length == 0 || (length > 10 && !hasLeadingOne) || length > 11
+            {
+                let newLength = (phoneField.text! as NSString).length + (string as NSString).length - range.length as Int
+                
+                return (newLength > 10) ? false : true
+            }
+            var index = 0 as Int
+            let formattedString = NSMutableString()
+            
+            if hasLeadingOne
+            {
+                formattedString.append("1")
+                index += 1
+            }
+            if (length - index) > 3
+            {
+                let areaCode = decimalString.substring(with: NSMakeRange(index, 3))
+                formattedString.appendFormat("(%@)", areaCode)
+                index += 3
+            }
+            if length - index > 3
+            {
+                let prefix = decimalString.substring(with: NSMakeRange(index, 3))
+                formattedString.appendFormat("%@-", prefix)
+                index += 3
+            }
+            
+            let remainder = decimalString.substring(from: index)
+            formattedString.append(remainder)
+            phoneField.text = formattedString as String
+            if (formattedString.length == 13 && !hasLeadingOne){
+             
+                self.view.endEditing(true)
+            }
+            if(formattedString.length == 14){
+                self.view.endEditing(true)
+            }
+            return false
+        }
+        else
+        {
+            return true
+        }
+    }
+    
     
     //how many sections are in the view
     func numberOfSections(in TableView: UITableView) -> Int {
@@ -54,8 +154,15 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
     var tempPeople = [Person]()
     var currentIndex = 0
     @IBAction func addPersonButtonPressed(_ sender: AnyObject) {
+        if (nameField?.text == "" || nameField?.text?.characters.first! == " " )
+        {
+            let alertControllerP = UIAlertController(title: "Please Enter a Name", message: "Try removing a space from the first character", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel)
+            alertControllerP.addAction(okAction)
+            self.present(alertControllerP, animated: true, completion: nil)
+        }
         
-        
+        else{
         
         let x = Person(name: nameField.text!, totalPlusMinus : zero, transactions: [], totalPaid: 0.0, currentPlusMinus: 0.0, phoneNumber: phoneField.text!, email: emailField.text!, toPaySummary: "", toBePaidSummary: "")
         
@@ -66,6 +173,7 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
         phoneField.text = ""
         emailField.text = ""
         TableOfPeople.reloadData()
+        }
     }
     
     @IBAction func finalizeGroupButtonPressed(_ sender: AnyObject) {
@@ -114,6 +222,7 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         self.emailField.keyboardType = UIKeyboardType.emailAddress
         self.phoneField.keyboardType = UIKeyboardType.numberPad
+        //self.phoneField.addTarget(self, action: #selector(self.didChangeText(textField:)), for: .editingChanged)
         // Do any additional setup after loading the view.
     }
     
