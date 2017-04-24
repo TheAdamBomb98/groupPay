@@ -71,7 +71,7 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
             let tempPaymentGroup = currentTrans.group
             var paymentGroup: [Person] = []
             let amount = currentTrans.amount
-            
+            allGroups[gotGroupIndex!].people[gotPersonIndex!].totalPaid -= amount
             for i in tempPaymentGroup.people {
                 paymentGroup.append(i)
             }
@@ -95,8 +95,14 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
                     }
                 }
             }
-            
-            allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.remove(at: indexPath.row)
+            totalPaidLabel.text = "$" + (String)((Double)((Int)(allGroups[gotGroupIndex!].people[gotPersonIndex!].totalPaid * 100) ) / 100)
+            if ( allGroups[gotGroupIndex!].people[gotPersonIndex!].currentPlusMinus > 0) {
+                plusMinusLabel.text = "+" + (String)((Double)((Int)(allGroups[gotGroupIndex!].people[gotPersonIndex!].currentPlusMinus * 100)) / 100 )
+            }
+            else {
+                plusMinusLabel.text = (String)((Double)((Int)(allGroups[gotGroupIndex!].people[gotPersonIndex!].currentPlusMinus * 100)) / 100)
+            }
+                allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.remove(at: indexPath.row)
             
             //DELETE FROM THE GROUP ARRAY OF TRANSACTIONS TOO
             tableView.deleteRows(at: [indexPath],  with: UITableViewRowAnimation.automatic)

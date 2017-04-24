@@ -20,6 +20,11 @@ var enterMoneyAmount: Double!
 
 internal var allGroups: [groupPay.Group] = []
 
+func removeAllButNumbersFromString(text: String) -> String {
+    let okayChars : Set<Character> =
+        Set("0123456789".characters)
+    return String(text.characters.filter {okayChars.contains($0) })
+}
 func saveGroups() {
     let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(allGroups, toFile: Group.ArchiveURL.path)
     if isSuccessfulSave {
