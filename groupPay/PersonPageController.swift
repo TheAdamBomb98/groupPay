@@ -103,7 +103,11 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
                 plusMinusLabel.text = (String)((Double)((Int)(allGroups[gotGroupIndex!].people[gotPersonIndex!].currentPlusMinus * 100)) / 100)
             }
                 allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.remove(at: indexPath.row)
-            
+            for i in 0...(allGroups[gotGroupIndex!].transactions.count - 1) {
+                if (allGroups[gotGroupIndex!].transactions[i].date.isEqual(to: currentTrans.date as Date)) {
+                    allGroups[gotGroupIndex!].transactions.remove(at: i)
+                }
+            }
             //DELETE FROM THE GROUP ARRAY OF TRANSACTIONS TOO
             tableView.deleteRows(at: [indexPath],  with: UITableViewRowAnimation.automatic)
             saveGroups()

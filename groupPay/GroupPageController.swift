@@ -18,6 +18,8 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var groupNameLabel: UILabel!
     
+    @IBOutlet weak var groupTotalLabel: UILabel!
+    
     //how many sections are in the view
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -57,6 +59,11 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         gotGroupIndex = indexOfGroup
         groupNameLabel.text = allGroups[gotGroupIndex!].name
+        var groupTotal = 0.0
+        for i in allGroups[gotGroupIndex!].transactions {
+            groupTotal += i.amount
+        }
+        groupTotalLabel.text = "$" + (String)(groupTotal)
     }
  
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

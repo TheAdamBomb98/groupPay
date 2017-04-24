@@ -147,7 +147,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             
             let groupWithNameAndCorrectListOfPeople = Group( date: NSDate() , name: allGroups[gotGroupIndex!].name , people: paymentGroup , transactions: allGroups[gotGroupIndex!].transactions )
         
-        let newPay = Receipt( amount: amount, tag: tag , person: payer, group: groupWithNameAndCorrectListOfPeople )
+            let newPay = Receipt( amount: amount, tag: tag , person: payer, group: groupWithNameAndCorrectListOfPeople, date: NSDate() )
         allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
         allGroups[gotGroupIndex!].transactions.append(newPay)
         
