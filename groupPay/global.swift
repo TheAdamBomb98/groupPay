@@ -16,6 +16,7 @@ var nonFullGroup: [Person] = []
 var phoneNums = [String]()
 var enterMoneyAmount: Double!
 var calculations = [String]()
+var bodyOfText = String()
 //var tags = [String]()
 //SAVING FUNCTIONS AND DECLARATION
 

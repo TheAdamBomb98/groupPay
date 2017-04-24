@@ -18,6 +18,7 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
     var gotGroupIndex: Int?
     var calculatedList: [Person] = []
     var fullSummary: String = ""
+    var newPhoneNums: [String] = []
     //how many sections are in the view
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -29,13 +30,20 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
     
     
     @IBAction func sendText(_ sender: UIButton) {
+        
         for i in 0...allGroups[gotGroupIndex!].people.count - 1{
             phoneNums.append(allGroups[gotGroupIndex!].people[i].phoneNumber)
         }
+        for i in 0...calculationsSummary.count - 1{
+            bodyOfText += (calculationsSummary[i] + "\n")
+        }
+        for i in 0...phoneNums.count - 1{
+            newPhoneNums.append(removeAllButNumbersFromString(text: phoneNums[i]))
+        }
         if MFMessageComposeViewController.canSendText(){
             let controller = MFMessageComposeViewController()
-            controller.body = ""
-            controller.recipients = phoneNums
+            controller.body = bodyOfText
+            controller.recipients = newPhoneNums
             controller.messageComposeDelegate = self
             self.present(controller, animated: true, completion: nil)
         }
@@ -64,5 +72,7 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
         var tempList = allGroups[gotGroupIndex!].people
         calculationsSummary = []
         calculatedList = calculate(groupOfPeople: tempList)
+        newPhoneNums = []
+        bodyOfText = ""
     }
 }
