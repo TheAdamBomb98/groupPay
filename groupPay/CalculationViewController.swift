@@ -26,14 +26,15 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         self.dismiss(animated: true, completion: nil)
     }
-    /*
-    @IBAction func sendText(_ sender: Any) {
+    
+    
+    @IBAction func sendText(_ sender: UIButton) {
         for i in 0...allGroups[gotGroupIndex!].people.count - 1{
             phoneNums.append(allGroups[gotGroupIndex!].people[i].phoneNumber)
         }
         if MFMessageComposeViewController.canSendText(){
             let controller = MFMessageComposeViewController()
-            controller.body = "blah blah blah"
+            controller.body = ""
             controller.recipients = phoneNums
             controller.messageComposeDelegate = self
             self.present(controller, animated: true, completion: nil)
@@ -42,7 +43,7 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
             print("idk")
         }
     }
-   */ 
+    
     //table view will return int for how many rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
