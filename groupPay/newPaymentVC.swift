@@ -20,6 +20,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     
     
     
+    @IBOutlet weak var commentField: UITextField!
     @IBOutlet weak var enterName: UILabel!
     @IBOutlet weak var enterMoney: UITextField!
     @IBOutlet weak var enterTag: UIPickerView!
@@ -147,7 +148,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             
             let groupWithNameAndCorrectListOfPeople = Group( date: NSDate() , name: allGroups[gotGroupIndex!].name , people: paymentGroup , transactions: allGroups[gotGroupIndex!].transactions )
         
-            let newPay = Receipt( amount: amount, tag: tag , person: payer, group: groupWithNameAndCorrectListOfPeople, date: NSDate() )
+            let newPay = Receipt( amount: amount, tag: tag , person: payer, group: groupWithNameAndCorrectListOfPeople, date: NSDate(), comment: commentField.text! )
         allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
         allGroups[gotGroupIndex!].transactions.append(newPay)
         

@@ -71,6 +71,7 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
             let tempPaymentGroup = currentTrans.group
             var paymentGroup: [Person] = []
             let amount = currentTrans.amount
+            let transDate = currentTrans.date
             allGroups[gotGroupIndex!].people[gotPersonIndex!].totalPaid -= amount
             for i in tempPaymentGroup.people {
                 paymentGroup.append(i)
@@ -104,8 +105,9 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
             }
                 allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.remove(at: indexPath.row)
             for i in 0...(allGroups[gotGroupIndex!].transactions.count - 1) {
-                if (allGroups[gotGroupIndex!].transactions[i].date.isEqual(to: currentTrans.date as Date)) {
+                if ((allGroups[gotGroupIndex!].transactions[i].date).isEqual(to: transDate as Date)) {
                     allGroups[gotGroupIndex!].transactions.remove(at: i)
+                    break
                 }
             }
             //DELETE FROM THE GROUP ARRAY OF TRANSACTIONS TOO

@@ -19,6 +19,7 @@ class Receipt: NSObject, NSCoding {
     var person: Person
     var group: Group
     var date: NSDate
+    var comment: String
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -32,10 +33,11 @@ class Receipt: NSObject, NSCoding {
         static let person = "person"
         static let group = "group"
         static let date = "date"
+        static let comment = "comment"
         }
     
     //MARK: Initialization
-    init( amount: Double , tag: String , person: Person , group: Group , date: NSDate ){
+    init( amount: Double , tag: String , person: Person , group: Group , date: NSDate , comment: String ){
        
         // Initialize stored properties.
         self.amount = amount
@@ -43,6 +45,7 @@ class Receipt: NSObject, NSCoding {
         self.person = person
         self.group = group
         self.date = date
+        self.comment = comment
     }
     
     //MARK: NSCoding
@@ -53,6 +56,7 @@ class Receipt: NSObject, NSCoding {
         aCoder.encode(person, forKey: PropertyKey.person)
         aCoder.encode(group, forKey: PropertyKey.group)
         aCoder.encode(date, forKey: PropertyKey.date)
+        aCoder.encode(comment, forKey: PropertyKey.comment)
     }
 
     required convenience init?(coder aDecoder: NSCoder) {
@@ -63,10 +67,11 @@ class Receipt: NSObject, NSCoding {
         let person = aDecoder.decodeObject(forKey: PropertyKey.person) as! Person
         let group = aDecoder.decodeObject(forKey: PropertyKey.group) as! Group
         let date = aDecoder.decodeObject(forKey: PropertyKey.date) as! NSDate
+        let comment = aDecoder.decodeObject(forKey: PropertyKey.comment) as! String
         
         
         // Must call designated initializer.
-        self.init(amount: amount, tag: tag, person: person, group: group, date: date)
+        self.init(amount: amount, tag: tag, person: person, group: group, date: date, comment: comment)
     }
 }
 
