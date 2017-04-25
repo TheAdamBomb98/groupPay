@@ -30,7 +30,8 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
     
     
     @IBAction func sendText(_ sender: UIButton) {
-        
+        newPhoneNums = []
+        bodyOfText = ""
         for i in 0...allGroups[gotGroupIndex!].people.count - 1{
             phoneNums.append(allGroups[gotGroupIndex!].people[i].phoneNumber)
         }
@@ -72,7 +73,6 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
         var tempList = allGroups[gotGroupIndex!].people
         calculationsSummary = []
         calculatedList = calculate(groupOfPeople: tempList)
-        newPhoneNums = []
-        bodyOfText = ""
+        
     }
 }
