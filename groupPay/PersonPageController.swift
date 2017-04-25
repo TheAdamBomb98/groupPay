@@ -48,14 +48,26 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
     //what is in the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        
         let tag = allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions[indexPath.row].tag
+        let comment = allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions[indexPath.row].comment
+        
         cell.textLabel?.text = tag
+        
         let price = allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions[indexPath.row].amount
         let label1 = UILabel(frame: CGRect(x: cell.frame.width/2, y: 0, width: (cell.frame.width/2 + 40), height: cell.frame.height))
+        let label2 = UILabel(frame: CGRect(x: cell.frame.width/3, y: 0, width: (cell.frame.width/2 + 40), height: cell.frame.height))
+        
         let priceD = "$" + String(price)
+        
         label1.text = priceD
         label1.textAlignment = .right
+        
+        label2.text = comment
+        label2.textAlignment = .left
+        
         cell.addSubview(label1)
+        cell.addSubview(label2)
         return cell
     }
     
