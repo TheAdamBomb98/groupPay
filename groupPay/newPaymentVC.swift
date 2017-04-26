@@ -20,11 +20,12 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     
     
     
+    @IBOutlet weak var enterPerson: UIPickerView!
     @IBOutlet weak var commentField: UITextField!
-    @IBOutlet weak var enterName: UILabel!
     @IBOutlet weak var enterMoney: UITextField!
     @IBOutlet weak var enterTag: UIPickerView!
-    let pickerData = ["Gas","Breakfast","Lunch","Dinner","Food","Snacks","Hotel","Tickets","Other"]
+    let enterTagPickerData = ["Gas","Breakfast","Lunch","Dinner","Food","Snacks","Hotel","Tickets","Other"]
+    var enterPersonPickerData: [String] = []
     
     
     override func viewDidLoad() {
@@ -32,7 +33,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         gotGroupIndex = indexOfGroup
         gotPersonIndex = indexOfPerson
         allGroups = loadGroups()!
-        enterName.text = allGroups[gotGroupIndex!].people[gotPersonIndex!].name
+        enterTag.tag = 0
         self.enterMoney.keyboardType = UIKeyboardType.decimalPad
         enterTag.dataSource = self
         enterTag.delegate = self
@@ -41,8 +42,8 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             enterMoneyAmount = nil
         }
         var indexofTag = 0
-        for i in 0...(pickerData.count - 1) {
-            if pickerData[i] == tag {
+        for i in 0...(enterTagPickerData.count - 1) {
+            if enterTagPickerData[i] == tag {
                 indexofTag = i
             }
         }
@@ -172,21 +173,33 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     //MARK: - Delegates and data sources
     //MARK: Data Sources
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
         return 1
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        if (pickerView.tag == 0) {
+            return enterTagPickerData.count
+        }
+        return allGroups[indexOfGroup!].people.count
     }
     
     //MARK: Delegate
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        if ( pickerView.tag == 0 ){
+            return enterTagPickerData[row]
+        }
+        return allGroups[indexOfGroup!].people[row].name
     }
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        tag = pickerData[row]
+        if (pickerView.tag == 0) {
+            tag = enterTagPickerData[row]
+        }
+        else {
+            tag = enterPersonPickerData[row]
     }
     
+}
 }
