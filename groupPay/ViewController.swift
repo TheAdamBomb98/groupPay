@@ -81,10 +81,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 saveGroups()
                 }
             
-                alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            let noAction = UIAlertAction(title: "No", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                tableView.reloadData()
+            }
             
         
         alertController.addAction(yesAction)
+        alertController.addAction(noAction)
         self.present(alertController, animated: true, completion: nil)
     }
     }

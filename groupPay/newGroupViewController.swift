@@ -161,18 +161,28 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
             alertControllerP.addAction(okAction)
             self.present(alertControllerP, animated: true, completion: nil)
         }
-        
+            
         else{
-        
-        let x = Person(name: nameField.text!, totalPlusMinus : zero, transactions: [], totalPaid: 0.0, currentPlusMinus: 0.0, phoneNumber: phoneField.text!, email: emailField.text!, toPaySummary: "", toBePaidSummary: "")
-        
-        tempPeople.append(x)
-        
-        currentIndex += 1
-        nameField.text = ""
-        phoneField.text = ""
-        emailField.text = ""
-        TableOfPeople.reloadData()
+            for i in tempPeople{
+                if(i.name == nameField?.text){
+                    let alertControllerSame = UIAlertController(title: "Please Enter a Unique Name", message: "", preferredStyle: UIAlertControllerStyle.alert)
+                    let okActionSame = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel)
+                    alertControllerSame.addAction(okActionSame)
+                    self.present(alertControllerSame, animated: true, completion: nil)
+                    return
+                }
+                
+            }
+            let x = Person(name: nameField.text!, totalPlusMinus : zero, transactions: [], totalPaid: 0.0, currentPlusMinus: 0.0, phoneNumber: phoneField.text!, email: emailField.text!, toPaySummary: "", toBePaidSummary: "")
+            
+            tempPeople.append(x)
+            
+            currentIndex += 1
+            nameField.text = ""
+            phoneField.text = ""
+            emailField.text = ""
+            TableOfPeople.reloadData()
+
         }
     }
     
@@ -184,8 +194,8 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
             self.present(alertController, animated: true, completion: nil)
             
         }
-        
-       else if(tempPeople.count < 2){
+            
+        else if(tempPeople.count < 2){
             let alertController1 = UIAlertController(title: "Please Enter People Into Your Group", message: "", preferredStyle: UIAlertControllerStyle.alert)
             let okAction1 = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel)
             alertController1.addAction(okAction1)
@@ -201,36 +211,28 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
             
         }
         else{
-        let tempReceipts = [Receipt]()
-        let newGroup = Group(date: NSDate(), name: groupNameField.text!, people: tempPeople, transactions: tempReceipts)
-        allGroups.append(newGroup)
-        groupNameField.text = ""
-        
-        saveGroups()
-        
-        indexOfGroup = allGroups.index(of: newGroup)
-        performSegue(withIdentifier: "newGroupToGroupPage", sender: self)
+            for i in allGroups{
+                if(i.name == groupNameField?.text){
+                    let alertControllerSame = UIAlertController(title: "Please Enter a Unique Group Name", message: "", preferredStyle: UIAlertControllerStyle.alert)
+                    let okActionSame = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel)
+                    alertControllerSame.addAction(okActionSame)
+                    self.present(alertControllerSame, animated: true, completion: nil)
+                    return
+                }
+            }
+            
+            let tempReceipts = [Receipt]()
+            let newGroup = Group(date: NSDate(), name: groupNameField.text!, people: tempPeople, transactions: tempReceipts)
+            allGroups.append(newGroup)
+            groupNameField.text = ""
+            
+            saveGroups()
+            
+            indexOfGroup = allGroups.index(of: newGroup)
+            performSegue(withIdentifier: "newGroupToGroupPage", sender: self)
+            
         }
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.emailField.keyboardType = UIKeyboardType.emailAddress
-        self.phoneField.keyboardType = UIKeyboardType.numberPad
-        //self.phoneField.addTarget(self, action: #selector(self.didChangeText(textField:)), for: .editingChanged)
-        // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //var secondVC: GroupPageController = segue.destination as! GroupPageController
         //secondVC.recievedGroup = allGroups[allGroups.count - 1]
