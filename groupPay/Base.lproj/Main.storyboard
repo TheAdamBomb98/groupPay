@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -335,17 +335,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Group Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbd-x3-COm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbd-x3-COm">
                                 <rect key="frame" x="9" y="41" width="359" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="ahY-qu-nA7"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.0" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vby-CO-gSN">
-                                <rect key="frame" x="16" y="200" width="343" height="376"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vby-CO-gSN">
+                                <rect key="frame" x="17" y="216" width="343" height="376"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uss-3N-TnT">
@@ -365,11 +364,9 @@
                                     <outlet property="delegate" destination="QuP-se-2Zf" id="EOU-qB-pMp"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crR-cF-4np">
-                                <rect key="frame" x="71" y="584" width="210" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="Owj-N5-9Rf"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crR-cF-4np">
+                                <rect key="frame" x="91" y="600" width="210" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="29"/>
                                 <state key="normal" title="CALCULATE!">
                                     <color key="titleColor" red="1" green="0.0" blue="0.030793504433242802" alpha="1" colorSpace="calibratedRGB"/>
@@ -378,12 +375,9 @@
                                     <segue destination="aSc-oc-hQA" kind="show" id="3Sl-yz-JQz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn8-7t-VRK">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn8-7t-VRK">
                                 <rect key="frame" x="9" y="13" width="164" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="164" id="HGD-me-gs5"/>
-                                    <constraint firstAttribute="height" constant="42" id="XUV-2E-ZqG"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Return to Homepage"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="ZmT-AX-eSC"/>
@@ -403,22 +397,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aI2-eP-VOv">
+                                <rect key="frame" x="107" y="152" width="178" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Make Payment"/>
+                                <connections>
+                                    <segue destination="Sui-Tq-qZA" kind="show" id="Dxj-Za-jcz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="Mbd-x3-COm" firstAttribute="top" secondItem="Zn8-7t-VRK" secondAttribute="bottom" constant="8" symbolic="YES" id="1e9-Ny-BPi"/>
-                            <constraint firstItem="crR-cF-4np" firstAttribute="top" secondItem="Vby-CO-gSN" secondAttribute="bottom" constant="8" symbolic="YES" id="51W-3f-hrI"/>
-                            <constraint firstItem="Zn8-7t-VRK" firstAttribute="leading" secondItem="OsR-dt-5Fi" secondAttribute="leadingMargin" constant="-7" id="9c2-58-Fcw"/>
-                            <constraint firstItem="Zn8-7t-VRK" firstAttribute="leading" secondItem="Mbd-x3-COm" secondAttribute="leading" id="9vu-lv-HoX"/>
-                            <constraint firstItem="Zn8-7t-VRK" firstAttribute="top" secondItem="OsR-dt-5Fi" secondAttribute="topMargin" constant="13" id="C9q-ac-8pW"/>
-                            <constraint firstItem="zZo-20-tkU" firstAttribute="top" secondItem="crR-cF-4np" secondAttribute="bottom" constant="36" id="IsY-Wv-3k4"/>
-                            <constraint firstItem="Vby-CO-gSN" firstAttribute="trailing" secondItem="OsR-dt-5Fi" secondAttribute="trailingMargin" id="Znj-ud-Xc3"/>
-                            <constraint firstItem="Vby-CO-gSN" firstAttribute="top" secondItem="Mbd-x3-COm" secondAttribute="bottom" constant="80" id="j2B-oT-VhK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Mbd-x3-COm" secondAttribute="trailing" constant="-9" id="jva-Y3-LOG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="crR-cF-4np" secondAttribute="trailing" constant="78" id="s5X-i8-HzQ"/>
-                            <constraint firstItem="Vby-CO-gSN" firstAttribute="leading" secondItem="OsR-dt-5Fi" secondAttribute="leadingMargin" id="vf0-RQ-O4x"/>
-                            <constraint firstItem="crR-cF-4np" firstAttribute="leading" secondItem="OsR-dt-5Fi" secondAttribute="leadingMargin" constant="55" id="zxA-7b-R83"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="groupNameLabel" destination="Mbd-x3-COm" id="o7b-A2-wnD"/>
@@ -849,9 +838,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Vbi-th-5hN"/>
-        <segue reference="QNB-Gm-DlX"/>
-        <segue reference="tg5-H9-NA1"/>
+        <segue reference="1GA-sg-59Z"/>
         <segue reference="dns-rb-dg4"/>
+        <segue reference="ZmT-AX-eSC"/>
+        <segue reference="Dxj-Za-jcz"/>
     </inferredMetricsTieBreakers>
 </document>

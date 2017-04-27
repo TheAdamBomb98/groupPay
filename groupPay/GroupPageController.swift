@@ -56,6 +56,8 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
         performSegue(withIdentifier: "groupPageToPersonPage" , sender: self )
     }
     
+    
+    
     override func viewDidLoad() {
         gotGroupIndex = indexOfGroup
         groupNameLabel.text = allGroups[gotGroupIndex!].name
