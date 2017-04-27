@@ -178,28 +178,32 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if (pickerView.tag == 0) {
+        if (pickerView == enterTag) {
             return enterTagPickerData.count
         }
-        return allGroups[indexOfGroup!].people.count
+        else{
+            return allGroups[indexOfGroup!].people.count
+        }
     }
     
     //MARK: Delegate
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if ( pickerView.tag == 0 ){
+        if (pickerView == enterTag){
             return enterTagPickerData[row]
         }
-        return allGroups[indexOfGroup!].people[row].name
-    }
-    
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if (pickerView.tag == 0) {
-            tag = enterTagPickerData[row]
+            else{
+                return allGroups[indexOfGroup!].people[row].name
+            }
         }
-        else {
-            tag = enterPersonPickerData[row]
-    }
-    
-}
+        
+        
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            if (pickerView == enterTag) {
+                tag = enterTagPickerData[row]
+            }
+            else {
+                tag = enterPersonPickerData[row]
+            }
+            
+        }
 }
