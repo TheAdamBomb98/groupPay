@@ -17,13 +17,6 @@ var phoneNums = [String]()
 var enterMoneyAmount: Double!
 var calculations = [String]()
 var bodyOfText = String()
-
-
-//Carter did this one if u want to change how it works
-var Payer: Person!
-
-
-
 //var tags = [String]()
 //SAVING FUNCTIONS AND DECLARATION
 

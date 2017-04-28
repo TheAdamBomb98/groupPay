@@ -137,7 +137,6 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Payer = allGroups[gotGroupIndex!].people[gotPersonIndex!]
         gotGroupIndex = indexOfGroup
         gotPersonIndex = indexOfPerson
         personNameTag.text = allGroups[gotGroupIndex!].people[gotPersonIndex!].name
