@@ -13,7 +13,6 @@
 		4B498F2B1E4A30360088AE29 /* PersonPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B498F2A1E4A30360088AE29 /* PersonPageController.swift */; };
 		4B6159971E7C3E6200013B82 /* PersonPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B498F2A1E4A30360088AE29 /* PersonPageController.swift */; };
 		4BB90C8D1DFF0C0500A73C15 /* groupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */; };
-		4BF29A0A1EB24C7A007F8334 /* ben.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BF29A091EB24C7A007F8334 /* ben.jpg */; };
 		BBD26F9E1E7AE6F3000BADFF /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD26F9D1E7AE6F3000BADFF /* CalculationViewController.swift */; };
 		BBF9F31A1E84252F00780F60 /* subGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9F3191E84252F00780F60 /* subGroupViewController.swift */; };
 		D0A1FB1E1E5F498100D2AAF0 /* newPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1FB1D1E5F498100D2AAF0 /* newPaymentVC.swift */; };
@@ -54,7 +53,6 @@
 		4B47818C1E9D2E3A000BCF45 /* settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settings.swift; sourceTree = "<group>"; };
 		4B498F2A1E4A30360088AE29 /* PersonPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonPageController.swift; sourceTree = "<group>"; };
 		4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupsTableViewCell.swift; sourceTree = "<group>"; };
-		4BF29A091EB24C7A007F8334 /* ben.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ben.jpg; path = ../../../Desktop/ben.jpg; sourceTree = "<group>"; };
 		BBD26F9D1E7AE6F3000BADFF /* CalculationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationViewController.swift; sourceTree = "<group>"; };
 		BBF9F3191E84252F00780F60 /* subGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subGroupViewController.swift; sourceTree = "<group>"; };
 		D0A1FB1D1E5F498100D2AAF0 /* newPaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newPaymentVC.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 				FE1484501DF9C428003B48E2 /* Assets.xcassets */,
 				FE1484521DF9C428003B48E2 /* LaunchScreen.storyboard */,
 				FE1484551DF9C428003B48E2 /* Info.plist */,
-				4BF29A091EB24C7A007F8334 /* ben.jpg */,
 			);
 			path = groupPay;
 			sourceTree = "<group>";
@@ -285,7 +282,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BF29A0A1EB24C7A007F8334 /* ben.jpg in Resources */,
 				FE1484541DF9C428003B48E2 /* LaunchScreen.storyboard in Resources */,
 				FE1484511DF9C428003B48E2 /* Assets.xcassets in Resources */,
 				FE14844F1DF9C428003B48E2 /* Main.storyboard in Resources */,

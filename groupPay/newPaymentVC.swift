@@ -17,6 +17,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     
     var gotGroupIndex: Int?
     var gotPersonIndex: Int?
+    var nameOfPayer = ""
     
     
     
@@ -41,13 +42,14 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             enterMoney.text = String(enterMoneyAmount)
             enterMoneyAmount = nil
         }
-        var indexofTag = 0
-        for i in 0...(enterTagPickerData.count - 1) {
-            if enterTagPickerData[i] == tag {
-                indexofTag = i
+        var indexofPerson = 0
+        for i in 0...(allGroups[gotGroupIndex!].people.count - 1) {
+            if allGroups[gotGroupIndex!].people[i].name == defaultPayer.name {
+                indexofPerson = i
             }
         }
-        enterTag.selectRow(indexofTag, inComponent: 0, animated: true)
+        //PUT IN VIEWDIDAPPEAR?
+        enterTag.selectRow(indexofPerson, inComponent: 0, animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -202,7 +204,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
                 tag = enterTagPickerData[row]
             }
             else {
-                tag = enterPersonPickerData[row]
+                nameOfPayer = allGroups[indexOfGroup!].people[row].name
             }
             
         }

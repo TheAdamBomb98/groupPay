@@ -131,6 +131,7 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func makePaymentButtonPressed(_ sender: AnyObject) {
         indexOfPerson = gotPersonIndex
         indexOfGroup = gotGroupIndex
+        defaultPayer = allGroups[gotGroupIndex!].people[gotPersonIndex!]
         performSegue(withIdentifier: "personToPayment" , sender: self)
         
     }

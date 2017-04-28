@@ -53,6 +53,7 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
                 indexOfPerson = allGroups[gotGroupIndex!].people.index(of: tempPerson)
             }
         }
+        defaultPayer = allGroups[gotGroupIndex!].people[0]
         performSegue(withIdentifier: "groupPageToPersonPage" , sender: self )
     }
     
