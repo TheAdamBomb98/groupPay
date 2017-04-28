@@ -161,13 +161,13 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
             alertControllerP.addAction(okAction)
             self.present(alertControllerP, animated: true, completion: nil)
         }
-        if (nameField?.text == "Adam"){
+        /*if (nameField?.text == "Adam"){
             let imageName = "ben.jpg"
             let image = UIImage(named: imageName)
             let imageView = UIImageView(image: image!)
-            imageView.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
+            imageView.frame = CGRect(x: 0, y: 0, width: ViewController.width, height: View.height)
             view.addSubview(imageView)
-        }
+        }*/
         else{
             for i in tempPeople{
                 if(i.name == nameField?.text){
