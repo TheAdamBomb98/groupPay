@@ -17,8 +17,8 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     
     var gotGroupIndex: Int?
     var gotPersonIndex: Int?
-    
-    
+    var gotPayer: Person?
+    var nameOfPayer: String?
     
     @IBOutlet weak var enterPerson: UIPickerView!
     @IBOutlet weak var commentField: UITextField!
@@ -32,8 +32,9 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         super.viewDidLoad()
         gotGroupIndex = indexOfGroup
         gotPersonIndex = indexOfPerson
+        gotPayer = Payer
+        nameOfPayer = gotPayer?.name
         allGroups = loadGroups()!
-        enterTag.tag = 0
         self.enterMoney.keyboardType = UIKeyboardType.decimalPad
         enterTag.dataSource = self
         enterTag.delegate = self
@@ -41,13 +42,6 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             enterMoney.text = String(enterMoneyAmount)
             enterMoneyAmount = nil
         }
-        var indexofTag = 0
-        for i in 0...(enterTagPickerData.count - 1) {
-            if enterTagPickerData[i] == tag {
-                indexofTag = i
-            }
-        }
-        enterTag.selectRow(indexofTag, inComponent: 0, animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -88,7 +82,14 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             }
  */
             
-        let payer = allGroups[gotGroupIndex!].people[gotPersonIndex!]
+       // let payer = allGroups[gotGroupIndex!].people[gotPersonIndex!]
+            for i in allGroups[gotGroupIndex!].people{
+                if i.name == nameOfPayer{
+                   //let index = allGroups[gotGroupIndex!].people[i].//index
+                    let payer = allGroups[gotGroupIndex!].people[index]
+                }
+            }
+        }
         
         if( groupHasChanged ) {
             paymentGroup = nonFullGroup
@@ -196,14 +197,14 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             }
         }
         
-        
+   
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
             if (pickerView == enterTag) {
                 tag = enterTagPickerData[row]
             }
             else {
-                tag = enterPersonPickerData[row]
+                nameOfPayer = enterPersonPickerData[row]
             }
             
         }
-}
+
