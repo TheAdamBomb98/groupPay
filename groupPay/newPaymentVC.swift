@@ -17,7 +17,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     
     var gotGroupIndex: Int?
     var gotPersonIndex: Int?
-    var nameOfPayer = ""
+    var rowOfPayer: Int?
     
     
     
@@ -28,6 +28,16 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     let enterTagPickerData = ["Gas","Breakfast","Lunch","Dinner","Food","Snacks","Hotel","Tickets","Other"]
     var enterPersonPickerData: [String] = []
     
+    override func viewDidAppear(_ animated: Bool) {
+        //PUT IN VIEWDIDAPPEAR?
+        var indexofPerson = 0
+        for i in 0...(allGroups[gotGroupIndex!].people.count - 1) {
+            if allGroups[gotGroupIndex!].people[i].name == defaultPayer.name {
+                indexofPerson = i
+            }
+        }
+        enterPerson.selectRow(indexofPerson, inComponent: 0, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,14 +52,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             enterMoney.text = String(enterMoneyAmount)
             enterMoneyAmount = nil
         }
-        var indexofPerson = 0
-        for i in 0...(allGroups[gotGroupIndex!].people.count - 1) {
-            if allGroups[gotGroupIndex!].people[i].name == defaultPayer.name {
-                indexofPerson = i
-            }
-        }
-        //PUT IN VIEWDIDAPPEAR?
-        enterTag.selectRow(indexofPerson, inComponent: 0, animated: true)
+       
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -89,8 +92,14 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
                 paymentGroup.append(x)
             }
  */
-            
-        let payer = allGroups[gotGroupIndex!].people[gotPersonIndex!]
+        var payer = allGroups[gotGroupIndex!].people[gotPersonIndex!]
+        let nameOfPayer = allGroups[gotGroupIndex!].people[rowOfPayer!].name
+        for i in paymentGroup {
+            if (i.name == nameOfPayer) {
+                payer = i
+                break
+            }
+        }
         
         if( groupHasChanged ) {
             paymentGroup = nonFullGroup
@@ -152,10 +161,10 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             let groupWithNameAndCorrectListOfPeople = Group( date: NSDate() , name: allGroups[gotGroupIndex!].name , people: paymentGroup , transactions: allGroups[gotGroupIndex!].transactions )
         
             let newPay = Receipt( amount: amount, tag: tag , person: payer, group: groupWithNameAndCorrectListOfPeople, date: NSDate(), comment: commentField.text! )
-        allGroups[gotGroupIndex!].people[gotPersonIndex!].transactions.append(newPay)
+        allGroups[gotGroupIndex!].people[rowOfPayer!].transactions.append(newPay)
         allGroups[gotGroupIndex!].transactions.append(newPay)
         
-        allGroups[gotGroupIndex!].people[gotPersonIndex!].totalPaid += amount
+        allGroups[gotGroupIndex!].people[rowOfPayer!].totalPaid += amount
         
         saveGroups()
    
@@ -204,7 +213,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
                 tag = enterTagPickerData[row]
             }
             else {
-                nameOfPayer = allGroups[indexOfGroup!].people[row].name
+                rowOfPayer = row
             }
             
         }
