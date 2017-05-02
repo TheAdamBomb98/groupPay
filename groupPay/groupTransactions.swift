@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class groupTransactions: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class groupTransactions: UIViewController {
     @IBOutlet weak var pickCategory: UIPickerView!
     @IBOutlet weak var tableOfPayments: UITableView!
     

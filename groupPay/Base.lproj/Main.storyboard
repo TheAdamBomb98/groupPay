@@ -403,7 +403,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Make Payment"/>
                                 <connections>
-                                    <segue destination="Sui-Tq-qZA" kind="show" id="Dxj-Za-jcz"/>
+                                    <action selector="makePaymentButtonPressed:" destination="QuP-se-2Zf" eventType="touchUpInside" id="AWc-HL-Y7g"/>
+                                    <segue destination="Sui-Tq-qZA" kind="show" identifier="makePaymentButtonToNew" id="Khh-q6-aJh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -412,6 +413,7 @@
                     <connections>
                         <outlet property="groupNameLabel" destination="Mbd-x3-COm" id="o7b-A2-wnD"/>
                         <outlet property="groupTotalLabel" destination="9yq-Dn-Zmd" id="3rS-Jt-isd"/>
+                        <outlet property="makePaymentButton" destination="aI2-eP-VOv" id="Stf-dT-q5f"/>
                         <outlet property="peopleTable" destination="Vby-CO-gSN" id="rej-d1-4JU"/>
                     </connections>
                 </viewController>
@@ -740,7 +742,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addPayment:" destination="Sui-Tq-qZA" eventType="touchUpInside" id="sFK-79-qSn"/>
-                                    <segue destination="9I9-lQ-Fie" kind="show" identifier="paymentToPerson" id="tg5-H9-NA1"/>
+                                    <segue destination="QuP-se-2Zf" kind="show" identifier="paymentToGroup" id="yiK-h9-bax"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Optional" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XtX-Pe-4np">
@@ -892,9 +894,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZmT-AX-eSC"/>
         <segue reference="S5g-se-JYZ"/>
-        <segue reference="Dxj-Za-jcz"/>
-        <segue reference="tg5-H9-NA1"/>
+        <segue reference="1GA-sg-59Z"/>
+        <segue reference="Khh-q6-aJh"/>
+        <segue reference="ZmT-AX-eSC"/>
     </inferredMetricsTieBreakers>
 </document>

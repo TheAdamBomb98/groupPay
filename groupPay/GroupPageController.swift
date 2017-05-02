@@ -14,6 +14,8 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     var gotGroupIndex: Int?
     
     
+    @IBOutlet weak var makePaymentButton: UIButton!
+    
     @IBOutlet var peopleTable: UITableView!
     
     @IBOutlet weak var groupNameLabel: UILabel!
@@ -58,6 +60,10 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
+    @IBAction func makePaymentButtonPressed(_ sender: Any) {
+        indexOfPerson = 0
+        performSegue(withIdentifier: "makePaymentButtonToNew" , sender: self )
+    }
     
     override func viewDidLoad() {
         gotGroupIndex = indexOfGroup
