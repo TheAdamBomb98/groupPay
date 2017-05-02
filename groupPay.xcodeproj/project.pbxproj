@@ -13,6 +13,7 @@
 		4B498F2B1E4A30360088AE29 /* PersonPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B498F2A1E4A30360088AE29 /* PersonPageController.swift */; };
 		4B6159971E7C3E6200013B82 /* PersonPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B498F2A1E4A30360088AE29 /* PersonPageController.swift */; };
 		4BB90C8D1DFF0C0500A73C15 /* groupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */; };
+		BBBB6F631EB7919C005576ED /* groupTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB6F621EB7919C005576ED /* groupTransactions.swift */; };
 		BBD26F9E1E7AE6F3000BADFF /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD26F9D1E7AE6F3000BADFF /* CalculationViewController.swift */; };
 		BBF9F31A1E84252F00780F60 /* subGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9F3191E84252F00780F60 /* subGroupViewController.swift */; };
 		D0A1FB1E1E5F498100D2AAF0 /* newPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1FB1D1E5F498100D2AAF0 /* newPaymentVC.swift */; };
@@ -53,6 +54,7 @@
 		4B47818C1E9D2E3A000BCF45 /* settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settings.swift; sourceTree = "<group>"; };
 		4B498F2A1E4A30360088AE29 /* PersonPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonPageController.swift; sourceTree = "<group>"; };
 		4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupsTableViewCell.swift; sourceTree = "<group>"; };
+		BBBB6F621EB7919C005576ED /* groupTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupTransactions.swift; sourceTree = "<group>"; };
 		BBD26F9D1E7AE6F3000BADFF /* CalculationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationViewController.swift; sourceTree = "<group>"; };
 		BBF9F3191E84252F00780F60 /* subGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subGroupViewController.swift; sourceTree = "<group>"; };
 		D0A1FB1D1E5F498100D2AAF0 /* newPaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newPaymentVC.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				FE57FDE31E0057C600CDD9C2 /* personClass.swift */,
 				FE57FDE51E00584800CDD9C2 /* receiptClass.swift */,
 				FE14844D1DF9C428003B48E2 /* Main.storyboard */,
+				BBBB6F621EB7919C005576ED /* groupTransactions.swift */,
 				4B47818C1E9D2E3A000BCF45 /* settings.swift */,
 				BBF9F3191E84252F00780F60 /* subGroupViewController.swift */,
 				FE5F18B81E40F15300A0ACEA /* global.swift */,
@@ -309,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBBB6F631EB7919C005576ED /* groupTransactions.swift in Sources */,
 				FE0B974E1E044C54002390EA /* newGroupViewController.swift in Sources */,
 				FE57FDE41E0057C600CDD9C2 /* personClass.swift in Sources */,
 				D0A1FB1E1E5F498100D2AAF0 /* newPaymentVC.swift in Sources */,
