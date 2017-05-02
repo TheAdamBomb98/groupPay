@@ -149,6 +149,7 @@ class PersonPageController: UIViewController, UITableViewDelegate, UITableViewDa
         else {
         plusMinusLabel.text = (String)((Double)((Int)(allGroups[gotGroupIndex!].people[gotPersonIndex!].currentPlusMinus * 100)) / 100)
         }
+        greenOrRed = []
         //allGroups = loadGroups()!
         // Do any additional setup after loading the view, typically from a nib.
 

@@ -30,8 +30,19 @@ class subGroupViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         var personName  = allGroups[gotGroupIndex!].people[indexPath.row].name
+        if greenOrRed == [] {
+            cell.backgroundColor = UIColor.green
+        }
+        else {
+            let green = greenOrRed[indexPath.row]
+            if green {
+                cell.backgroundColor = UIColor.green
+            }
+            else {
+                cell.backgroundColor = UIColor.red
+            }
+        }
         cell.textLabel?.text = personName
-        cell.backgroundColor = UIColor.green
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -49,14 +60,19 @@ class subGroupViewController: UIViewController, UITableViewDelegate, UITableView
    
 
     @IBAction func backButtonPressed(_ sender: Any) {
+        greenOrRed = []
         for i in tableOfSubGroup.visibleCells {
             if( i.backgroundColor == UIColor.green ) {
+                greenOrRed.append(true)
                 for allGroupPeople in allGroups[gotGroupIndex!].people {
                     if ( allGroupPeople.name == i.textLabel?.text ) {
                         nonFullGroup.append(allGroupPeople)
                         
                     }
                 }
+            }
+            else {
+                greenOrRed.append(false)
             }
         }
         if ( !(nonFullGroup.count == allGroups[gotGroupIndex!].people.count) ) {

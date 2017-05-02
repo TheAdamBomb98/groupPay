@@ -17,8 +17,10 @@ var phoneNums = [String]()
 var enterMoneyAmount: Double!
 var calculations = [String]()
 var bodyOfText = String()
-var defaultPayer: Person! 
+var defaultPayer: Person!
+var greenOrRed: [Bool]! = []
 //var tags = [String]()
+
 //SAVING FUNCTIONS AND DECLARATION
 
 internal var allGroups: [groupPay.Group] = []

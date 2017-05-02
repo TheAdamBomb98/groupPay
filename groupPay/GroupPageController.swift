@@ -73,11 +73,13 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
             groupTotal += i.amount
         }
         groupTotalLabel.text = "$" + (String)(groupTotal)
+        greenOrRed = []
     }
  
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+    
     /*func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             allGroups[gotGroupIndex!].people.remove(at: indexPath.row)
