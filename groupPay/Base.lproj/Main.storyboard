@@ -539,11 +539,12 @@
                     <connections>
                         <outlet property="pickCategory" destination="hHu-uv-KEw" id="zZ9-cm-90j"/>
                         <outlet property="tableOfPayments" destination="AzN-7L-7ft" id="Hjl-Tc-xfC"/>
+                        <outlet property="tagChooser" destination="hHu-uv-KEw" id="DFE-5Y-Faq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lT9-7h-fNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2456.8000000000002" y="1413.6431784107947"/>
+            <point key="canvasLocation" x="2783" y="1298"/>
         </scene>
         <!--Person Page Controller-->
         <scene sceneID="4jU-XA-00L">
