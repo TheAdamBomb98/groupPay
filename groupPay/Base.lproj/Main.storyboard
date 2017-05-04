@@ -351,7 +351,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uss-3N-TnT" id="a3z-OA-Vc9">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -405,6 +405,14 @@
                                 <connections>
                                     <action selector="makePaymentButtonPressed:" destination="QuP-se-2Zf" eventType="touchUpInside" id="AWc-HL-Y7g"/>
                                     <segue destination="Sui-Tq-qZA" kind="show" identifier="makePaymentButtonToNew" id="Khh-q6-aJh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3F7-y5-WKK">
+                                <rect key="frame" x="268" y="19" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Export Group"/>
+                                <connections>
+                                    <action selector="exportButtonPressed:" destination="QuP-se-2Zf" eventType="touchUpInside" id="YT9-Dw-CBG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -896,8 +904,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="S5g-se-JYZ"/>
+        <segue reference="Khh-q6-aJh"/>
         <segue reference="1GA-sg-59Z"/>
         <segue reference="ZmT-AX-eSC"/>
-        <segue reference="jJN-6F-EWU"/>
     </inferredMetricsTieBreakers>
 </document>

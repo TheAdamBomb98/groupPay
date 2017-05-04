@@ -31,13 +31,17 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     override func viewDidAppear(_ animated: Bool) {
         //PUT IN VIEWDIDAPPEAR?
         if !(defaultPayer == nil) {
-            var indexofPerson = 0
+            var indexofPersonDefaultPayer = 0
             for i in 0...(allGroups[gotGroupIndex!].people.count - 1) {
                 if allGroups[indexOfGroup!].people[i].name == defaultPayer.name {
-                    indexofPerson = i
+                    indexofPersonDefaultPayer = i
                 }
             }
-        enterPerson.selectRow(indexofPerson, inComponent: 0, animated: true)
+            enterPerson.selectRow(indexofPersonDefaultPayer, inComponent: 0, animated: true)
+            rowOfPayer = indexofPersonDefaultPayer
+        }
+        else {
+            rowOfPayer = 0
         }
     }
     

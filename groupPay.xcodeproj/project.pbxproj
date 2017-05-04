@@ -26,6 +26,7 @@
 		FE14845F1DF9C428003B48E2 /* groupPayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE14845E1DF9C428003B48E2 /* groupPayTests.swift */; };
 		FE14846A1DF9C428003B48E2 /* groupPayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1484691DF9C428003B48E2 /* groupPayUITests.swift */; };
 		FE1484781DF9C661003B48E2 /* groupClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1484771DF9C661003B48E2 /* groupClass.swift */; };
+		FE530E861EBA33BE00E2FD4F /* csvClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE530E851EBA33BE00E2FD4F /* csvClass.swift */; };
 		FE57FDE41E0057C600CDD9C2 /* personClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57FDE31E0057C600CDD9C2 /* personClass.swift */; };
 		FE57FDE61E00584800CDD9C2 /* receiptClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57FDE51E00584800CDD9C2 /* receiptClass.swift */; };
 		FE5F18B91E40F15300A0ACEA /* global.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5F18B81E40F15300A0ACEA /* global.swift */; };
@@ -73,6 +74,7 @@
 		FE1484691DF9C428003B48E2 /* groupPayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupPayUITests.swift; sourceTree = "<group>"; };
 		FE14846B1DF9C428003B48E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE1484771DF9C661003B48E2 /* groupClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupClass.swift; sourceTree = "<group>"; };
+		FE530E851EBA33BE00E2FD4F /* csvClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csvClass.swift; sourceTree = "<group>"; };
 		FE57FDE31E0057C600CDD9C2 /* personClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personClass.swift; sourceTree = "<group>"; };
 		FE57FDE51E00584800CDD9C2 /* receiptClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = receiptClass.swift; sourceTree = "<group>"; };
 		FE5F18B81E40F15300A0ACEA /* global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = global.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				FE5F18B81E40F15300A0ACEA /* global.swift */,
 				FE0B974D1E044C54002390EA /* newGroupViewController.swift */,
 				D0A1FB1D1E5F498100D2AAF0 /* newPaymentVC.swift */,
+				FE530E851EBA33BE00E2FD4F /* csvClass.swift */,
 				4BB90C8C1DFF0C0500A73C15 /* groupsTableViewCell.swift */,
 				BBD26F9D1E7AE6F3000BADFF /* CalculationViewController.swift */,
 				FE1484501DF9C428003B48E2 /* Assets.xcassets */,
@@ -323,6 +326,7 @@
 				BBF9F31A1E84252F00780F60 /* subGroupViewController.swift in Sources */,
 				FE5F18B91E40F15300A0ACEA /* global.swift in Sources */,
 				FE14844A1DF9C428003B48E2 /* AppDelegate.swift in Sources */,
+				FE530E861EBA33BE00E2FD4F /* csvClass.swift in Sources */,
 				4BB90C8D1DFF0C0500A73C15 /* groupsTableViewCell.swift in Sources */,
 				FE57FDE61E00584800CDD9C2 /* receiptClass.swift in Sources */,
 				4B47818D1E9D2E3A000BCF45 /* settings.swift in Sources */,

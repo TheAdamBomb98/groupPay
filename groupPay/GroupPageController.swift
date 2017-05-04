@@ -59,6 +59,33 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
         performSegue(withIdentifier: "groupPageToPersonPage" , sender: self )
     }
     
+    @IBAction func exportButtonPressed(_ sender: Any) {
+        var groupCSV: CSV
+        var groupSum: [[String]]
+        for i in allGroups[gotGroupIndex!].transactions {
+            var subGroupSummary = ""
+            if i.group.people.count == allGroups[gotGroupIndex!].people.count {
+                
+            }
+            groupSum.append([ i.date, i.person.name, i.amount, i.tag, i.comment, SUBGROUP])
+            
+        }
+    }
+    //EXPORTING!!!!
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     @IBAction func makePaymentButtonPressed(_ sender: Any) {
         indexOfPerson = 0
