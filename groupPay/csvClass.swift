@@ -13,12 +13,6 @@ class CSV {
     var dataArray: [[String]] = [[]]
     
     
-    init(input: String)
-    {
-        fileData = input
-        dataToArray()
-    }
-    
     init(input: [[String]])
     {
         dataArray = input
@@ -61,6 +55,7 @@ class CSV {
     /*
      *   puts a raw string into an array
      */
+    /*
     func dataToArray()
     {
         var lastPos = 0
@@ -110,5 +105,5 @@ class CSV {
                 dataArray[x].append(tempDiv[i])
             }
         }
-    }
+    */
 }
