@@ -415,6 +415,14 @@
                                     <action selector="exportButtonPressed:" destination="QuP-se-2Zf" eventType="touchUpInside" id="YT9-Dw-CBG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCk-y0-mY8">
+                                <rect key="frame" x="272" y="57" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Transactions"/>
+                                <connections>
+                                    <segue destination="mTr-cw-yc0" kind="show" id="Vye-2h-1hs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -473,14 +481,6 @@
                                     <action selector="sendText:" destination="aSc-oc-hQA" eventType="touchUpInside" id="9d1-da-AC8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvH-J8-wgD">
-                                <rect key="frame" x="228" y="20" width="146" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Groups' Transactions"/>
-                                <connections>
-                                    <segue destination="mTr-cw-yc0" kind="show" id="gBL-eN-n4k"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -537,9 +537,12 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynd-ZA-98Z">
-                                <rect key="frame" x="16" y="20" width="143" height="30"/>
+                                <rect key="frame" x="37" y="20" width="101" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back To Calculations"/>
+                                <state key="normal" title="Back To Group"/>
+                                <connections>
+                                    <segue destination="QuP-se-2Zf" kind="show" id="XFL-yF-n4g"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -904,8 +907,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="S5g-se-JYZ"/>
-        <segue reference="Khh-q6-aJh"/>
         <segue reference="1GA-sg-59Z"/>
+        <segue reference="Khh-q6-aJh"/>
         <segue reference="ZmT-AX-eSC"/>
     </inferredMetricsTieBreakers>
 </document>
