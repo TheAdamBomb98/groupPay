@@ -64,6 +64,7 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
         var groupSum: [[String]] = [[]]
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        groupSum.append(["Date", "Payer", "Amount", "Tag", "Comment", "Sub-Group Summary"])
         for i in allGroups[gotGroupIndex!].transactions {
             var subGroupSummary = ""
             if i.group.people.count == allGroups[gotGroupIndex!].people.count {
@@ -111,14 +112,30 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
         if MFMailComposeViewController.canSendMail() {
             self.present(emailViewController, animated: true, completion: nil)
             Swift.print(MFMailComposeViewController.canSendMail())
-            /*func mailComposeController(controller: MFMailComposeViewController,
-             didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-             // Check the result or perform other tasks.
-             
-             // Dismiss the mail compose view controller.
-             controller.dismiss(animated: true, completion: nil)
-             }*/
             
+            func mailComposeController(controller: MFMailComposeViewController,
+                                       didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+                
+                switch result {
+                    
+                case MFMailComposeResult.cancelled:
+                    controller.dismiss(animated: true, completion: nil)
+                    break
+                    
+                case MFMailComposeResult.sent:
+                    controller.dismiss(animated: true, completion: nil)
+                    break
+                    
+                case MFMailComposeResult.failed:
+                    controller.dismiss(animated: true, completion: nil)
+                    break
+                    
+                default:
+                    break
+                }
+                
+                controller.dismiss(animated: true, completion: nil)
+            }
         }
     }
     //EXPORTING!!!!
