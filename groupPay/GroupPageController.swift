@@ -112,11 +112,11 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
         if MFMailComposeViewController.canSendMail() {
             self.present(emailViewController, animated: true, completion: nil)
             Swift.print(MFMailComposeViewController.canSendMail())
-            
-            func mailComposeController(controller: MFMailComposeViewController,
+        }
+        func mailComposeController(controller: MFMailComposeViewController,
                                        didFinishWithResult result: MFMailComposeResult, error: NSError?) {
                 
-                switch result {
+            switch result {
                     
                 case MFMailComposeResult.cancelled:
                     controller.dismiss(animated: true, completion: nil)
@@ -132,11 +132,11 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                 default:
                     break
-                }
+            }
                 
                 controller.dismiss(animated: true, completion: nil)
-            }
         }
+        
     }
     //EXPORTING!!!!
    
