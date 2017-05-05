@@ -59,85 +59,8 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
         defaultPayer = allGroups[gotGroupIndex!].people[0]
         performSegue(withIdentifier: "groupPageToPersonPage" , sender: self )
     }
-    
-    @IBAction func exportButtonPressed(_ sender: Any) {
-        var groupSum: [[String]] = [[]]
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        groupSum.append(["Date", "Payer", "Amount", "Tag", "Comment", "Sub-Group Summary"])
-        for i in allGroups[gotGroupIndex!].transactions {
-            var subGroupSummary = ""
-            if i.group.people.count == allGroups[gotGroupIndex!].people.count {
-                subGroupSummary = "All Members Included"
-            }
-            else {
-                for people in i.group.people {
-                    subGroupSummary += (people.name + " ")
-                }
-            }
-            let dateString = formatter.string(from: i.date as Date)
-            groupSum.append([ dateString, i.person.name, (String)(i.amount), i.tag, i.comment, subGroupSummary])
-            
-        }
-        groupSum.remove(at: 0)
-        var groupCSV = CSV(input: groupSum)
-        groupCSV.arrayToData()
         
-        
-        let data = groupCSV.fileData.data(using: String.Encoding.utf8, allowLossyConversion: false)
-        if let content = data {
-            print("NSData: \(content)")
-        }
-        
-        // Generating the email controller.
-        func configuredMailComposeViewController() -> MFMailComposeViewController {
-            let emailController = MFMailComposeViewController()
-            emailController.mailComposeDelegate = self
-            emailController.setSubject(allGroups[gotGroupIndex!].name + " Report")
-            emailController.setMessageBody(("Attatched is the data for " + allGroups[gotGroupIndex!].name), isHTML: false)
-            emailController.setToRecipients(["758743@apps.district196.org"])
-            
-            // Attaching the .CSV file to the email.
-            emailController.addAttachmentData(data!, mimeType: "text/csv", fileName: ( allGroups[gotGroupIndex!].name + "Data.csv" ) )
-            
-            return emailController
-        }
-        
-        // If the view controller can send the email.
-        // This will show an email-style popup that allows you to enter
-        // Who to send the email to, the subject, the cc's and the message.
-        // As the .CSV is already attached, you can simply add an email
-        // and press send.
-        let emailViewController = configuredMailComposeViewController()
-        if MFMailComposeViewController.canSendMail() {
-            self.present(emailViewController, animated: true, completion: nil)
-            Swift.print(MFMailComposeViewController.canSendMail())
-        }
-        func mailComposeController(controller: MFMailComposeViewController,
-                                       didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-                
-            switch result {
-                    
-                case MFMailComposeResult.cancelled:
-                    controller.dismiss(animated: true, completion: nil)
-                    break
-                    
-                case MFMailComposeResult.sent:
-                    controller.dismiss(animated: true, completion: nil)
-                    break
-                    
-                case MFMailComposeResult.failed:
-                    controller.dismiss(animated: true, completion: nil)
-                    break
-                    
-                default:
-                    break
-            }
-                
-                controller.dismiss(animated: true, completion: nil)
-        }
-        
-    }
+
     //EXPORTING!!!!
    
     
