@@ -239,7 +239,23 @@ class newGroupViewController: UIViewController, UITableViewDelegate, UITableView
             
         }
     }
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.emailField.keyboardType = UIKeyboardType.emailAddress
+        self.phoneField.keyboardType = UIKeyboardType.numberPad
+        //self.phoneField.addTarget(self, action: #selector(self.didChangeText(textField:)), for: .editingChanged)
+        // Do any additional setup after loading the view.
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+        }    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //var secondVC: GroupPageController = segue.destination as! GroupPageController
         //secondVC.recievedGroup = allGroups[allGroups.count - 1]
         if allGroups.count != 0{
