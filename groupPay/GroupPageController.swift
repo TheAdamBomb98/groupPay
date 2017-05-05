@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MessageUI
 
 class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     
@@ -60,7 +61,6 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @IBAction func exportButtonPressed(_ sender: Any) {
-        var groupCSV: CSV
         var groupSum: [[String]] = [[]]
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -79,8 +79,8 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }
         groupSum.remove(at: 0)
-        groupCSV.dataArray = groupSum
-        groupCSV.getDataString()
+        var groupCSV = CSV(input: groupSum)
+        groupCSV.arrayToData()
         
         
         let data = groupCSV.fileData.data(using: String.Encoding.utf8, allowLossyConversion: false)
@@ -93,11 +93,11 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
             let emailController = MFMailComposeViewController()
             emailController.mailComposeDelegate = self
             emailController.setSubject(allGroups[gotGroupIndex!].name + " Report")
-            emailController.setMessageBody("Attatched is the data for " + allGroups[gotGroupIndex!].name) , isHTML: false)
+            emailController.setMessageBody(("Attatched is the data for " + allGroups[gotGroupIndex!].name), isHTML: false)
             emailController.setToRecipients(["758743@apps.district196.org"])
             
             // Attaching the .CSV file to the email.
-            emailController.addAttachmentData(data!, mimeType: "text/csv", fileName: "Round.csv")
+            emailController.addAttachmentData(data!, mimeType: "text/csv", fileName: ( allGroups[gotGroupIndex!].name + "Data.csv" ) )
             
             return emailController
         }
