@@ -36,7 +36,10 @@ class groupTransactions: UIViewController,UIPickerViewDelegate, UIPickerViewData
         receipts.removeAll()
         groupTransactionsTag = enterTagPickerData[row]
         if (groupTransactionsTag == ("All Tags")){
-            receipts = allGroups[gotGroupIndex!].transactions
+            for x in allGroups[gotGroupIndex!].transactions{
+                receipts.append(x)
+        }
+            tableOfPayments.reloadData()
         }
         else{
         for i in allGroups[gotGroupIndex!].transactions{
