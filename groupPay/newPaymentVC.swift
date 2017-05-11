@@ -58,6 +58,10 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
             enterMoney.text = String(enterMoneyAmount)
             enterMoneyAmount = nil
         }
+        if enterComment != nil {
+            commentField.text = enterComment
+            enterComment = nil
+        }
        
     }
     
@@ -68,6 +72,7 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     
     @IBAction func subgroupButton(_ sender: UIButton) {
         enterMoneyAmount = Double(enterMoney.text!)
+        enterComment = String(commentField.text!)
     }
    
     @IBAction func addPayment(_ sender: AnyObject) {

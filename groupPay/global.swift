@@ -15,6 +15,7 @@ var calculationsSummary: [String] = []
 var nonFullGroup: [Person] = []
 var phoneNums = [String]()
 var enterMoneyAmount: Double!
+var enterComment: String!
 var calculations = [String]()
 var bodyOfText = String()
 var defaultPayer: Person!

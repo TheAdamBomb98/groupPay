@@ -89,7 +89,13 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
                 emailController.mailComposeDelegate = self
                 emailController.setSubject(allGroups[gotGroupIndex!].name + " Report")
                 emailController.setMessageBody(("Attatched is the data for " + allGroups[gotGroupIndex!].name), isHTML: false)
-                emailController.setToRecipients(["758743@apps.district196.org"])
+                var emailArray: [String] = []
+                for i in allGroups[gotGroupIndex!].people {
+                    if (i.email != "") {
+                        emailArray.append(i.email)
+                    }
+                }
+                emailController.setToRecipients(emailArray)
                 
                 // Attaching the .CSV file to the email.
                 emailController.addAttachmentData(data!, mimeType: "text/csv", fileName: ( allGroups[gotGroupIndex!].name + "Data.csv" ) )
