@@ -8,7 +8,7 @@
 import MessageUI
 import Foundation
 import UIKit
-internal class CalculationViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate{
+internal class CalculationViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate  {
     
     @IBOutlet weak var labelOfGroup: UILabel!
    
@@ -53,7 +53,7 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
         }
     }
     
-    
+    var data: Data!
     @IBAction func exportGroupButtonPressed(_ sender: Any) {
             var groupSum: [[String]] = [[]]
             let formatter = DateFormatter()
@@ -78,11 +78,12 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
             groupCSV.arrayToData()
             
             
-            let data = groupCSV.fileData.data(using: String.Encoding.utf8, allowLossyConversion: false)
-            if let content = data {
-                print("NSData: \(content)")
-            }
-            
+            data = groupCSV.fileData.data(using: String.Encoding.utf8, allowLossyConversion: false)!
+        
+            //if let content = data {
+                //print("NSData: \(content)")
+            //}
+    }
             // Generating the email controller.
             func configuredMailComposeViewController() -> MFMailComposeViewController {
                 let emailController = MFMailComposeViewController()
@@ -98,7 +99,7 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
                 emailController.setToRecipients(emailArray)
                 
                 // Attaching the .CSV file to the email.
-                emailController.addAttachmentData(data!, mimeType: "text/csv", fileName: ( allGroups[gotGroupIndex!].name + "Data.csv" ) )
+                emailController.addAttachmentData(data, mimeType: "text/csv", fileName: ( allGroups[gotGroupIndex!].name + "Data.csv" ) )
                 
                 return emailController
             }
@@ -107,24 +108,11 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
                 let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
                 sendMailErrorAlert.show()
             }
-        
-        // MARK: MFMailComposeViewControllerDelegate Method
             func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-            
-                    switch result {
-                        case .cancelled:
-                            break
-                        case .saved:
-                            break
-                        case .sent:
-                            break
-                        case .failed:
-                            break
-                
-                    }
-            
-            controller.dismiss(animated: true, completion: nil)
-        }
+                controller.dismiss(animated: true, completion: nil)
+            }
+        // MARK: MFMailComposeViewControllerDelegate Method
+        
             // If the view controller can send the email.
             // This will show an email-style popup that allows you to enter
             // Who to send the email to, the subject, the cc's and the message.
@@ -160,7 +148,6 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
                 controller.dismiss(animated: true, completion: nil)
             }
     */
-    }
     
     //table view will return int for how many rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
