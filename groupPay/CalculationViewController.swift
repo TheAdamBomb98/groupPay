@@ -102,12 +102,23 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
                 
                 return emailController
             }
-            
+        
+            func showSendMailErrorAlert() {
+                let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+                sendMailErrorAlert.show()
+            }
+        
+        // MARK: MFMailComposeViewControllerDelegate Method
+            func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+                controller.dismiss(animated: true, completion: nil)
+            }
+        
             // If the view controller can send the email.
             // This will show an email-style popup that allows you to enter
             // Who to send the email to, the subject, the cc's and the message.
             // As the .CSV is already attached, you can simply add an email
             // and press send.
+        /*
             let emailViewController = configuredMailComposeViewController()
             if MFMailComposeViewController.canSendMail() {
                 self.present(emailViewController, animated: true, completion: nil)
@@ -136,6 +147,7 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
                 
                 controller.dismiss(animated: true, completion: nil)
             }
+    */
     }
     
     //table view will return int for how many rows
