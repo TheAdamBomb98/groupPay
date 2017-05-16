@@ -110,9 +110,21 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
         
         // MARK: MFMailComposeViewControllerDelegate Method
             func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-                controller.dismiss(animated: true, completion: nil)
-            }
-        
+            
+                    switch result {
+                        case .cancelled:
+                            break
+                        case .saved:
+                            break
+                        case .sent:
+                            break
+                        case .failed:
+                            break
+                
+                    }
+            
+            controller.dismiss(animated: true, completion: nil)
+        }
             // If the view controller can send the email.
             // This will show an email-style popup that allows you to enter
             // Who to send the email to, the subject, the cc's and the message.
