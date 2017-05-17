@@ -103,7 +103,7 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
                 
                 return emailController
             }
-        
+        /*
             func showSendMailErrorAlert() {
                 let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
                 sendMailErrorAlert.show()
@@ -111,6 +111,7 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
             func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
                 controller.dismiss(animated: true, completion: nil)
             }
+    */
         // MARK: MFMailComposeViewControllerDelegate Method
         
             // If the view controller can send the email.
@@ -171,4 +172,5 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
         calculatedList = calculate(groupOfPeople: tempList)
         
     }
+ 
 }
