@@ -12,8 +12,8 @@ import UIKit
 import os.log
 var groupHasChanged = false
 var tag = "Gas"
-var payerSub = String()
-var tagSub = String()
+var payerSub: Int = -1
+var tagSub: Int = -1
 
 
 class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
@@ -21,8 +21,8 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
     var gotGroupIndex: Int?
     var gotPersonIndex: Int?
     var rowOfPayer: Int?
-    var gotTagSub: String?
-    var gotPayerSub: String?
+    var gotTagSub: Int?
+    var gotPayerSub: Int?
     
     
     @IBOutlet weak var enterPerson: UIPickerView!
@@ -47,9 +47,13 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         else {
             rowOfPayer = 0
         }
-        if (gotPayerSub != nil)
-        {
-            enterPerson.selectRow
+        if (gotPayerSub != -1){
+            enterPerson.selectRow(gotPayerSub!, inComponent: 0, animated: true)
+            gotPayerSub = -1
+        }
+        if (gotTagSub != -1) {
+            enterTag.selectRow(gotTagSub!, inComponent: 0, animated: true)
+            gotTagSub = -1
         }
     }
     
@@ -232,11 +236,11 @@ class newPaymentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
             if (pickerView == enterTag) {
                 tag = enterTagPickerData[row]
-                tagSub = enterTagPickerData[row]
+                tagSub = row
             }
             else {
                 rowOfPayer = row
-                payerSub = enterTagPickerData[row]
+                payerSub = row
             }
             
         }

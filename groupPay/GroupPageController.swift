@@ -91,6 +91,8 @@ class GroupPageController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         groupTotalLabel.text = "$" + (String)(groupTotal)
         greenOrRed = []
+        tagSub = -1
+        payerSub = -1
     }
  
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
