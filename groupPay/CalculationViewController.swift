@@ -79,7 +79,7 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
             
             
             data = groupCSV.fileData.data(using: String.Encoding.utf8, allowLossyConversion: false)!
-        
+    }
             //if let content = data {
                 //print("NSData: \(content)")
             //}
@@ -102,7 +102,7 @@ internal class CalculationViewController : UIViewController, UITableViewDelegate
                 
                 return emailController
             }
-    }
+    
         /*
             func showSendMailErrorAlert() {
                 let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
